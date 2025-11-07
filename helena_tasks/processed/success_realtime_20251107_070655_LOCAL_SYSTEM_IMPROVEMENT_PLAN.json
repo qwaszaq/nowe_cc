@@ -1,0 +1,9 @@
+{
+  "file_path": "LOCAL_SYSTEM_IMPROVEMENT_PLAN.md",
+  "document_type": "architecture",
+  "title": "Local LLM System Improvement Plan",
+  "detected_at": "2025-11-07T07:06:55.423681",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Local LLM System Improvement Plan\n\n**Objective:** Maximize local LLM effectiveness to match Claude-level analysis quality\n**Current Status:** Local system reaches correct conclusions but lacks severity calibration and depth\n**Target:** 90%+ quality match with Claude benchmark (currently ~70-75%)\n\n---\n\n## \ud83c\udfaf Core Problem Statement\n\n**Current Gap:** Local LLM (openai/gpt-oss-20b) produces correct directional analysis but fails on:\n\n1. **Severity Calibration:** Underestimates crisis severity (0.70"
+}

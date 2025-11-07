@@ -1,0 +1,35 @@
+SET doc:COMMIT_71fe32a_documentation:title "Add multi-year PDF analysis plan + Phase 1 enhanced prompts"
+SET doc:COMMIT_71fe32a_documentation:type "general_documentation"
+SET doc:COMMIT_71fe32a_documentation:path "docs/auto-generated/2025-11-07/COMMIT_71fe32a_documentation.md"
+SET doc:COMMIT_71fe32a_documentation:content "# Add multi-year PDF analysis plan + Phase 1 enhanced prompts
+
+**Auto-Generated Documentation**
+
+**Date:** 2025-11-07 07:10:31
+**Commit:** `71fe32a`
+**Type:** Documentation
+**Author:** artur
+
+---
+
+## 📝 Commit Message
+
+**docs: Add multi-year PDF analysis plan + Phase 1 enhanced prompts**
+
+MULTI_YEAR_PDF_ANALYSIS_PLAN.md:
+- Comprehensive baseline testing before Phase 1 implementation
+- Download 3 years of Azoty annual reports (2022, 2023, 2024)
+- Test all 3 systems (Single-Agent, Multi-Agent, Claude) on full PDFs
+- Compare data extraction, RAG quality, severity calibration, narrative analysis
+- Gap analysis → prioritized improvement roadmap
+- Timeline: 2-3 weeks (acquisition + analysis + comparison)
+
+local_llm_prompts_v2.py (Phase 1 Enhanced Prompts - ready for testing):
+- Framework decision tree (credit vs equity analysis)
+- Explicit severity calibration scales (0-100 with thresholds)
+- Few-shot examples with correct calibration
+- Chain-of-thought reasoning templates
+- Mandatory probabi"
+EXPIRE doc:COMMIT_71fe32a_documentation:content 86400
+SADD docs:all "COMMIT_71fe32a_documentation"
+SADD docs:type:general_documentation "COMMIT_71fe32a_documentation"

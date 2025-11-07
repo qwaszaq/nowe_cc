@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-07/COMMIT_d6c67ac_documentation.md",
+  "document_type": "general_documentation",
+  "title": "Add comprehensive system completion report",
+  "detected_at": "2025-11-07T06:59:33.378907",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Add comprehensive system completion report\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-07 06:59:33\n**Commit:** `d6c67ac`\n**Type:** Documentation\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**docs: Add comprehensive system completion report**\n\n- Documents all 4 completed priorities (Single-Agent, Multi-Year, RAG, Multi-Agent)\n- Performance metrics and quality assessment\n- Three-way comparison analysis (Single vs Multi vs Claude)\n- 7 critical weak spots identified in local LLM analysis"
+}

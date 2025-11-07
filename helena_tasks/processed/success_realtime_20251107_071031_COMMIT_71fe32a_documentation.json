@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-07/COMMIT_71fe32a_documentation.md",
+  "document_type": "general_documentation",
+  "title": "Add multi-year PDF analysis plan + Phase 1 enhanced prompts",
+  "detected_at": "2025-11-07T07:10:31.196643",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Add multi-year PDF analysis plan + Phase 1 enhanced prompts\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-07 07:10:31\n**Commit:** `71fe32a`\n**Type:** Documentation\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**docs: Add multi-year PDF analysis plan + Phase 1 enhanced prompts**\n\nMULTI_YEAR_PDF_ANALYSIS_PLAN.md:\n- Comprehensive baseline testing before Phase 1 implementation\n- Download 3 years of Azoty annual reports (2022, 2023, 2024)\n- Test all 3 systems (Single-Agent, Multi-Agent, Clau"
+}

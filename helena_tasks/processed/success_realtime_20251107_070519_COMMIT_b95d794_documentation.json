@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-07/COMMIT_b95d794_documentation.md",
+  "document_type": "general_documentation",
+  "title": "Add comprehensive local LLM improvement plan",
+  "detected_at": "2025-11-07T07:05:19.743595",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Add comprehensive local LLM improvement plan\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-07 07:05:19\n**Commit:** `b95d794`\n**Type:** Documentation\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**docs: Add comprehensive local LLM improvement plan**\n\nMajor objective: Polish local system to match Claude-level quality (90%+)\nClaude is benchmark/advisor only, not part of production workflow\n\n5 Improvement Pillars:\n1. Enhanced Prompts with Explicit Frameworks (framework decision trees)\n2. RA"
+}

@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-07/COMMIT_dc23cfe_feature.md",
+  "document_type": "architecture",
+  "title": "Complete multi-agent intelligence system with local/Claude comparison",
+  "detected_at": "2025-11-07T06:54:26.691367",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Complete multi-agent intelligence system with local/Claude comparison\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-07 06:54:26\n**Commit:** `dc23cfe`\n**Type:** Feature\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**feat: Complete multi-agent intelligence system with local/Claude comparison**\n\n\ud83c\udfaf Major Features Implemented:\n\n1. Multi-Agent Intelligence System (Priority 4)\n   - 6 specialized agents: Financial, Risk, Industry, Strategy, Market, Synthesis\n   - Sequential orchestration with c"
+}

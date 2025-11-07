@@ -1,0 +1,38 @@
+SET doc:COMMIT_dc23cfe_feature:title "Complete multi-agent intelligence system with local/Claude comparison"
+SET doc:COMMIT_dc23cfe_feature:type "architecture"
+SET doc:COMMIT_dc23cfe_feature:path "docs/auto-generated/2025-11-07/COMMIT_dc23cfe_feature.md"
+SET doc:COMMIT_dc23cfe_feature:content "# Complete multi-agent intelligence system with local/Claude comparison
+
+**Auto-Generated Documentation**
+
+**Date:** 2025-11-07 06:54:26
+**Commit:** `dc23cfe`
+**Type:** Feature
+**Author:** artur
+
+---
+
+## 📝 Commit Message
+
+**feat: Complete multi-agent intelligence system with local/Claude comparison**
+
+🎯 Major Features Implemented:
+
+1. Multi-Agent Intelligence System (Priority 4)
+   - 6 specialized agents: Financial, Risk, Industry, Strategy, Market, Synthesis
+   - Sequential orchestration with context passing
+   - RAG integration with section-filtered queries
+   - Generation time: 80.32s for comprehensive analysis
+
+2. RAG System Enhancement (Priority 3)
+   - Qdrant vector store with BGE reranker
+   - Section detection (6 types) for intelligent retrieval
+   - E5 embeddings (1024 dimensions)
+   - Chunk size: 750 chars, overlap: 100 chars
+
+3. Multi-Year Data Pipeline (Priority 2)
+   - JSON-based storage for company financial data
+   - Support for balance sheet, income statement, cash flow"
+EXPIRE doc:COMMIT_dc23cfe_feature:content 86400
+SADD docs:all "COMMIT_dc23cfe_feature"
+SADD docs:type:architecture "COMMIT_dc23cfe_feature"

@@ -1,0 +1,25 @@
+SET doc:LOCAL_SYSTEM_IMPROVEMENT_PLAN:title "Local LLM System Improvement Plan"
+SET doc:LOCAL_SYSTEM_IMPROVEMENT_PLAN:type "architecture"
+SET doc:LOCAL_SYSTEM_IMPROVEMENT_PLAN:path "LOCAL_SYSTEM_IMPROVEMENT_PLAN.md"
+SET doc:LOCAL_SYSTEM_IMPROVEMENT_PLAN:content "# Local LLM System Improvement Plan
+
+**Objective:** Maximize local LLM effectiveness to match Claude-level analysis quality
+**Current Status:** Local system reaches correct conclusions but lacks severity calibration and depth
+**Target:** 90%+ quality match with Claude benchmark (currently ~70-75%)
+
+---
+
+## 🎯 Core Problem Statement
+
+**Current Gap:** Local LLM (openai/gpt-oss-20b) produces correct directional analysis but fails on:
+
+1. **Severity Calibration:** Underestimates crisis severity (0.70 current ratio = "weak" not "critical")
+2. **Framework Selection:** Applies wrong analytical frameworks (equity analysis for distressed credit)
+3. **Causal Reasoning:** Lists problems without identifying feedback loops and cascading effects
+4. **Specificity:** Generic risk factors instead of quantified probabilities and timelines
+5. **Contrarian Thinking:** Accepts narratives at face value, lacks critical questioning
+6. **Probability Calibration:** Over-optimistic scenario weighting
+7. **Missing"
+EXPIRE doc:LOCAL_SYSTEM_IMPROVEMENT_PLAN:content 86400
+SADD docs:all "LOCAL_SYSTEM_IMPROVEMENT_PLAN"
+SADD docs:type:architecture "LOCAL_SYSTEM_IMPROVEMENT_PLAN"
