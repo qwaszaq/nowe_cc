@@ -1,0 +1,9 @@
+{
+  "file_path": "MULTI_YEAR_PDF_COMPARISON.md",
+  "document_type": "general_documentation",
+  "title": "Multi-Year PDF Analysis - System Comparison",
+  "detected_at": "2025-11-07T07:55:56.361941",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Multi-Year PDF Analysis - System Comparison\n## Grupa Azoty S.A. Intelligence Reports (2022-2024)\n\n**Date**: 2025-11-07 07:55:56\n\n---\n\n## Executive Summary\n\nThis report compares three intelligence systems on multi-year financial analysis:\n1. **Single-Agent**: Local LLM (1 perspective)\n2. **Multi-Agent**: Local LLM (6 specialized agents with RAG)\n3. **Claude**: Anthropic Claude 3.5 Sonnet (benchmark)\n\n**Test Data**: Grupa Azoty S.A. (2022-2024)\n- Severe financial distress (46.9% equity decline)\n"
+}

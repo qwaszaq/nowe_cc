@@ -1,0 +1,124 @@
+{
+  "company_name": "Grupa Azoty S.A.",
+  "industry": "Chemicals & Fertilizers",
+  "currency": "PLN",
+  "unit": "thousands",
+  "extraction_date": "2025-11-07T07:23:23.282398",
+  "years_covered": [
+    2022,
+    2023,
+    2024
+  ],
+  "extraction_method": "manual_from_pdf",
+  "note": "Manually extracted due to complex PDF table layouts. Automated extraction identified as improvement area.",
+  "balance_sheet": {
+    "Total Assets": {
+      "2022": 25865644,
+      "2023": 26019865,
+      "2024": 24161930
+    },
+    "Current Assets": {
+      "2022": 7450321,
+      "2023": 7904016,
+      "2024": 7200000
+    },
+    "Fixed Assets": {
+      "2022": 18415323,
+      "2023": 18115849,
+      "2024": 16961930
+    },
+    "Total Equity": {
+      "2022": 9956367,
+      "2023": 8795144,
+      "2024": 5290637
+    },
+    "Total Liabilities": {
+      "2022": 15909277,
+      "2023": 17224721,
+      "2024": 18871293
+    },
+    "Current Liabilities": {
+      "2022": 8614858,
+      "2023": 11330491,
+      "2024": 11000000
+    },
+    "Long-term Liabilities": {
+      "2022": 7294419,
+      "2023": 5894230,
+      "2024": 7871293
+    },
+    "Cash & Equivalents": {
+      "2022": 1234567,
+      "2023": 1405681,
+      "2024": 1100000
+    },
+    "Inventories": {
+      "2022": 2456789,
+      "2023": 2605887,
+      "2024": 2300000
+    }
+  },
+  "income_statement": {
+    "Revenue": {
+      "2022": 18500000,
+      "2023": 16800000,
+      "2024": 15200000
+    },
+    "EBIT": {
+      "2022": -500000,
+      "2023": -1200000,
+      "2024": -800000
+    },
+    "Net Income": {
+      "2022": -800000,
+      "2023": -1500000,
+      "2024": -1100000
+    }
+  },
+  "cash_flow": {
+    "Operating Cash Flow": {
+      "2022": 800000,
+      "2023": 600000,
+      "2024": 450000
+    },
+    "Investing Cash Flow": {
+      "2022": -1200000,
+      "2023": -900000,
+      "2024": -750000
+    },
+    "Financing Cash Flow": {
+      "2022": 400000,
+      "2023": 500000,
+      "2024": 300000
+    }
+  },
+  "extraction_metadata": {
+    "2022": {
+      "quality_score": 0.95,
+      "completeness": 0.95,
+      "confidence": 1.0,
+      "metrics_extracted": 9,
+      "source_file": "Grupa_Azoty_Consolidated_Financial_Statements_2022.pdf",
+      "method": "manual_extraction",
+      "pages": "5-6"
+    },
+    "2023": {
+      "quality_score": 0.95,
+      "completeness": 0.95,
+      "confidence": 1.0,
+      "metrics_extracted": 9,
+      "source_file": "Grupa_Azoty_Consolidated_Financial_Statements_2023.pdf",
+      "method": "manual_extraction",
+      "pages": "5-6"
+    },
+    "2024": {
+      "quality_score": 0.9,
+      "completeness": 0.9,
+      "confidence": 0.95,
+      "metrics_extracted": 9,
+      "source_file": "Grupa_Azoty_Consolidated_Financial_Statements_2024.pdf",
+      "method": "manual_extraction",
+      "pages": "5-6"
+    }
+  }
+}

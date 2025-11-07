@@ -1,0 +1,19 @@
+SET doc:Azoty_MultiAgent_MultiYear_20251107_074658:title "Untitled"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_074658:type "team_documentation"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_074658:path "output/intelligence_reports/Azoty_MultiAgent_MultiYear_20251107_074658.md"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_074658:content "**COMPREHENSIVE INTELLIGENCE REPORT: Grupa Azoty S.A.**
+
+═══════════════════════════════════════════════════════════════  
+
+## EXECUTIVE SUMMARY  
+
+Grupa Azoty is a mid‑size Polish fertilizer producer whose financials have deteriorated sharply over the past three years: current ratios fell below 1, working capital turned increasingly negative, and net margins are persistently negative. Leverage has exploded (Debt‑to‑Equity > 3), while profitability remains weak. The company’s competitive moat is modest; it lacks cost leadership or brand differentiation, and its strategic plan focuses on “operational excellence” without a clear growth agenda. Recent catalysts—debt refinancing, CAPEX cuts, and a partnership to develop precision fertilizers—offer some upside, but regulatory pressure (EU carbon tax) and commodity price volatility pose significant risks.  
+
+**Overall Assessment Score:** **38/100**  
+**Investment Recommendation:** **SELL**  
+
+Key reasons:  
+1. **Financial fragility** – liqui"
+EXPIRE doc:Azoty_MultiAgent_MultiYear_20251107_074658:content 86400
+SADD docs:all "Azoty_MultiAgent_MultiYear_20251107_074658"
+SADD docs:type:team_documentation "Azoty_MultiAgent_MultiYear_20251107_074658"

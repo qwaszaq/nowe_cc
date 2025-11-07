@@ -1,0 +1,251 @@
+================================================================================
+FULL CYCLE: MULTI-YEAR PDF ANALYSIS
+Grupa Azoty S.A. (2022-2024)
+================================================================================
+
+✅ Phase 1: PDFs Downloaded (6 files, 21.6 MB)
+
+✅ Phase 2: Multi-year dataset created
+
+Phase 3: RAG Ingestion...
+2025-11-07 07:29:26,145 - src.rag.document_loader - INFO - DocumentLoader initialized: chunk_size=750, overlap=100
+2025-11-07 07:29:26,187 - httpx - INFO - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-11-07 07:29:29,148 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-11-07 07:29:29,547 - src.rag.qdrant_vector_store - INFO - BGE reranker initialized
+2025-11-07 07:29:29,549 - httpx - INFO - HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+2025-11-07 07:29:29,550 - src.rag.qdrant_vector_store - INFO - Collection already exists: azoty_multi_year
+2025-11-07 07:29:29,550 - src.rag.qdrant_vector_store - INFO - QdrantVectorStore initialized: http://localhost:6333/azoty_multi_year
+2025-11-07 07:29:29,550 - __main__ - INFO - Collection initialized: azoty_multi_year
+2025-11-07 07:29:29,550 - src.rag.document_loader - INFO - Loading annual_report for Grupa Azoty S.A. (2022): Grupa_Azoty_Consolidated_Financial_Statements_2022.pdf
+2025-11-07 07:29:38,790 - src.rag.document_loader - INFO - Section distribution: {'financial_statements': 185, 'operations': 43, 'notes': 29, 'management_discussion': 30, 'unknown': 85, 'strategy': 18, 'risk_factors': 8}
+2025-11-07 07:29:38,790 - src.rag.document_loader - INFO - Loaded 398 chunks from 73 pages
+2025-11-07 07:29:38,790 - __main__ - ERROR - ❌ 2022 financial_statements: Ingestion failed - QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 115, in ingest_multi_year_reports
+    vector_store.ingest_documents(chunks)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+2025-11-07 07:29:38,790 - src.rag.document_loader - INFO - Loading annual_report for Grupa Azoty S.A. (2022): Grupa_Azoty_Directors_Report_2022.pdf
+2025-11-07 07:29:44,725 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P402' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P408' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P414' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P420' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P426' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P430' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P436' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P442' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P448' is an invalid float value
+2025-11-07 07:29:44,726 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P454' is an invalid float value
+2025-11-07 07:29:44,728 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P460' is an invalid float value
+2025-11-07 07:29:44,729 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P466' is an invalid float value
+2025-11-07 07:29:45,103 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P492' is an invalid float value
+2025-11-07 07:29:45,103 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P498' is an invalid float value
+2025-11-07 07:29:45,103 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P504' is an invalid float value
+2025-11-07 07:29:45,103 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P510' is an invalid float value
+2025-11-07 07:29:45,103 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P514' is an invalid float value
+2025-11-07 07:29:45,103 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P518' is an invalid float value
+2025-11-07 07:29:45,104 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P524' is an invalid float value
+2025-11-07 07:29:45,104 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P530' is an invalid float value
+2025-11-07 07:29:45,105 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P536' is an invalid float value
+2025-11-07 07:29:45,105 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P542' is an invalid float value
+2025-11-07 07:29:55,442 - src.rag.document_loader - INFO - Section distribution: {'financial_statements': 83, 'management_discussion': 204, 'unknown': 384, 'strategy': 111, 'operations': 126, 'risk_factors': 12, 'notes': 1}
+2025-11-07 07:29:55,442 - src.rag.document_loader - INFO - Loaded 921 chunks from 156 pages
+2025-11-07 07:29:55,442 - __main__ - ERROR - ❌ 2022 directors_report: Ingestion failed - QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 115, in ingest_multi_year_reports
+    vector_store.ingest_documents(chunks)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+2025-11-07 07:29:55,442 - src.rag.document_loader - INFO - Loading annual_report for Grupa Azoty S.A. (2023): Grupa_Azoty_Consolidated_Financial_Statements_2023.pdf
+2025-11-07 07:30:07,036 - src.rag.document_loader - INFO - Section distribution: {'financial_statements': 195, 'management_discussion': 42, 'notes': 31, 'operations': 39, 'unknown': 151, 'strategy': 17, 'risk_factors': 11}
+2025-11-07 07:30:07,036 - src.rag.document_loader - INFO - Loaded 486 chunks from 89 pages
+2025-11-07 07:30:07,036 - __main__ - ERROR - ❌ 2023 financial_statements: Ingestion failed - QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 115, in ingest_multi_year_reports
+    vector_store.ingest_documents(chunks)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+2025-11-07 07:30:07,036 - src.rag.document_loader - INFO - Loading annual_report for Grupa Azoty S.A. (2023): Grupa_Azoty_Directors_Report_2023.pdf
+2025-11-07 07:30:14,107 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P438' is an invalid float value
+2025-11-07 07:30:14,107 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P444' is an invalid float value
+2025-11-07 07:30:14,107 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P450' is an invalid float value
+2025-11-07 07:30:14,107 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P456' is an invalid float value
+2025-11-07 07:30:14,107 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P462' is an invalid float value
+2025-11-07 07:30:14,107 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P466' is an invalid float value
+2025-11-07 07:30:14,107 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P474' is an invalid float value
+2025-11-07 07:30:14,108 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P478' is an invalid float value
+2025-11-07 07:30:14,108 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P484' is an invalid float value
+2025-11-07 07:30:14,108 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P490' is an invalid float value
+2025-11-07 07:30:14,110 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P496' is an invalid float value
+2025-11-07 07:30:14,110 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P502' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P530' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P536' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P542' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P548' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P554' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P560' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P568' is an invalid float value
+2025-11-07 07:30:14,550 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P574' is an invalid float value
+2025-11-07 07:30:14,552 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P580' is an invalid float value
+2025-11-07 07:30:14,552 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P586' is an invalid float value
+2025-11-07 07:30:25,862 - src.rag.document_loader - INFO - Section distribution: {'financial_statements': 97, 'management_discussion': 226, 'unknown': 448, 'strategy': 118, 'operations': 135, 'risk_factors': 14, 'notes': 2}
+2025-11-07 07:30:25,862 - src.rag.document_loader - INFO - Loaded 1040 chunks from 173 pages
+2025-11-07 07:30:25,862 - __main__ - ERROR - ❌ 2023 directors_report: Ingestion failed - QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 115, in ingest_multi_year_reports
+    vector_store.ingest_documents(
+TypeError: QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+2025-11-07 07:30:25,862 - src.rag.document_loader - INFO - Loading annual_report for Grupa Azoty S.A. (2024): Grupa_Azoty_Consolidated_Financial_Statements_2024.pdf
+2025-11-07 07:30:37,325 - src.rag.document_loader - INFO - Section distribution: {'financial_statements': 191, 'management_discussion': 38, 'notes': 28, 'unknown': 146, 'operations': 34, 'strategy': 18, 'risk_factors': 11}
+2025-11-07 07:30:37,325 - src.rag.document_loader - INFO - Loaded 466 chunks from 90 pages
+2025-11-07 07:30:37,325 - __main__ - ERROR - ❌ 2024 financial_statements: Ingestion failed - QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 115, in ingest_multi_year_reports
+    vector_store.ingest_documents(
+TypeError: QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+2025-11-07 07:30:37,325 - src.rag.document_loader - INFO - Loading annual_report for Grupa Azoty S.A. (2024): Grupa_Azoty_Directors_Report_2024.pdf
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P549' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P555' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P561' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P567' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P573' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P579' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P585' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P591' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P597' is an invalid float value
+2025-11-07 07:30:44,085 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P603' is an invalid float value
+2025-11-07 07:30:44,088 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P609' is an invalid float value
+2025-11-07 07:30:44,088 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P615' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P643' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P649' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P653' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P659' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P665' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P671' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P679' is an invalid float value
+2025-11-07 07:30:44,495 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P685' is an invalid float value
+2025-11-07 07:30:44,497 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P691' is an invalid float value
+2025-11-07 07:30:44,497 - pdfminer.pdfinterp - WARNING - Cannot set gray non-stroke color because /'P697' is an invalid float value
+2025-11-07 07:31:12,570 - src.rag.document_loader - INFO - Section distribution: {'financial_statements': 117, 'management_discussion': 327, 'unknown': 634, 'strategy': 185, 'operations': 239, 'notes': 3, 'risk_factors': 24}
+2025-11-07 07:31:12,570 - src.rag.document_loader - INFO - Loaded 1529 chunks from 276 pages
+2025-11-07 07:31:12,570 - __main__ - ERROR - ❌ 2024 directors_report: Ingestion failed - QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 115, in ingest_multi_year_reports
+    vector_store.ingest_documents(
+TypeError: QdrantVectorStore.ingest_documents() missing 2 required positional arguments: 'year' and 'chunks'
+2025-11-07 07:31:12,613 - httpx - INFO - HTTP Request: POST http://localhost:6333/collections/azoty_multi_year/points/search "HTTP/1.1 200 OK"
+2025-11-07 07:31:12,613 - src.rag.qdrant_vector_store - WARNING - No results found for query: Why did profitability decline from 2022 to 2024?
+2025-11-07 07:31:12,646 - httpx - INFO - HTTP Request: POST http://localhost:6333/collections/azoty_multi_year/points/search "HTTP/1.1 200 OK"
+2025-11-07 07:31:12,646 - src.rag.qdrant_vector_store - WARNING - No results found for query: What are the main financial risks facing the company?
+2025-11-07 07:31:12,671 - httpx - INFO - HTTP Request: POST http://localhost:6333/collections/azoty_multi_year/points/search "HTTP/1.1 200 OK"
+2025-11-07 07:31:12,671 - src.rag.qdrant_vector_store - WARNING - No results found for query: What is management's strategy to improve performance?
+================================================================================
+MULTI-YEAR PDF INGESTION INTO RAG SYSTEM
+Grupa Azoty S.A. - 2022, 2023, 2024
+================================================================================
+
+
+================================================================================
+Ingesting 2022 - financial_statements
+File: Grupa_Azoty_Consolidated_Financial_Statements_2022.pdf
+================================================================================
+
+================================================================================
+Ingesting 2022 - directors_report
+File: Grupa_Azoty_Directors_Report_2022.pdf
+================================================================================
+
+================================================================================
+Ingesting 2023 - financial_statements
+File: Grupa_Azoty_Consolidated_Financial_Statements_2023.pdf
+================================================================================
+
+================================================================================
+Ingesting 2023 - directors_report
+File: Grupa_Azoty_Directors_Report_2023.pdf
+================================================================================
+
+================================================================================
+Ingesting 2024 - financial_statements
+File: Grupa_Azoty_Consolidated_Financial_Statements_2024.pdf
+================================================================================
+
+================================================================================
+Ingesting 2024 - directors_report
+File: Grupa_Azoty_Directors_Report_2024.pdf
+================================================================================
+
+================================================================================
+INGESTION SUMMARY
+================================================================================
+
+Total chunks ingested: 0
+
+By Year and Type:
+  ❌ 2022 - financial_statements: 0 chunks
+  ❌ 2022 - directors_report: 0 chunks
+  ❌ 2023 - financial_statements: 0 chunks
+  ❌ 2023 - directors_report: 0 chunks
+  ❌ 2024 - financial_statements: 0 chunks
+  ❌ 2024 - directors_report: 0 chunks
+
+================================================================================
+TESTING RETRIEVAL
+================================================================================
+
+
+Query: "Why did profitability decline from 2022 to 2024?"
+--------------------------------------------------------------------------------
+
+Query: "What are the main financial risks facing the company?"
+--------------------------------------------------------------------------------
+
+Query: "What is management's strategy to improve performance?"
+--------------------------------------------------------------------------------
+
+================================================================================
+✅ RAG INGESTION COMPLETE
+================================================================================
+
+Next Step: Generate analysis reports
+  1. Single-agent: python3 scripts/test_single_agent_multi_year.py
+  2. Multi-agent: python3 scripts/test_multi_agent_multi_year.py
+  3. Claude: python3 scripts/generate_claude_multi_year.py
+================================================================================
+✅ Phase 3: RAG ingestion complete
+
+Phase 4.1: Generating Single-Agent Report...
+INFO:src.intelligence.services.local_intelligence_service:RAG-enhanced analysis DISABLED (using only structured data)
+INFO:src.intelligence.services.local_intelligence_service:Local Intelligence Service initialized: openai/gpt-oss-20b
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+INFO:src.intelligence.services.local_intelligence_service:GENERATING INTELLIGENCE REPORT: Grupa Azoty S.A.
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+INFO:src.intelligence.services.local_intelligence_service:Step 1: Preparing financial data...
+ERROR:src.intelligence.services.local_intelligence_service:Report generation failed: 'balance_sheet'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/src/intelligence/services/local_intelligence_service.py", line 115, in generate_intelligence_report
+    balance_sheet_table = format_financial_data(company_data['balance_sheet'])
+                                                ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'balance_sheet'
+ERROR:__main__:❌ FATAL ERROR: write() argument must be str, not dict
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/test_single_agent_multi_year.py", line 123, in <module>
+    result = generate_single_agent_report()
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/test_single_agent_multi_year.py", line 93, in generate_single_agent_report
+    f.write(report)
+    ~~~~~~~^^^^^^^^
+TypeError: write() argument must be str, not dict
+================================================================================
+SINGLE-AGENT INTELLIGENCE ANALYSIS
+Grupa Azoty S.A. - Multi-Year Analysis (2022-2024)
+================================================================================
+
+Data loaded:
+  Company: Grupa Azoty S.A.
+  Years: 2022, 2023, 2024
+  Metrics per year: ~0
+
+Generating single-agent intelligence report...
+(This may take 30-60 seconds)
+
+❌ Phase 4.1: Single-Agent report failed

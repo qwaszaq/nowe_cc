@@ -1,0 +1,21 @@
+SET doc:Azoty_MultiAgent_MultiYear_20251107_084021:title "Untitled"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_084021:type "team_documentation"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_084021:path "output/intelligence_reports/Azoty_MultiAgent_MultiYear_20251107_084021.md"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_084021:content "**COMPREHENSIVE INTELLIGENCE REPORT: Grupa Azoty S.A.**
+
+═══════════════════════════════════════════════════════════════
+
+## EXECUTIVE SUMMARY
+
+Overall Assessment Score: **38/100**
+
+Investment Recommendation: **SELL**
+
+Grupa Azoty is a chemically‑heavy, debt‑laden entity that has only recently turned profitable. Its liquidity remains critically weak (current ratio 0.65), leverage is extreme (debt‑to‑equity 3.57), and working capital is deeply negative. While the company’s “Green Azoty” strategy and market position as Poland’s largest fertilizer producer offer long‑term upside, the immediate risk of liquidity crunch, covenant breach, and commodity price volatility far outweighs any potential gains. Investors should divest or avoid new positions until a credible restructuring plan materialises.
+
+Key Investment Thesis:
+- **Critical Liquidity Crisis**: Current ratio < 1 and negative working capital expose the firm to imminent default.
+- **Imminent Default Risk**: Debt‑to‑equity > 3, long‑t"
+EXPIRE doc:Azoty_MultiAgent_MultiYear_20251107_084021:content 86400
+SADD docs:all "Azoty_MultiAgent_MultiYear_20251107_084021"
+SADD docs:type:team_documentation "Azoty_MultiAgent_MultiYear_20251107_084021"

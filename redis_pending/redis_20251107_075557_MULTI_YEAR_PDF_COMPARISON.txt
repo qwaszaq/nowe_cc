@@ -1,0 +1,39 @@
+SET doc:MULTI_YEAR_PDF_COMPARISON:title "Multi-Year PDF Analysis - System Comparison"
+SET doc:MULTI_YEAR_PDF_COMPARISON:type "general_documentation"
+SET doc:MULTI_YEAR_PDF_COMPARISON:path "MULTI_YEAR_PDF_COMPARISON.md"
+SET doc:MULTI_YEAR_PDF_COMPARISON:content "# Multi-Year PDF Analysis - System Comparison
+## Grupa Azoty S.A. Intelligence Reports (2022-2024)
+
+**Date**: 2025-11-07 07:55:56
+
+---
+
+## Executive Summary
+
+This report compares three intelligence systems on multi-year financial analysis:
+1. **Single-Agent**: Local LLM (1 perspective)
+2. **Multi-Agent**: Local LLM (6 specialized agents with RAG)
+3. **Claude**: Anthropic Claude 3.5 Sonnet (benchmark)
+
+**Test Data**: Grupa Azoty S.A. (2022-2024)
+- Severe financial distress (46.9% equity decline)
+- Persistent operating losses
+- Rising debt burden
+- Perfect test case for severity calibration
+
+---
+
+## Quantitative Comparison
+
+| Metric | Single-Agent | Multi-Agent | Claude |
+|--------|-------------|-------------|--------|
+| Length (characters) | 21206 | 9035 | N/A |
+| Length (words) | 3213 | 1194 | N/A |
+| Number of sections | 21 | 16 | N/A |
+| Framework selection | False | True | N/A |
+| Severity calibration | False | False | N/A |
+| Recommendations | True | True | N/A |
+| Quantified proba"
+EXPIRE doc:MULTI_YEAR_PDF_COMPARISON:content 86400
+SADD docs:all "MULTI_YEAR_PDF_COMPARISON"
+SADD docs:type:general_documentation "MULTI_YEAR_PDF_COMPARISON"

@@ -20,13 +20,15 @@ class RAGService:
     def __init__(
         self,
         qdrant_url: str = "http://localhost:6333",
+        collection_name: str = "rag_documents",
         use_reranker: bool = True
     ):
         self.vector_store = QdrantVectorStore(
+            collection_name=collection_name,
             qdrant_url=qdrant_url,
             use_reranker=use_reranker
         )
-        logger.info("RAGService initialized with Qdrant")
+        logger.info(f"RAGService initialized with Qdrant (collection: {collection_name})")
 
     def get_context_for_question(
         self,

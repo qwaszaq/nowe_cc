@@ -1,0 +1,20 @@
+SET doc:Azoty_MultiAgent_MultiYear_20251107_081825:title "Untitled"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_081825:type "team_documentation"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_081825:path "output/intelligence_reports/Azoty_MultiAgent_MultiYear_20251107_081825.md"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_081825:content "**COMPREHENSIVE INTELLIGENCE REPORT: Grupa Azoty S.A.**
+
+═══════════════════════════════════════════════════════════════  
+
+## EXECUTIVE SUMMARY  
+
+Grupa Azoty is Poland’s largest fertilizer producer and the EU’s second‑largest mineral fertilizer manufacturer, giving it a strong competitive moat.  The company has turned its net margin from a deep loss in 2023 to a modest 8.3 % in 2024, driven by cost‑control measures and a disciplined CAPEX program focused on sustainability (“Green Azoty”).  However, liquidity is weak (current ratio 0.65, working capital –3.8 M PLN) and leverage has surged to a debt‑to‑equity of 3.57, exposing the firm to refinancing risk.  
+
+**Recommendation:** **HOLD**  
+The company’s strategic positioning and ESG trajectory are attractive, but short‑term financial fragility and high leverage temper upside potential.  A cautious hold is warranted until liquidity improves and early “Green Azoty” milestones materialise.
+
+**Key Investment Thesis**
+
+1. **Scale & Market P"
+EXPIRE doc:Azoty_MultiAgent_MultiYear_20251107_081825:content 86400
+SADD docs:all "Azoty_MultiAgent_MultiYear_20251107_081825"
+SADD docs:type:team_documentation "Azoty_MultiAgent_MultiYear_20251107_081825"

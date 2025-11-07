@@ -1,0 +1,15 @@
+ERROR:__main__:❌ FATAL ERROR: MultiAgentIntelligenceService.__init__() got an unexpected keyword argument 'qdrant_collection'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/test_multi_agent_multi_year.py", line 127, in <module>
+    result = generate_multi_agent_report()
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/test_multi_agent_multi_year.py", line 34, in generate_multi_agent_report
+    service = MultiAgentIntelligenceService(
+        use_rag=True,
+        qdrant_collection="azoty_multi_year"
+    )
+TypeError: MultiAgentIntelligenceService.__init__() got an unexpected keyword argument 'qdrant_collection'
+================================================================================
+MULTI-AGENT INTELLIGENCE ANALYSIS (with RAG)
+Grupa Azoty S.A. - Multi-Year Analysis (2022-2024)
+================================================================================
+

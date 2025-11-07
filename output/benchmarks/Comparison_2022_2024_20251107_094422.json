@@ -1,0 +1,39 @@
+{
+  "timestamp": "20251107_094422",
+  "company": "Grupa Azoty S.A.",
+  "years": [
+    2022,
+    2023,
+    2024
+  ],
+  "results": [
+    {
+      "approach": "Local Single-Agent (RAG)",
+      "time": 31.59609889984131,
+      "score": 34,
+      "recommendation": "Investment Recommendation:",
+      "report_length": 21338,
+      "report_file": "output/intelligence_reports/Benchmark_SingleAgent_20251107_094303.md",
+      "model": "openai/gpt-oss-20b (local)"
+    },
+    {
+      "approach": "Local Multi-Agent (RAG)",
+      "time": 78.53006792068481,
+      "score": 38,
+      "recommendation": "SELL",
+      "report_length": 9384,
+      "report_file": "output/intelligence_reports/Benchmark_MultiAgent_20251107_094422.md",
+      "model": "openai/gpt-oss-20b (local) x6 agents"
+    },
+    {
+      "approach": "Claude (Benchmark)",
+      "time": null,
+      "score": null,
+      "recommendation": "SKIPPED",
+      "report_length": null,
+      "report_file": null,
+      "model": "claude-sonnet-4",
+      "note": "API key not configured"
+    }
+  ]
+}

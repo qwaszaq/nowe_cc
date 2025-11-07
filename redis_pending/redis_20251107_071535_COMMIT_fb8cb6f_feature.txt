@@ -1,0 +1,40 @@
+SET doc:COMMIT_fb8cb6f_feature:title "Download 6 Azoty annual reports for multi-year analysis (2022-2024)"
+SET doc:COMMIT_fb8cb6f_feature:type "general_documentation"
+SET doc:COMMIT_fb8cb6f_feature:path "docs/auto-generated/2025-11-07/COMMIT_fb8cb6f_feature.md"
+SET doc:COMMIT_fb8cb6f_feature:content "# Download 6 Azoty annual reports for multi-year analysis (2022-2024)
+
+**Auto-Generated Documentation**
+
+**Date:** 2025-11-07 07:15:34
+**Commit:** `fb8cb6f`
+**Type:** Feature
+**Author:** artur
+
+---
+
+## 📝 Commit Message
+
+**feat: Download 6 Azoty annual reports for multi-year analysis (2022-2024)**
+
+Phase 1 Complete: Data Acquisition ✅
+
+Downloaded 6 PDF files (21.6M total):
+- 2022: Consolidated Financial Statements (2.4M) + Directors Report (3.0M)
+- 2023: Consolidated Financial Statements (2.5M) + Directors Report (4.0M)
+- 2024: Consolidated Financial Statements (3.4M) + Directors Report (6.3M)
+
+Files:
+- scripts/download_azoty_reports.sh (download automation)
+- data/documents/grupa_azoty/*.pdf (6 annual reports)
+
+Next: Phase 2 - Extract multi-year financial data from PDFs
+- Balance Sheet (2022-2024)
+- Income Statement (2022-2024)
+- Cash Flow (2022-2024)
+- Combine into multi-year dataset
+- Ingest into RAG system
+
+Purpose: Establish comprehensive baseline for single-agent vs multi-agent vs"
+EXPIRE doc:COMMIT_fb8cb6f_feature:content 86400
+SADD docs:all "COMMIT_fb8cb6f_feature"
+SADD docs:type:general_documentation "COMMIT_fb8cb6f_feature"

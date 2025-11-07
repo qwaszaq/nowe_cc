@@ -1,0 +1,50 @@
+INFO:httpx:HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+INFO:sentence_transformers.cross_encoder.CrossEncoder:Use pytorch device: mps
+INFO:src.rag.qdrant_vector_store:BGE reranker initialized
+INFO:httpx:HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+INFO:src.rag.qdrant_vector_store:Collection already exists: rag_documents
+INFO:src.rag.qdrant_vector_store:QdrantVectorStore initialized: http://localhost:6333/rag_documents
+INFO:src.rag.rag_service:RAGService initialized with Qdrant
+INFO:src.intelligence.services.multi_agent_intelligence_service:Multi-Agent System with RAG ENABLED (Qdrant: http://localhost:6333)
+INFO:src.intelligence.services.multi_agent_intelligence_service:Multi-Agent Intelligence Service initialized: openai/gpt-oss-20b
+INFO:src.intelligence.services.multi_agent_intelligence_service:Agents: Financial, Risk, Industry, Strategy, Market, Synthesis
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:MULTI-AGENT INTELLIGENCE REPORT: Grupa Azoty S.A.
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+ERROR:src.intelligence.services.multi_agent_intelligence_service:Multi-agent report generation failed: 'balance_sheet'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/src/intelligence/services/multi_agent_intelligence_service.py", line 121, in generate_intelligence_report
+    balance_sheet_table = format_financial_data(company_data['balance_sheet'])
+                                                ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'balance_sheet'
+================================================================================
+MULTI-AGENT INTELLIGENCE ANALYSIS (with RAG)
+Grupa Azoty S.A. - Multi-Year Analysis (2022-2024)
+================================================================================
+
+Data loaded:
+  Company: Grupa Azoty S.A.
+  Years: 2022, 2023, 2024
+  Metrics per year: ~0
+  RAG enabled: Yes (collection: azoty_multi_year)
+
+Generating 6-agent intelligence report with RAG...
+(This may take 90-180 seconds - 6 agents working)
+
+================================================================================
+✅ MULTI-AGENT REPORT GENERATED
+================================================================================
+
+Output file: output/intelligence_reports/Azoty_MultiAgent_MultiYear_20251107_074239.md
+Generation time: 0.0 seconds
+Report length: 46 characters
+Agents used: 6 (Financial, Risk, Industry, Strategy, Market, Synthesis)
+
+Report Preview (first 1000 chars):
+--------------------------------------------------------------------------------
+{'success': False, 'error': "'balance_sheet'"}
+...
+--------------------------------------------------------------------------------
+
+Next: Generate Claude benchmark
+  python3 scripts/generate_claude_multi_year.py

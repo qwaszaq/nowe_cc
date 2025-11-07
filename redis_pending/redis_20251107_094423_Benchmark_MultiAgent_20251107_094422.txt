@@ -1,0 +1,22 @@
+SET doc:Benchmark_MultiAgent_20251107_094422:title "Untitled"
+SET doc:Benchmark_MultiAgent_20251107_094422:type "team_documentation"
+SET doc:Benchmark_MultiAgent_20251107_094422:path "output/intelligence_reports/Benchmark_MultiAgent_20251107_094422.md"
+SET doc:Benchmark_MultiAgent_20251107_094422:content "**COMPREHENSIVE INTELLIGENCE REPORT: Grupa Azoty S.A.**
+
+═══════════════════════════════════════════════════════════════
+
+## EXECUTIVE SUMMARY  
+
+Overall Assessment Score: **38/100**  
+Investment Recommendation: **SELL**  
+
+Grupa Azoty is trapped in a *critical liquidity crisis* with a current ratio of 0.65 and negative working capital of –3.8 M PLN (2024)【source: Financial Health Agent, p.1】. Debt‑to‑equity has surged to 3.57, signalling severe solvency pressure【source: Financial Health Agent, p.2】. While the company’s “Green Azoty” ESG strategy and state backing provide a theoretical upside, the *imminent default risk* and lack of tangible profitability make near‑term investment untenable.
+
+**Key Investment Thesis**
+
+- **Liquidity Collapse:** Current ratio <1 and worsening working capital create an acute cash‑flow bottleneck.  
+- **Leverage Explosion:** Debt‑to‑equity >3.5 limits refinancing options and heightens covenant breach risk.  
+- **Profitability Volatility:** Net margin rema"
+EXPIRE doc:Benchmark_MultiAgent_20251107_094422:content 86400
+SADD docs:all "Benchmark_MultiAgent_20251107_094422"
+SADD docs:type:team_documentation "Benchmark_MultiAgent_20251107_094422"

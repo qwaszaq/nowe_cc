@@ -1,0 +1,37 @@
+INFO:src.intelligence.services.local_intelligence_service:RAG-enhanced analysis DISABLED (using only structured data)
+INFO:src.intelligence.services.local_intelligence_service:Local Intelligence Service initialized: openai/gpt-oss-20b
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+INFO:src.intelligence.services.local_intelligence_service:GENERATING INTELLIGENCE REPORT: Grupa Azoty S.A.
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+INFO:src.intelligence.services.local_intelligence_service:Step 1: Preparing financial data...
+ERROR:src.intelligence.services.local_intelligence_service:Report generation failed: unsupported operand type(s) for -: 'str' and 'str'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/src/intelligence/services/local_intelligence_service.py", line 115, in generate_intelligence_report
+    balance_sheet_table = format_financial_data(company_data['balance_sheet'])
+  File "/Users/artur/coursor-agents-destiny-folder/src/intelligence/formatters/data_formatter.py", line 65, in format_financial_data
+    years_diff = last_year - first_year
+                 ~~~~~~~~~~^~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+ERROR:__main__:❌ FATAL ERROR: write() argument must be str, not dict
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/test_single_agent_multi_year.py", line 105, in <module>
+    result = generate_single_agent_report()
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/test_single_agent_multi_year.py", line 75, in generate_single_agent_report
+    f.write(report)
+    ~~~~~~~^^^^^^^^
+TypeError: write() argument must be str, not dict
+================================================================================
+SINGLE-AGENT INTELLIGENCE ANALYSIS
+Grupa Azoty S.A. - Multi-Year Analysis (2022-2024)
+================================================================================
+
+Data loaded:
+  Company: Grupa Azoty S.A.
+  Years: 2022, 2023, 2024
+  Balance sheet metrics: 9
+  Income statement metrics: 3
+  Cash flow metrics: 3
+
+Generating single-agent intelligence report...
+(This may take 30-60 seconds)
+

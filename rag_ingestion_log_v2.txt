@@ -1,0 +1,24 @@
+2025-11-07 07:27:21,504 - src.rag.document_loader - INFO - DocumentLoader initialized: chunk_size=750, overlap=100
+2025-11-07 07:27:21,543 - httpx - INFO - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-11-07 07:27:25,031 - sentence_transformers.cross_encoder.CrossEncoder - INFO - Use pytorch device: mps
+2025-11-07 07:27:25,429 - src.rag.qdrant_vector_store - INFO - BGE reranker initialized
+2025-11-07 07:27:25,433 - httpx - INFO - HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+2025-11-07 07:27:25,434 - src.rag.qdrant_vector_store - INFO - Creating collection: azoty_multi_year
+2025-11-07 07:27:25,485 - httpx - INFO - HTTP Request: PUT http://localhost:6333/collections/azoty_multi_year "HTTP/1.1 200 OK"
+2025-11-07 07:27:25,486 - src.rag.qdrant_vector_store - INFO - ✓ Collection created: azoty_multi_year
+2025-11-07 07:27:25,486 - src.rag.qdrant_vector_store - INFO - QdrantVectorStore initialized: http://localhost:6333/azoty_multi_year
+2025-11-07 07:27:25,486 - __main__ - INFO - No existing collection to delete
+2025-11-07 07:27:25,486 - __main__ - ERROR - 
+❌ FATAL ERROR: 'QdrantVectorStore' object has no attribute 'create_collection'
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 207, in <module>
+    result = ingest_multi_year_reports()
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/ingest_azoty_multi_year.py", line 82, in ingest_multi_year_reports
+    vector_store.create_collection()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QdrantVectorStore' object has no attribute 'create_collection'
+================================================================================
+MULTI-YEAR PDF INGESTION INTO RAG SYSTEM
+Grupa Azoty S.A. - 2022, 2023, 2024
+================================================================================
+

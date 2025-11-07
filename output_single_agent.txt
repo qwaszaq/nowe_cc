@@ -1,0 +1,95 @@
+INFO:src.intelligence.services.local_intelligence_service:RAG-enhanced analysis DISABLED (using only structured data)
+INFO:src.intelligence.services.local_intelligence_service:Local Intelligence Service initialized: openai/gpt-oss-20b
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+INFO:src.intelligence.services.local_intelligence_service:GENERATING INTELLIGENCE REPORT: Grupa Azoty S.A.
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+INFO:src.intelligence.services.local_intelligence_service:Step 1: Preparing financial data...
+INFO:src.intelligence.formatters.data_formatter:Calculated 8 financial ratios across 3 years
+INFO:src.intelligence.services.local_intelligence_service:  - Balance sheet: 9 metrics
+INFO:src.intelligence.services.local_intelligence_service:  - Calculated ratios: 8 ratios
+INFO:src.intelligence.services.local_intelligence_service:  - Latest year for RAG queries: 2024
+INFO:src.intelligence.services.local_intelligence_service:
+Step 2: Financial Health Analysis (Pass 1)...
+INFO:src.intelligence.services.local_intelligence_service:  ✓ Financial analysis complete (3132 chars)
+INFO:src.intelligence.services.local_intelligence_service:
+Step 3: Risk Assessment (Pass 2)...
+INFO:src.intelligence.services.local_intelligence_service:  ✓ Risk assessment complete (7912 chars)
+INFO:src.intelligence.services.local_intelligence_service:
+Step 4: Investment Thesis (Pass 3)...
+INFO:src.intelligence.services.local_intelligence_service:  ✓ Investment thesis complete (6335 chars)
+INFO:src.intelligence.services.local_intelligence_service:
+Step 5: Compiling final report...
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+INFO:src.intelligence.services.local_intelligence_service:✅ REPORT GENERATED SUCCESSFULLY
+INFO:src.intelligence.services.local_intelligence_service:   Generation time: 31.39 seconds
+INFO:src.intelligence.services.local_intelligence_service:   Report length: 21,206 characters
+INFO:src.intelligence.services.local_intelligence_service:================================================================================
+================================================================================
+SINGLE-AGENT INTELLIGENCE ANALYSIS
+Grupa Azoty S.A. - Multi-Year Analysis (2022-2024)
+================================================================================
+
+Data loaded:
+  Company: Grupa Azoty S.A.
+  Years: 2022, 2023, 2024
+  Balance sheet metrics: 9
+  Income statement metrics: 3
+  Cash flow metrics: 3
+
+Generating single-agent intelligence report...
+(This may take 30-60 seconds)
+
+================================================================================
+✅ SINGLE-AGENT REPORT GENERATED
+================================================================================
+
+Output file: output/intelligence_reports/Azoty_SingleAgent_MultiYear_20251107_074306.md
+Generation time: 31.4 seconds
+Report length: 21,206 characters
+
+Report Preview (first 1000 chars):
+--------------------------------------------------------------------------------
+# Comprehensive Intelligence Report: Grupa Azoty S.A.
+
+**Report Date:** 2025-11-07
+**Industry:** Chemicals & Fertilizers
+**Currency:** PLN (thousands)
+**Analysis Period:** 2022, 2023, 2024
+**Analysis Method:** Local LLM Intelligence System (Multi-Pass Analysis)
+
+---
+
+## EXECUTIVE SUMMARY
+
+**Financial Health Score:** 35/100
+**Overall Risk Level:** N/A
+**Investment Recommendation:** HOLD
+
+This comprehensive report analyzes the company across three critical dimensions: financial health, risk assessment, and investment viability. The analysis is based on automated extraction of financial statements, validated through accounting equation verification.
+
+### Key Findings
+
+
+
+
+
+**BASE CASE**
+Most Likely Outcome**
+
+The most realistic scenario is a **continued period of financial distress with modest improvement if management implements an aggressive liquidity & cost‑control program**.
+
+---
+
+## 1. FINANCIAL HEALTH ANALYSIS
+
+**FINANCIAL HEALTH SCORE: 35/100**
+
+---
+
+### LIQUIDITY ASSESSMENT  
+**Sta
+...
+--------------------------------------------------------------------------------
+
+Next: Generate multi-agent report
+  python3 scripts/test_multi_agent_multi_year.py

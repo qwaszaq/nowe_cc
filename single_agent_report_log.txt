@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/artur/coursor-agents-destiny-folder/scripts/test_single_agent_multi_year.py", line 10, in <module>
+    from src.intelligence.local_single_agent import LocalIntelligenceService
+ModuleNotFoundError: No module named 'src.intelligence.local_single_agent'

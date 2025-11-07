@@ -37,7 +37,9 @@ from ..prompts.synthesis_prompts import create_synthesis_prompt
 
 from ..formatters.data_formatter import (
     format_financial_data,
-    calculate_financial_ratios
+    calculate_financial_ratios,
+    select_analysis_framework,
+    assess_severity
 )
 
 logger = logging.getLogger(__name__)
@@ -65,7 +67,8 @@ class MultiAgentIntelligenceService:
         model: str = "openai/gpt-oss-20b",
         max_tokens_per_pass: int = 4000,
         use_rag: bool = True,
-        qdrant_url: str = "http://localhost:6333"
+        qdrant_url: str = "http://localhost:6333",
+        qdrant_collection: str = "rag_documents"
     ):
         """
         Initialize multi-agent intelligence service
@@ -76,6 +79,7 @@ class MultiAgentIntelligenceService:
             max_tokens_per_pass: Max tokens for each agent
             use_rag: Enable RAG-enhanced analysis
             qdrant_url: Qdrant server URL
+            qdrant_collection: Qdrant collection name to query
         """
         self.llm = LLMFinancialValidator(base_url=llm_base_url, model=model)
         self.max_tokens = max_tokens_per_pass
@@ -84,8 +88,12 @@ class MultiAgentIntelligenceService:
         # Initialize RAG if enabled
         if use_rag:
             from ...rag.rag_service import RAGService
-            self.rag = RAGService(qdrant_url=qdrant_url, use_reranker=True)
-            logger.info(f"Multi-Agent System with RAG ENABLED (Qdrant: {qdrant_url})")
+            self.rag = RAGService(
+                qdrant_url=qdrant_url,
+                collection_name=qdrant_collection,
+                use_reranker=True
+            )
+            logger.info(f"Multi-Agent System with RAG ENABLED (Qdrant: {qdrant_url}/{qdrant_collection})")
         else:
             self.rag = None
             logger.info("Multi-Agent System with RAG DISABLED")
@@ -141,8 +149,27 @@ class MultiAgentIntelligenceService:
             logger.info(f"Latest Year: {latest_year}")
             logger.info(f"RAG Enabled: {self.use_rag}")
 
+            # Gap #3: Select Analysis Framework
+            framework, framework_rationale = select_analysis_framework(
+                company_data['balance_sheet'],
+                company_data.get('income_statement', {})
+            )
+            logger.info(f"Analysis Framework: {framework}")
+
+            # Gap #4: Assess Severity
+            severity, severity_factors = assess_severity(
+                company_data['balance_sheet'],
+                company_data.get('income_statement', {})
+            )
+            logger.info(f"Distress Severity: {severity} ({len(severity_factors)} critical factors)")
+
             # Storage for agent results
-            agent_results = {}
+            agent_results = {
+                'framework': framework,
+                'framework_rationale': framework_rationale,
+                'severity': severity,
+                'severity_factors': severity_factors
+            }
 
             # ================================================================
             # AGENT 1: FINANCIAL HEALTH
@@ -491,7 +518,11 @@ class MultiAgentIntelligenceService:
             risk_analysis=agent_results['risk'],
             industry_analysis=agent_results['industry'],
             strategic_analysis=agent_results['strategy'],
-            market_intelligence=agent_results['market']
+            market_intelligence=agent_results['market'],
+            framework=agent_results.get('framework', 'EQUITY_ANALYSIS'),
+            framework_rationale=agent_results.get('framework_rationale', ''),
+            severity=agent_results.get('severity', 'LOW'),
+            severity_factors=agent_results.get('severity_factors', [])
         )
 
         messages = [

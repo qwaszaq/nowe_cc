@@ -1,0 +1,30 @@
+SET doc:Azoty_SingleAgent_MultiYear_20251107_081651:title "Comprehensive Intelligence Report: Grupa Azoty S.A."
+SET doc:Azoty_SingleAgent_MultiYear_20251107_081651:type "team_documentation"
+SET doc:Azoty_SingleAgent_MultiYear_20251107_081651:path "output/intelligence_reports/Azoty_SingleAgent_MultiYear_20251107_081651.md"
+SET doc:Azoty_SingleAgent_MultiYear_20251107_081651:content "# Comprehensive Intelligence Report: Grupa Azoty S.A.
+
+**Report Date:** 2025-11-07
+**Industry:** Chemicals & Fertilizers
+**Currency:** PLN (thousands)
+**Analysis Period:** 2022, 2023, 2024
+**Analysis Method:** Local LLM Intelligence System (Multi-Pass Analysis)
+
+---
+
+## EXECUTIVE SUMMARY
+
+**Financial Health Score:** 35/100
+**Overall Risk Level:** N/A
+**Investment Recommendation:** SELL
+
+This comprehensive report analyzes the company across three critical dimensions: financial health, risk assessment, and investment viability. The analysis is based on automated extraction of financial statements, validated through accounting equation verification.
+
+### Key Findings
+
+
+
+**OVERALL RISK PROFILE**
+- **Summary:** Grupa Azoty S.A. faces a *critical* risk profile driven by deteriorating liquidity, escalating leverage, and persistent negative profitability. Operational vulnerabilities (production safety, supply‑chain dependence) compound financial fragility, while market cyclicality and regulato"
+EXPIRE doc:Azoty_SingleAgent_MultiYear_20251107_081651:content 86400
+SADD docs:all "Azoty_SingleAgent_MultiYear_20251107_081651"
+SADD docs:type:team_documentation "Azoty_SingleAgent_MultiYear_20251107_081651"

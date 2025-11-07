@@ -1,0 +1,153 @@
+INFO:httpx:HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+INFO:sentence_transformers.cross_encoder.CrossEncoder:Use pytorch device: mps
+INFO:src.rag.qdrant_vector_store:BGE reranker initialized
+INFO:httpx:HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+INFO:src.rag.qdrant_vector_store:Collection already exists: rag_documents
+INFO:src.rag.qdrant_vector_store:QdrantVectorStore initialized: http://localhost:6333/rag_documents
+INFO:src.rag.rag_service:RAGService initialized with Qdrant
+INFO:src.intelligence.services.multi_agent_intelligence_service:Multi-Agent System with RAG ENABLED (Qdrant: http://localhost:6333)
+INFO:src.intelligence.services.multi_agent_intelligence_service:Multi-Agent Intelligence Service initialized: openai/gpt-oss-20b
+INFO:src.intelligence.services.multi_agent_intelligence_service:Agents: Financial, Risk, Industry, Strategy, Market, Synthesis
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:MULTI-AGENT INTELLIGENCE REPORT: Grupa Azoty S.A.
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.formatters.data_formatter:Calculated 8 financial ratios across 3 years
+INFO:src.intelligence.services.multi_agent_intelligence_service:Company: Grupa Azoty S.A.
+INFO:src.intelligence.services.multi_agent_intelligence_service:Industry: Chemicals & Fertilizers
+INFO:src.intelligence.services.multi_agent_intelligence_service:Latest Year: 2024
+INFO:src.intelligence.services.multi_agent_intelligence_service:RAG Enabled: True
+INFO:src.intelligence.services.multi_agent_intelligence_service:
+================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:AGENT 1/6: FINANCIAL HEALTH ANALYSIS
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:  Retrieving RAG context...
+INFO:src.rag.rag_service:RAG query: 'Why did liquidity and working capital current status and trends? What were the key drivers, challenges, and management explanations?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: Why did liquidity and working capital current status and trends? What were the key drivers, challenges, and management explanations?
+WARNING:src.rag.rag_service:No relevant context found for: Why did liquidity and working capital current status and trends? What were the key drivers, challenges, and management explanations?
+INFO:src.rag.rag_service:RAG query: 'Why did profitability and margins performance trends? What were the key drivers, challenges, and management explanations?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: Why did profitability and margins performance trends? What were the key drivers, challenges, and management explanations?
+WARNING:src.rag.rag_service:No relevant context found for: Why did profitability and margins performance trends? What were the key drivers, challenges, and management explanations?
+INFO:src.intelligence.services.multi_agent_intelligence_service:✓ Financial Health complete (2787 chars)
+INFO:src.intelligence.services.multi_agent_intelligence_service:
+================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:AGENT 2/6: RISK ASSESSMENT
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:  Retrieving RAG context...
+INFO:src.rag.rag_service:RAG query: 'What are the financial and operational risks factors? What mitigation strategies are mentioned? What are the key concerns?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What are the financial and operational risks factors? What mitigation strategies are mentioned? What are the key concerns?
+WARNING:src.rag.rag_service:No relevant context found for: What are the financial and operational risks factors? What mitigation strategies are mentioned? What are the key concerns?
+INFO:src.intelligence.services.multi_agent_intelligence_service:✓ Risk Assessment complete (8631 chars)
+INFO:src.intelligence.services.multi_agent_intelligence_service:
+================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:AGENT 3/6: INDUSTRY CONTEXT
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:  Retrieving RAG context...
+INFO:src.rag.rag_service:RAG query: 'Who are Grupa Azoty S.A.'s main competitors and what is the competitive landscape in the industry?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: Who are Grupa Azoty S.A.'s main competitors and what is the competitive landscape in the industry?
+WARNING:src.rag.rag_service:No relevant context found for: Who are Grupa Azoty S.A.'s main competitors and what is the competitive landscape in the industry?
+INFO:src.rag.rag_service:RAG query: 'What market share, industry position, or competitive advantages are disclosed for Grupa Azoty S.A.?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What market share, industry position, or competitive advantages are disclosed for Grupa Azoty S.A.?
+WARNING:src.rag.rag_service:No relevant context found for: What market share, industry position, or competitive advantages are disclosed for Grupa Azoty S.A.?
+INFO:src.rag.rag_service:RAG query: 'What industry trends, market dynamics, or structural changes are discussed that affect Grupa Azoty S.A.?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What industry trends, market dynamics, or structural changes are discussed that affect Grupa Azoty S.A.?
+WARNING:src.rag.rag_service:No relevant context found for: What industry trends, market dynamics, or structural changes are discussed that affect Grupa Azoty S.A.?
+INFO:src.intelligence.services.multi_agent_intelligence_service:✓ Industry Context complete (4900 chars)
+INFO:src.intelligence.services.multi_agent_intelligence_service:
+================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:AGENT 4/6: STRATEGIC EVALUATION
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:  Retrieving RAG context...
+INFO:src.rag.rag_service:RAG query: 'What is Grupa Azoty S.A.'s stated growth strategy, strategic objectives, and key initiatives?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What is Grupa Azoty S.A.'s stated growth strategy, strategic objectives, and key initiatives?
+WARNING:src.rag.rag_service:No relevant context found for: What is Grupa Azoty S.A.'s stated growth strategy, strategic objectives, and key initiatives?
+INFO:src.rag.rag_service:RAG query: 'What capital expenditures, investments, and resource allocation priorities are disclosed for Grupa Azoty S.A.?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What capital expenditures, investments, and resource allocation priorities are disclosed for Grupa Azoty S.A.?
+WARNING:src.rag.rag_service:No relevant context found for: What capital expenditures, investments, and resource allocation priorities are disclosed for Grupa Azoty S.A.?
+INFO:src.rag.rag_service:RAG query: 'What does management say about strategic execution, achievements, and future plans for Grupa Azoty S.A.?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What does management say about strategic execution, achievements, and future plans for Grupa Azoty S.A.?
+WARNING:src.rag.rag_service:No relevant context found for: What does management say about strategic execution, achievements, and future plans for Grupa Azoty S.A.?
+INFO:src.intelligence.services.multi_agent_intelligence_service:✓ Strategic Evaluation complete (6919 chars)
+INFO:src.intelligence.services.multi_agent_intelligence_service:
+================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:AGENT 5/6: MARKET INTELLIGENCE
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:  Retrieving RAG context...
+INFO:src.rag.rag_service:RAG query: 'What recent developments, events, or significant changes are disclosed for Grupa Azoty S.A.?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What recent developments, events, or significant changes are disclosed for Grupa Azoty S.A.?
+WARNING:src.rag.rag_service:No relevant context found for: What recent developments, events, or significant changes are disclosed for Grupa Azoty S.A.?
+INFO:src.rag.rag_service:RAG query: 'What is management's outlook, guidance, or forward-looking statements for Grupa Azoty S.A.?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What is management's outlook, guidance, or forward-looking statements for Grupa Azoty S.A.?
+WARNING:src.rag.rag_service:No relevant context found for: What is management's outlook, guidance, or forward-looking statements for Grupa Azoty S.A.?
+INFO:src.rag.rag_service:RAG query: 'What upcoming events, milestones, or planned initiatives are mentioned for Grupa Azoty S.A.?' for Grupa Azoty S.A. (years=[2024])
+INFO:httpx:HTTP Request: POST http://localhost:6333/collections/rag_documents/points/search "HTTP/1.1 200 OK"
+WARNING:src.rag.qdrant_vector_store:No results found for query: What upcoming events, milestones, or planned initiatives are mentioned for Grupa Azoty S.A.?
+WARNING:src.rag.rag_service:No relevant context found for: What upcoming events, milestones, or planned initiatives are mentioned for Grupa Azoty S.A.?
+INFO:src.intelligence.services.multi_agent_intelligence_service:✓ Market Intelligence complete (8410 chars)
+INFO:src.intelligence.services.multi_agent_intelligence_service:
+================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:AGENT 6/6: SYNTHESIS & FINAL RECOMMENDATION
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:✓ Synthesis complete (9035 chars)
+INFO:src.intelligence.services.multi_agent_intelligence_service:
+================================================================================
+INFO:src.intelligence.services.multi_agent_intelligence_service:✅ MULTI-AGENT REPORT COMPLETE
+INFO:src.intelligence.services.multi_agent_intelligence_service:   Generation time: 68.03 seconds
+INFO:src.intelligence.services.multi_agent_intelligence_service:   Report length: 9,035 characters
+INFO:src.intelligence.services.multi_agent_intelligence_service:   Agents executed: 6
+INFO:src.intelligence.services.multi_agent_intelligence_service:================================================================================
+================================================================================
+MULTI-AGENT INTELLIGENCE ANALYSIS (with RAG)
+Grupa Azoty S.A. - Multi-Year Analysis (2022-2024)
+================================================================================
+
+Data loaded:
+  Company: Grupa Azoty S.A.
+  Years: 2022, 2023, 2024
+  Balance sheet metrics: 9
+  Income statement metrics: 3
+  Cash flow metrics: 3
+  RAG enabled: Yes (collection: azoty_multi_year)
+
+Generating 6-agent intelligence report with RAG...
+(This may take 90-180 seconds - 6 agents working)
+
+================================================================================
+✅ MULTI-AGENT REPORT GENERATED
+================================================================================
+
+Output file: output/intelligence_reports/Azoty_MultiAgent_MultiYear_20251107_074658.md
+Generation time: 68.0 seconds
+Report length: 9,035 characters
+Agents used: 6 (Financial, Risk, Industry, Strategy, Market, Synthesis)
+
+Report Preview (first 1000 chars):
+--------------------------------------------------------------------------------
+**COMPREHENSIVE INTELLIGENCE REPORT: Grupa Azoty S.A.**
+
+═══════════════════════════════════════════════════════════════  
+
+## EXECUTIVE SUMMARY  
+
+Grupa Azoty is a mid‑size Polish fertilizer producer whose financials have deteriorated sharply over the past three years: current ratios fell below 1, working capital turned increasingly negative, and net margins are persistently negative. Leverage has exploded (Debt‑to‑Equity > 3), while profitability remains weak. The company’s competitive moat is modest; it lacks cost leadership or brand differentiation, and its strategic plan focuses on “operational excellence” without a clear growth agenda. Recent catalysts—debt refinancing, CAPEX cuts, and a partnership to develop precision fertilizers—offer some upside, but regulatory pressure (EU carbon tax) and commodity price volatility pose significant risks.  
+
+**Overall Assessment Score:** **38/100**  
+**Investment Recommendation:** **SELL**  
+
+Key reasons:  
+1. **Financial fragility** – liqui
+...
+--------------------------------------------------------------------------------
+
+Next: Generate Claude benchmark
+  python3 scripts/generate_claude_multi_year.py

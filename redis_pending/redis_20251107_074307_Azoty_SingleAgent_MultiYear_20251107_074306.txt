@@ -1,0 +1,45 @@
+SET doc:Azoty_SingleAgent_MultiYear_20251107_074306:title "Comprehensive Intelligence Report: Grupa Azoty S.A."
+SET doc:Azoty_SingleAgent_MultiYear_20251107_074306:type "team_documentation"
+SET doc:Azoty_SingleAgent_MultiYear_20251107_074306:path "output/intelligence_reports/Azoty_SingleAgent_MultiYear_20251107_074306.md"
+SET doc:Azoty_SingleAgent_MultiYear_20251107_074306:content "# Comprehensive Intelligence Report: Grupa Azoty S.A.
+
+**Report Date:** 2025-11-07
+**Industry:** Chemicals & Fertilizers
+**Currency:** PLN (thousands)
+**Analysis Period:** 2022, 2023, 2024
+**Analysis Method:** Local LLM Intelligence System (Multi-Pass Analysis)
+
+---
+
+## EXECUTIVE SUMMARY
+
+**Financial Health Score:** 35/100
+**Overall Risk Level:** N/A
+**Investment Recommendation:** HOLD
+
+This comprehensive report analyzes the company across three critical dimensions: financial health, risk assessment, and investment viability. The analysis is based on automated extraction of financial statements, validated through accounting equation verification.
+
+### Key Findings
+
+
+
+
+
+**BASE CASE**
+Most Likely Outcome**
+
+The most realistic scenario is a **continued period of financial distress with modest improvement if management implements an aggressive liquidity & cost‑control program**.
+
+---
+
+## 1. FINANCIAL HEALTH ANALYSIS
+
+**FINANCIAL HEALTH SCORE: 35/100**
+
+---
+
+### LIQUIDITY ASSESSMENT  
+**Sta"
+EXPIRE doc:Azoty_SingleAgent_MultiYear_20251107_074306:content 86400
+SADD docs:all "Azoty_SingleAgent_MultiYear_20251107_074306"
+SADD docs:type:team_documentation "Azoty_SingleAgent_MultiYear_20251107_074306"

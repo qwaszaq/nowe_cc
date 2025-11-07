@@ -27,10 +27,41 @@ from ..prompts.local_llm_prompts import (
 )
 from ..formatters.data_formatter import (
     format_financial_data,
-    calculate_financial_ratios
+    calculate_financial_ratios,
+    select_analysis_framework,
+    assess_severity
 )
 
 logger = logging.getLogger(__name__)
+
+
+def determine_recommendation_from_score(financial_health_score: int) -> str:
+    """
+    Map financial health score to investment recommendation using explicit thresholds
+
+    Score Ranges:
+    - 80-100: STRONG BUY
+    - 60-79:  BUY
+    - 45-59:  HOLD
+    - 30-44:  SELL
+    - 0-29:   STRONG SELL
+
+    Args:
+        financial_health_score: Score from 0-100
+
+    Returns:
+        Investment recommendation string
+    """
+    if financial_health_score >= 80:
+        return "STRONG BUY"
+    elif financial_health_score >= 60:
+        return "BUY"
+    elif financial_health_score >= 45:
+        return "HOLD"
+    elif financial_health_score >= 30:
+        return "SELL"
+    else:
+        return "STRONG SELL"
 
 
 class LocalIntelligenceService:
@@ -52,7 +83,8 @@ class LocalIntelligenceService:
         model: str = "openai/gpt-oss-20b",
         max_tokens_per_pass: int = 4000,  # Conservative for output
         use_rag: bool = False,
-        qdrant_url: str = "http://localhost:6333"
+        qdrant_url: str = "http://localhost:6333",
+        qdrant_collection: str = "rag_documents"
     ):
         """
         Initialize intelligence service
@@ -63,6 +95,7 @@ class LocalIntelligenceService:
             max_tokens_per_pass: Max tokens for each LLM response
             use_rag: Enable RAG-enhanced analysis
             qdrant_url: Qdrant server URL (if use_rag=True)
+            qdrant_collection: Qdrant collection name to query
         """
         self.llm = LLMFinancialValidator(base_url=llm_base_url, model=model)
         self.max_tokens = max_tokens_per_pass
@@ -71,8 +104,12 @@ class LocalIntelligenceService:
         # Initialize RAG if enabled
         if use_rag:
             from ...rag.rag_service import RAGService
-            self.rag = RAGService(qdrant_url=qdrant_url, use_reranker=True)
-            logger.info(f"RAG-enhanced analysis ENABLED (Qdrant: {qdrant_url})")
+            self.rag = RAGService(
+                qdrant_url=qdrant_url,
+                collection_name=qdrant_collection,
+                use_reranker=True
+            )
+            logger.info(f"RAG-enhanced analysis ENABLED (Qdrant: {qdrant_url}/{qdrant_collection})")
         else:
             self.rag = None
             logger.info("RAG-enhanced analysis DISABLED (using only structured data)")
@@ -138,6 +175,20 @@ class LocalIntelligenceService:
             if latest_year:
                 logger.info(f"  - Latest year for RAG queries: {latest_year}")
 
+            # Gap #3 Fix: Select Analysis Framework
+            framework, framework_rationale = select_analysis_framework(
+                company_data['balance_sheet'],
+                company_data.get('income_statement', {})
+            )
+            logger.info(f"  - Analysis framework: {framework}")
+
+            # Gap #4 Fix: Assess Severity
+            severity, severity_factors = assess_severity(
+                company_data['balance_sheet'],
+                company_data.get('income_statement', {})
+            )
+            logger.info(f"  - Distress severity: {severity}")
+
             # Step 2: PASS 1 - Financial Health Analysis
             logger.info("\nStep 2: Financial Health Analysis (Pass 1)...")
             financial_summary = self._analyze_financial_health(
@@ -179,7 +230,10 @@ class LocalIntelligenceService:
                 risk_summary=risk_summary,
                 investment_thesis=investment_thesis,
                 balance_sheet_table=balance_sheet_table,
-                ratios_table=ratios_table
+                ratios_table=ratios_table,
+                framework_rationale=framework_rationale,
+                severity=severity,
+                severity_factors=severity_factors
             )
 
             generation_time = time.time() - start_time
@@ -378,14 +432,24 @@ class LocalIntelligenceService:
         risk_summary: str,
         investment_thesis: str,
         balance_sheet_table: str,
-        ratios_table: str
+        ratios_table: str,
+        framework_rationale: str = "",
+        severity: str = "LOW",
+        severity_factors: list = None
     ) -> str:
         """
         PASS 4: Compile all analyses into final report
 
+        Args:
+            framework_rationale: Framework selection rationale (Gap #3)
+            severity: Distress severity level (Gap #4)
+            severity_factors: List of critical severity factors (Gap #4)
+
         Returns:
             Complete formatted report (markdown)
         """
+        if severity_factors is None:
+            severity_factors = []
         exec_summary = self._extract_executive_summary(
             financial_summary, risk_summary, investment_thesis
         )
@@ -393,6 +457,12 @@ class LocalIntelligenceService:
         # Get years for data sources
         years = sorted(company_data['balance_sheet'].get('Total Assets', {}).keys())
         years_str = ', '.join(map(str, years))
+
+        # Format severity factors for display
+        if severity_factors:
+            severity_factors_text = '\n'.join(f'- {factor}' for factor in severity_factors)
+        else:
+            severity_factors_text = '- None identified'
 
         report = f"""# Comprehensive Intelligence Report: {company_data['company_name']}
 
@@ -407,6 +477,19 @@ class LocalIntelligenceService:
 ## EXECUTIVE SUMMARY
 
 {exec_summary}
+
+---
+
+## FRAMEWORK SELECTION
+
+{framework_rationale}
+
+### Distress Severity Assessment
+
+**Severity Level:** {severity}
+
+**Critical Factors Identified:**
+{severity_factors_text}
 
 ---
 
@@ -514,9 +597,26 @@ All extracted financial values have been validated against:
         score_match = re.search(r'FINANCIAL HEALTH SCORE:\s*(\d+)', financial_summary)
         health_score = score_match.group(1) if score_match else "N/A"
 
-        # Extract recommendation
-        rec_match = re.search(r'INVESTMENT RECOMMENDATION:\s*(\w+)', investment_thesis)
-        recommendation = rec_match.group(1) if rec_match else "N/A"
+        # Extract recommendation from LLM output
+        rec_match = re.search(r'INVESTMENT RECOMMENDATION:\s*(\w+(?:\s+\w+)?)', investment_thesis)
+        llm_recommendation = rec_match.group(1).strip() if rec_match else "N/A"
+
+        # Validate recommendation consistency with score (GAP #2 FIX)
+        if health_score != "N/A":
+            score_based_recommendation = determine_recommendation_from_score(int(health_score))
+
+            # If LLM recommendation is inconsistent, use score-based recommendation
+            if llm_recommendation != score_based_recommendation:
+                logger.warning(
+                    f"Recommendation inconsistency detected: "
+                    f"LLM suggested '{llm_recommendation}' but score {health_score}/100 maps to '{score_based_recommendation}'. "
+                    f"Using score-based recommendation for consistency."
+                )
+                recommendation = score_based_recommendation
+            else:
+                recommendation = llm_recommendation
+        else:
+            recommendation = llm_recommendation
 
         # Extract risk level
         risk_match = re.search(r'Risk Level:\s*(\w+(?:/\w+)?)', risk_summary)

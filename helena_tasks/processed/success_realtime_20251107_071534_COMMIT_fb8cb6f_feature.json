@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-07/COMMIT_fb8cb6f_feature.md",
+  "document_type": "general_documentation",
+  "title": "Download 6 Azoty annual reports for multi-year analysis (2022-2024)",
+  "detected_at": "2025-11-07T07:15:34.904602",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Download 6 Azoty annual reports for multi-year analysis (2022-2024)\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-07 07:15:34\n**Commit:** `fb8cb6f`\n**Type:** Feature\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**feat: Download 6 Azoty annual reports for multi-year analysis (2022-2024)**\n\nPhase 1 Complete: Data Acquisition \u2705\n\nDownloaded 6 PDF files (21.6M total):\n- 2022: Consolidated Financial Statements (2.4M) + Directors Report (3.0M)\n- 2023: Consolidated Financial Statements (2.5M) +"
+}

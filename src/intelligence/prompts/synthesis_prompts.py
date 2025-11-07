@@ -11,7 +11,11 @@ def create_synthesis_prompt(
     risk_analysis: str,
     industry_analysis: str,
     strategic_analysis: str,
-    market_intelligence: str
+    market_intelligence: str,
+    framework: str = "EQUITY_ANALYSIS",
+    framework_rationale: str = "",
+    severity: str = "LOW",
+    severity_factors: list = None
 ) -> str:
     """
     Create prompt for synthesis and final recommendation
@@ -24,14 +28,93 @@ def create_synthesis_prompt(
         industry_analysis: Output from Industry Context Agent
         strategic_analysis: Output from Strategic Evaluation Agent
         market_intelligence: Output from Market Intelligence Agent
+        framework: Analysis framework (CREDIT_ANALYSIS or EQUITY_ANALYSIS)
+        framework_rationale: Rationale for framework selection
+        severity: Distress severity level (CRITICAL, HIGH, MEDIUM, LOW)
+        severity_factors: List of critical distress factors
 
     Returns:
         Formatted prompt for synthesis
     """
+    if severity_factors is None:
+        severity_factors = []
+
+    # Build severity-based language calibration
+    severity_guidance = ""
+    if severity == "CRITICAL":
+        severity_guidance = """
+**⚠️  CRITICAL DISTRESS LEVEL DETECTED**
+
+This company is in **severe financial distress**. Your language must reflect the urgency:
+
+Required Language Calibration:
+- Use "critical liquidity crisis" (not "weak liquidity")
+- Use "imminent default risk" (not "debt concerns")
+- Use "severe solvency pressure" (not "leverage issues")
+- Use "urgent restructuring needed" (not "should consider restructuring")
+- Use "acute" and "critical" frequently when discussing risks
+
+**Avoid** understated language like "weak," "moderate concern," "challenges," or "headwinds."
+
+The CRITICAL severity means this is a distressed company scenario. Frame your analysis accordingly.
+"""
+    elif severity == "HIGH":
+        severity_guidance = """
+**⚠️  HIGH DISTRESS LEVEL DETECTED**
+
+This company faces **significant financial stress**. Use appropriately strong language:
+
+Language Calibration:
+- Use "significant liquidity concerns" (not "tight liquidity")
+- Use "elevated default risk" (not "some risk")
+- Use "substantial leverage pressure" (not "high debt")
+- Use "material restructuring likely needed"
+
+Frame as a company under financial stress requiring careful risk assessment.
+"""
+    elif severity == "MEDIUM":
+        severity_guidance = """
+**ℹ️  MEDIUM STRESS LEVEL DETECTED**
+
+This company shows **moderate financial challenges**:
+
+Language Calibration:
+- Use "moderate liquidity pressures"
+- Use "manageable but elevated risks"
+- Use "monitoring needed"
+- Balance concerns with potential recovery paths
+"""
 
     prompt = f"""# COMPREHENSIVE INTELLIGENCE SYNTHESIS
 
 You are a Chief Investment Officer synthesizing multi-perspective analysis into a final investment recommendation.
+
+## ANALYSIS FRAMEWORK & SEVERITY
+
+**Framework Selected:** {framework}
+**Rationale:** {framework_rationale if framework_rationale else "Standard analysis approach"}
+
+**Distress Severity:** {severity}
+**Critical Factors:** {', '.join(severity_factors) if severity_factors else 'None'}
+
+{severity_guidance}
+
+## CRITICAL: SOURCE CITATION REQUIREMENTS
+
+**MANDATORY**: The agent analyses below include source citations in the format:
+[Source X: filename.pdf, Year YYYY, Page NN, Section: ..., Relevance: 0.XX]
+
+**YOU MUST**:
+1. **Preserve these citations** when referencing specific information from the analyses
+2. **Include page numbers** in your final report for key claims
+3. **Use this format**: (Source: [filename], [year], p.[page])
+4. **Add a SOURCES section** at the end listing all documents referenced
+
+**Example**:
+- "Management announced a restructuring plan" → "Management announced a restructuring plan (Source: Directors_Report_2024.pdf, 2024, p.45)"
+- "Green Azoty strategy focuses on low-carbon products" → "Green Azoty strategy focuses on low-carbon products (Source: Annual_Report_2024.pdf, 2024, p.12)"
+
+**DO NOT** make claims without attribution when source citations are available in the agent analyses.
 
 ## TASK
 
@@ -42,6 +125,7 @@ Integrate analysis from 5 specialized agents and provide:
 3. **Executive Summary**
 4. **Integrated Analysis**
 5. **Final Investment Thesis**
+6. **Sources Section** (NEW - list all documents cited)
 
 ## COMPANY INFORMATION
 
@@ -277,6 +361,24 @@ Basis: [What gives confidence or causes uncertainty]
 
 ═══════════════════════════════════════════════════════════════
 
+SOURCES & CITATIONS
+
+List all documents referenced in this analysis with key pages cited:
+
+**Document 1**: [filename.pdf], Year [YYYY]
+- Page [X]: [Brief description of what was cited]
+- Page [Y]: [Brief description of what was cited]
+
+**Document 2**: [filename.pdf], Year [YYYY]
+- Page [X]: [Brief description of what was cited]
+
+[Continue for all documents cited in the analysis above]
+
+**Note**: All source citations extracted from RAG-enhanced agent analyses.
+Page numbers refer to the original PDF documents.
+
+═══════════════════════════════════════════════════════════════
+
 APPENDIX: METHODOLOGY
 
 This analysis integrates perspectives from 5 specialized agents:
@@ -307,6 +409,8 @@ Data Quality: [Assessment of data completeness]
 - **Acknowledge uncertainty:** Note blind spots and missing data
 - **Provide triggers:** Specific conditions for reassessment
 - **Integrate, don't summarize:** Synthesize insights across agents
+- **CITE SOURCES:** Preserve page numbers from agent analyses and include in final report
+- **CREATE SOURCES SECTION:** List all documents with pages cited at end of report
 
 Generate the synthesis now.
 """

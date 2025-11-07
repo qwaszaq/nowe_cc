@@ -1,0 +1,21 @@
+SET doc:Azoty_MultiAgent_MultiYear_20251107_085800:title "Untitled"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_085800:type "team_documentation"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_085800:path "output/intelligence_reports/Azoty_MultiAgent_MultiYear_20251107_085800.md"
+SET doc:Azoty_MultiAgent_MultiYear_20251107_085800:content "**COMPREHENSIVE INTELLIGENCE REPORT: Grupa Azoty S.A.**
+
+═══════════════════════════════════════════════════════════════
+
+## EXECUTIVE SUMMARY
+
+Overall Assessment Score: **38/100**
+
+Investment Recommendation: **SELL**
+
+Grupa Azoty is in a critical liquidity crisis, with a current ratio of 0.65 and negative working capital that has worsened over three years (Source: Grupa_Azoty_Directors_Report_2024.pdf, 2024, p.77‑80). Debt‑to‑equity has surged to 3.57, exposing the company to imminent default risk (Source: Grupa_Azoty_Directors_Report_2024.pdf, 2024, p.78). While management’s “Green Azoty” strategy and CAPEX growth plan signal ambition, the firm’s financial fragility and lack of concrete turnaround milestones render it a high‑risk investment. The most probable outcome over the next 12–24 months is continued liquidity strain and margin compression, making a SELL recommendation prudent.
+
+**Key Investment Thesis**
+
+- **Severe Liquidity Crisis:** Current ratio <0.7 and negative working ca"
+EXPIRE doc:Azoty_MultiAgent_MultiYear_20251107_085800:content 86400
+SADD docs:all "Azoty_MultiAgent_MultiYear_20251107_085800"
+SADD docs:type:team_documentation "Azoty_MultiAgent_MultiYear_20251107_085800"
