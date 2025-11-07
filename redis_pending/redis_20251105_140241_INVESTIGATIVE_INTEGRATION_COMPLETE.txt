@@ -1,0 +1,41 @@
+SET doc:INVESTIGATIVE_INTEGRATION_COMPLETE:title "🎉 INVESTIGATIVE INTEGRATION - COMPLETE"
+SET doc:INVESTIGATIVE_INTEGRATION_COMPLETE:type "general_documentation"
+SET doc:INVESTIGATIVE_INTEGRATION_COMPLETE:path "INVESTIGATIVE_INTEGRATION_COMPLETE.md"
+SET doc:INVESTIGATIVE_INTEGRATION_COMPLETE:content "# 🎉 INVESTIGATIVE INTEGRATION - COMPLETE
+
+**Data:** 2024-11-05  
+**Status:** ✅ GOTOWE I PRZETESTOWANE
+
+---
+
+## 📋 Co zostało zaimplementowane
+
+### 1. Rozszerzenie klasyfikacji dokumentów
+
+**Plik:** `src/autonomous/document_discovery.py`
+
+✅ Dodano kategorię `investigative` do `CLASSIFICATION_RULES`
+```python
+'investigative': {
+    'keywords': ['investigation', 'osint', 'intelligence', 'fraud', 'corruption', 
+                'scandal', 'cba', 'prokuratura', 'śledztwo', 'postępowanie', 'afera'],
+    'patterns': ['case', 'suspect', 'allegation'],
+    'extensions': ['.pdf', '.docx', '.txt'],
+}
+```
+
+✅ Dodano inteligentny scoring dla treści investigative:
+- Każde dopasowanie słowa kluczowego: +3 punkty
+- 3+ dopasowania: +20 punktów bonus
+- Automatyczna detekcja zarówno po angielsku, jak i po polsku
+
+✅ Dodano metodę `determine_investigation_type()`:
+- Określa typ investigacji: `comprehensive`, `osint`, `financial`, `legal`, `none`
+- Używa scoringu do inteligentnego routingu
+
+---
+
+### 2. Integra"
+EXPIRE doc:INVESTIGATIVE_INTEGRATION_COMPLETE:content 86400
+SADD docs:all "INVESTIGATIVE_INTEGRATION_COMPLETE"
+SADD docs:type:general_documentation "INVESTIGATIVE_INTEGRATION_COMPLETE"

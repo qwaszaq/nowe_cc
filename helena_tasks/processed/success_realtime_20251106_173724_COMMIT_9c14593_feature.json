@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-06/COMMIT_9c14593_feature.md",
+  "document_type": "architecture",
+  "title": "feat(intelligent-extraction): Complete multi-source extraction system",
+  "detected_at": "2025-11-06T17:37:24.135890",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# feat(intelligent-extraction): Complete multi-source extraction system\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-06 17:37:24\n**Commit:** `9c14593`\n**Type:** Feature\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**feat(intelligent-extraction): Complete multi-source extraction system**\n\n\ud83d\ude80 FULL HOG IMPLEMENTATION - Intelligent Multi-Source Financial Data Extraction\n\n## Achievement: Complete System Implementation\n\nImplemented comprehensive intelligent extraction system supporting 6 docume"
+}

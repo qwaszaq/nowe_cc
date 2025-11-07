@@ -1,0 +1,41 @@
+SET doc:ISTNIEJACE_KONTENERY_ANALIZA:title "🔍 ISTNIEJĄCE KONTENERY - Analiza"
+SET doc:ISTNIEJACE_KONTENERY_ANALIZA:type "general_documentation"
+SET doc:ISTNIEJACE_KONTENERY_ANALIZA:path "ISTNIEJACE_KONTENERY_ANALIZA.md"
+SET doc:ISTNIEJACE_KONTENERY_ANALIZA:content "# 🔍 ISTNIEJĄCE KONTENERY - Analiza
+
+**Data:** 5 Listopada 2024  
+**Problem:** Mamy już działające kontenery z danymi!
+
+---
+
+## ✅ CO MAMY URUCHOMIONE
+
+```
+┌────────────────────────┬─────────────────┬──────────────────┐
+│ Kontener               │ Port            │ Status           │
+├────────────────────────┼─────────────────┼──────────────────┤
+│ sms-qdrant             │ 6333-6334       │ Up 15h ✅        │
+│ sms-neo4j              │ 7474, 7687      │ Up 15h ✅        │
+│ sms-postgres           │ 5432            │ Up 15h ✅        │
+│ hercules-elasticsearch │ 9200, 9300      │ Up 15h ✅        │
+│ hercules-postgres      │ 5433            │ Up 3 days ✅     │
+│ hercules-kibana        │ 5601            │ Up 3 days ✅     │
+└────────────────────────┴─────────────────┴──────────────────┘
+```
+
+---
+
+## 📊 DANE W SYSTEMACH
+
+### **Qdrant (sms-qdrant):**
+
+```
+14 kolekcji z danymi:
+
+1. destiny-team-framework-master     ← TWOJE DANE!
+2. destiny-team-test
+3. destiny-team-project-634d0dad
+4. sms_embeddings"
+EXPIRE doc:ISTNIEJACE_KONTENERY_ANALIZA:content 86400
+SADD docs:all "ISTNIEJACE_KONTENERY_ANALIZA"
+SADD docs:type:general_documentation "ISTNIEJACE_KONTENERY_ANALIZA"

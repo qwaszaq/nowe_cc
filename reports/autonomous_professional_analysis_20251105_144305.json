@@ -1,0 +1,1714 @@
+{
+  "case_id": "professional_analysis_20251105_144305",
+  "folder": "/Users/artur/coursor-agents-destiny-folder/testdocsLLM",
+  "timestamp": "2025-11-05T14:43:46.913372",
+  "summary": {
+    "total_files": 14,
+    "files_by_type": {
+      "pdf": 13,
+      "text": 1
+    },
+    "total_size_mb": 17.2,
+    "total_tasks": 2,
+    "successful_agents": 0,
+    "extracted_metrics_count": 0
+  },
+  "extracted_metrics": {},
+  "findings": [
+    {
+      "agent": "professional_phase1",
+      "category": "investigative",
+      "output": "Structure Analysis: 10 documents analyzed",
+      "confidence": 0.85
+    },
+    {
+      "agent": "professional_phase2",
+      "category": "investigative",
+      "output": "Quantitative Extraction: 10 years with metrics extracted",
+      "confidence": 0.85
+    },
+    {
+      "agent": "professional_phase3",
+      "category": "investigative",
+      "output": "Qualitative Analysis: 10 documents analyzed",
+      "confidence": 0.85
+    },
+    {
+      "agent": "professional_phase4",
+      "category": "investigative",
+      "output": "Temporal Trends: 9 metrics analyzed",
+      "confidence": 0.85
+    },
+    {
+      "agent": "professional_phase5",
+      "category": "investigative",
+      "output": "Comparative Analysis: 9 efficiency metrics calculated",
+      "confidence": 0.85
+    },
+    {
+      "agent": "professional_phase6",
+      "category": "investigative",
+      "output": "Critical Assessment: 3 issues identified, confidence: 0.95",
+      "confidence": 0.85
+    },
+    {
+      "agent": "professional_phase7",
+      "category": "investigative",
+      "output": "Insight Synthesis: 9 key findings, 2 recommendations",
+      "confidence": 0.85
+    },
+    {
+      "agent": "architect",
+      "category": "technical",
+      "output": "## 1\ufe0f\u20e3 Technical Review\n\n| # | Item | Description / Observation | Implication |\n|---|------|---------------------------|-------------|\n| **T1** | Project Purpose | The repository is a *test harness* for an autonomous document\u2011analysis system (`destiny_auto.py`). | Core functionality is to ingest various file types, classify them, and trigger appropriate agents. |\n| **T2** | Supported File Types | <ul><li>Documents: `.pdf`, `.docx`, `.doc`, `.txt`, `.md`</li><li>Data: `.xlsx`, `.xls`, `.csv`</li><li>Structured: `.json`, `.xml`, `.yaml`</li><li>Images: `.png`, `.jpg`, `.jpeg` (OCR)</li></ul> | The system must include parsers for each format and an OCR pipeline. |\n| **T3** | Command\u2011line Interface | `python destiny_auto.py testdocsLLM [--case-id <id>]` | Simple CLI; could be extended to a REST API or GUI in future. |\n| **T4** | Automatic Workflow | 1. Detect file type<br>2. Classify category<br>3. Select agents<br>4. Run analysis<br>5. Generate report | The workflow implies a plug\u2011in architecture where each \u201cagent\u201d is a separate module/worker. |\n| **T5** | Repository Hygiene | `.gitignore` excludes the test folder, preventing large binary files from being committed. | Good practice for keeping repo lightweight; however, documentation of the ignored content should be maintained elsewhere (e.g., external storage or CI artifacts). |\n| **T6** | Sample Data | Four example categories: financial reports, contracts, technical docs, statistical data. | These samples indicate typical use\u2011cases; the system must handle both structured data extraction and unstructured text summarization. |\n\n### Key Technical Findings\n1. **Modular Design Needed** \u2013 The \u201cagent\u201d selection suggests a dynamic plugin or micro\u2011service pattern.\n2. **Multi\u2011Format Parsing Stack** \u2013 Requires libraries such as `PyPDF2`, `python-docx`, `pandas` for CSV/XLSX, `lxml`/`json`, and OCR via `Tesseract` or an API.\n3. **Scalability Concerns** \u2013 If many large PDFs are processed concurrently, memory usage can spike; consider streaming parsing or chunking.\n4. **Error Handling** \u2013 The README does not mention logging or error reporting; robust exception handling is essential for production use.\n\n## 2\ufe0f\u20e3 Architecture Analysis\n\n| Layer | Responsibility | Suggested Technologies | Notes |\n|-------|----------------|------------------------|-------|\n| **Input Layer** | File ingestion & format detection | `watchdog` (for folder monitoring), MIME sniffing, file extension checks | Could expose a REST endpoint for uploads in future. |\n| **Classification Layer** | Determine document category | Machine learning classifiers (e.g., TF\u2011IDF + SVM) or rule\u2011based taggers | Use pre\u2011trained embeddings for better accuracy on Polish text. |\n| **Agent Registry** | Map category \u2192 agent(s) | JSON/YAML config, plugin loader (`importlib`) | Enables dynamic addition of new agents without code changes. |\n| **Processing Layer** | Execute domain\u2011specific analysis | Separate worker processes or threads; use `celery` for distributed queues | Agents can be written in any language if exposed via RPC/HTTP. |\n| **Report Generation** | Produce consolidated output | Markdown / PDF rendering (e.g., `WeasyPrint`, `reportlab`) | Store reports locally and optionally upload to S3 or SharePoint. |\n| **Orchestration** | Orchestrate workflow, handle retries | CLI driver (`argparse`), optional Docker Compose for isolation | Consider a lightweight orchestrator like Prefect if pipelines grow complex. |\n\n### Patterns & Trends\n\n- **Plug\u2011in/Agent Pattern** \u2013 Allows adding new document types without touching core logic.\n- **Data\u2011First Processing** \u2013 Emphasis on classification before analysis suggests the system is *data\u2011centric*.\n- **Command\u2011Line Driven** \u2013 Indicates a batch\u2011processing use case rather than real\u2011time streaming.\n\n### Risks & Opportunities\n\n| Risk | Mitigation |\n|------|------------|\n| **Large File Memory Footprint** | Stream parsing, chunking PDFs, offload heavy tasks to workers. |\n| **OCR Quality for Polish Characters** | Use Tesseract with Polish language pack; validate accuracy on sample OCR images. |\n| **Missing Error Reporting** | Implement structured logging (`logging` + `loguru`) and a health\u2011check endpoint. |\n| **Scalability of Agent Execution** | Containerize agents, use message queues for load balancing. |\n\n| Opportunity | Benefit |\n|-------------|---------|\n| **Expose API** | Turn CLI into RESTful service; easier integration with other systems. |\n| **ML\u2011Based Classification** | Higher accuracy on mixed\u2011content documents; potential to auto\u2011tag new categories. |\n| **Cloud Storage Integration** | Store processed reports and raw files in S3/GCS, enabling audit trails. |\n\n## 3\ufe0f\u20e3 Summary of Insights for the Architect\n\n1. **Design a modular agent framework** \u2013 Use dynamic loading so that new document types can be added without redeploying the core system.\n2. **Prioritize streaming & chunked processing** \u2013 Especially for PDFs and large CSV/XLSX files to keep memory usage predictable.\n3. **Implement robust logging and monitoring** \u2013 Even though the current CLI is simple, production deployments will need observability.\n4. **Plan for language\u2011specific OCR support** \u2013 Polish characters can be problematic; ensure proper training data or use a dedicated OCR service.\n5. **Consider containerization from the start** \u2013 Docker + Compose (or Kubernetes) will simplify scaling agents and managing dependencies.\n\n---\n\n### Confidence Levels\n\n| Aspect | Confidence | Reasoning |\n|--------|------------|-----------|\n| Overall system architecture understanding | 0.95 | Explicit workflow described in README; standard patterns apply. |\n| Specific tech stack choices | 0.80 | Inferred from file types, but exact libraries are not listed. |\n| Risk assessment accuracy | 0.90 | Common issues for similar systems, no contradictory evidence. |\n\n**[SZACUNEK]** \u2013 Estimated memory usage per PDF ~200\u202fMB if parsed fully; can be reduced to <50\u202fMB with streaming.\n\n**[BRAK DANYCH]** \u2013 No explicit performance benchmarks or concurrency limits provided in the README.",
+      "confidence": 0.85
+    }
+  ],
+  "task_results": [
+    {
+      "task": {
+        "task_id": "investigative_0",
+        "category": "investigative",
+        "agents": [
+          "investigative"
+        ],
+        "files": [
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_2021.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/informacja_CBA_2019.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie_jawne_2010_druk.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie_2013.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/informacja_za_2023_r_ (1).pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie_2012.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie__jawne_2011_druk.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2017_r..pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_CBA_2014.pdf"
+        ],
+        "file_count": 13,
+        "analyses": [
+          "timeline_reconstruction",
+          "source_verification",
+          "comprehensive_investigation",
+          "osint_analysis",
+          "document_extraction",
+          "critical_review",
+          "entity_extraction"
+        ],
+        "priority": 91,
+        "investigation_type": "comprehensive"
+      },
+      "agent_results": [
+        {
+          "agent": "professional_phase1",
+          "output": "Structure Analysis: 10 documents analyzed",
+          "duration": 1.5597754205976213,
+          "confidence": 0.85,
+          "analysis_phase": "phase1",
+          "professional_analysis": true
+        },
+        {
+          "agent": "professional_phase2",
+          "output": "Quantitative Extraction: 10 years with metrics extracted",
+          "duration": 1.5597754205976213,
+          "confidence": 0.85,
+          "analysis_phase": "phase2",
+          "professional_analysis": true
+        },
+        {
+          "agent": "professional_phase3",
+          "output": "Qualitative Analysis: 10 documents analyzed",
+          "duration": 1.5597754205976213,
+          "confidence": 0.85,
+          "analysis_phase": "phase3",
+          "professional_analysis": true
+        },
+        {
+          "agent": "professional_phase4",
+          "output": "Temporal Trends: 9 metrics analyzed",
+          "duration": 1.5597754205976213,
+          "confidence": 0.85,
+          "analysis_phase": "phase4",
+          "professional_analysis": true
+        },
+        {
+          "agent": "professional_phase5",
+          "output": "Comparative Analysis: 9 efficiency metrics calculated",
+          "duration": 1.5597754205976213,
+          "confidence": 0.85,
+          "analysis_phase": "phase5",
+          "professional_analysis": true
+        },
+        {
+          "agent": "professional_phase6",
+          "output": "Critical Assessment: 3 issues identified, confidence: 0.95",
+          "duration": 1.5597754205976213,
+          "confidence": 0.85,
+          "analysis_phase": "phase6",
+          "professional_analysis": true
+        },
+        {
+          "agent": "professional_phase7",
+          "output": "Insight Synthesis: 9 key findings, 2 recommendations",
+          "duration": 1.5597754205976213,
+          "confidence": 0.85,
+          "analysis_phase": "phase7",
+          "professional_analysis": true
+        }
+      ],
+      "professional_analysis": {
+        "phase1": {
+          "total_documents": 10,
+          "structures": {
+            "2021": {
+              "filename": "Informacja_2021.pdf",
+              "sections": [
+                "WPROWADZENIE"
+              ],
+              "text_length": 115665,
+              "section_count": 1
+            },
+            "2022": {
+              "filename": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+              "sections": [
+                "Mam nadziej\u0119,"
+              ],
+              "text_length": 99457,
+              "section_count": 1
+            },
+            "2019": {
+              "filename": "informacja_CBA_2019.pdf",
+              "sections": [
+                "WPROWADZENIE",
+                "DZIA\u0141ANIA PRIORYTETOWE",
+                "Zainteresowaniem obj\u0119ta zo-"
+              ],
+              "text_length": 92929,
+              "section_count": 3
+            },
+            "2015": {
+              "filename": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+              "sections": [
+                "SPIS TRE \u015aCI",
+                "Dzia \u0142ania operacyjne i procesowe",
+                "Dzia \u0142alno\u015b\u0107 kontrolna",
+                "Dzia \u0142alno\u015b\u0107 analityczno -informacyjna",
+                "Finansowanie s \u0142u\u017cby",
+                "Sytuacja logistyczna s \u0142u\u017cby",
+                "Liczba funkcjonariuszy i pracownik\u00f3w cywilnych",
+                "Szkolenia i doskonalenie zawodowe",
+                "Dzia\u0142ania operacyjne i procesowe"
+              ],
+              "text_length": 47061,
+              "section_count": 9
+            },
+            "2024": {
+              "filename": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+              "sections": [
+                "Zadaniem zespo\u0142u by\u0142o zgromadzenie informacji w zakresie procesu wy\u0142onienia"
+              ],
+              "text_length": 80285,
+              "section_count": 1
+            },
+            "2010": {
+              "filename": "Sprawozdanie_jawne_2010_druk.pdf",
+              "sections": [
+                "INFORMACJA O WYNIKACH DZIA\u0141ALNO\u015aCI",
+                "CENTRALNEGO BIURA ANTYKORUPCYJNEGO",
+                "Dzia\u0142ania operacyjne i procesowe",
+                "Dzia\u0142alno\u015b\u0107 kontrolna",
+                "Dzia\u0142alno\u015b\u0107 analityczno -informacyjna",
+                "Publikacje",
+                "Szkolenia antykorupcyjne",
+                "Dzia\u0142alno\u015b\u0107 naukowo -badawcza",
+                "Udzia\u0142 w konferencjach",
+                "Struktura organizacyjna",
+                "Finansowanie s\u0142u\u017cby",
+                "Sytuacj a logistyczna",
+                "Sytuacja kadrowa",
+                "Doskonalenie zawodowe",
+                "W tym samym okresie wszcz\u0119te zosta\u0142y 162 post\u0119powania przygotowawcze1, zako\u0144 -",
+                "Sprawy o char akterze ko rupcyj-"
+              ],
+              "text_length": 51653,
+              "section_count": 16
+            },
+            "2008": {
+              "filename": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+              "sections": [
+                "Charakterystyka zada\u0144 realizowanych przez CBA",
+                "Sprawy organizacyjno -finansowe, rekrutacja i szkolenia funkcjonariuszy",
+                "Bezpiecze\u0144stwo wewn\u0119trzne",
+                "Wsp\u00f3\u0142praca mi\u0119dzynarodowa",
+                "Dzia\u0142ania operacyjno -\u015bledcze",
+                "Dzia\u0142ania kontrolne",
+                "Dzia\u0142ania analityczne",
+                "Dzia\u0142ania prewencyjne i edukacyjne",
+                "Finansowanie s\u0142u\u017cby",
+                "Rekrutacja",
+                "Szkolenia",
+                "Sprawy organizacyjne",
+                "Ochrona informacji niej awnych, obiekt\u00f3w i mienia CBA",
+                "System kancelaryjny",
+                "Post\u0119powania sprawdzaj\u0105ce",
+                "Bezpiecze\u0144stwo teleinformatyczne",
+                "Kontrola ochrony informacji i obiegu materia\u0142\u00f3w niejawnych",
+                "Wsp\u00f3\u0142praca multilateralna",
+                "Wsp\u00f3\u0142pra ca bilateralna",
+                "W minionym roku Zarz\u0105d"
+              ],
+              "text_length": 35021,
+              "section_count": 20
+            },
+            "2013": {
+              "filename": "Sprawozdanie_2013.pdf",
+              "sections": [
+                "WARTO\u015aD ZABEZPIECZONEGO MIENIA W MLN Z\u0141",
+                "ZASTOSOWANE \u015aRODKI ZAPOBIEGAWCZE",
+                "RODZAJ  \u015aRODK A ZAPOBIEGAWCZE GO LICZBA",
+                "ODSETEK \u015aLEDZTW ZAKOOCZONYCH AKTEM OSKAR\u017bENIA",
+                "Dzia\u0142ania operacyjne i procesowe",
+                "Dzia\u0142alno\u015bd kontrolna",
+                "Dzia\u0142alno\u015bd analityczno -informacyjna \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
+                "Finansowanie s\u0142u\u017cby",
+                "Sytuacja logistyczna s\u0142u\u017cby",
+                "Liczba funkcjonariuszy i pracownik\u00f3w cywilnych",
+                "Szkolenie i doskonalenie zawodowe",
+                "Prowadzono 469 post\u0119powao przygotowawczych"
+              ],
+              "text_length": 43140,
+              "section_count": 12
+            },
+            "2023": {
+              "filename": "informacja_za_2023_r_ (1).pdf",
+              "sections": [
+                "WPROWADZENIE",
+                "DZIA\u0141ANIA"
+              ],
+              "text_length": 103454,
+              "section_count": 2
+            },
+            "2012": {
+              "filename": "Sprawozdanie_2012.pdf",
+              "sections": [
+                "SPIS TRE\u015aCI",
+                "PRZYBLI\u017bONA WARTO\u015aD ZABEZPIECZONEGO MIENIA W MLN Z\u0141",
+                "ZASTOSOWANE \u015aRODKI ZAPOBIEGAWCZE",
+                "RODZAJ  \u015aRODK A ZAPOBIEGAWCZE GO LICZBA",
+                "ODSETEK \u015aLEDZTW ZAKOOCZONYCH AKTEM OSKAR\u017bENIA",
+                "Dzia\u0142ania operacyjne i procesowe",
+                "Dzia\u0142alno\u015bd kontrolna",
+                "Dzia\u0142 alno\u015bd analityczno -informacyjna",
+                "Finansowanie s\u0142u\u017cby",
+                "Sytuacja logistyczna s\u0142u\u017cby",
+                "Liczba funkcjonariuszy i pracownik\u00f3w cywilnych",
+                "Szkolenie i doskonalenie zawodowe",
+                "Jednocze\u015bnie od 2009 r",
+                "W jednostkach organizacyjnych  CBA wszcz\u0119 to 208 spraw ,",
+                "Prowadzono 466 post\u0119powao przygotowawczych"
+              ],
+              "text_length": 51280,
+              "section_count": 15
+            }
+          },
+          "common_sections": [
+            "dzia\u0142ania operacyjne i procesowe",
+            "finansowanie s\u0142u\u017cby",
+            "wprowadzenie",
+            "liczba funkcjonariuszy i pracownik\u00f3w cywilnych",
+            "zastosowane \u015brodki zapobiegawcze",
+            "rodzaj  \u015brodk a zapobiegawcze go liczba",
+            "odsetek \u015bledztw zakooczonych aktem oskar\u017cenia",
+            "dzia\u0142alno\u015bd kontrolna",
+            "sytuacja logistyczna s\u0142u\u017cby",
+            "szkolenie i doskonalenie zawodowe"
+          ],
+          "evolution": {
+            "early_period": {
+              "years": [
+                2008,
+                2010,
+                2012,
+                2013,
+                2015
+              ],
+              "avg_sections": 14.4
+            },
+            "recent_period": {
+              "years": [
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "avg_sections": 1.6
+            },
+            "evolution": "decreasing"
+          }
+        },
+        "phase2": {
+          "metrics": {
+            "2021": {
+              "sprawy_operacyjne": {
+                "value": 1,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 5
+              },
+              "sprawy_zako\u0144czone": {
+                "value": 2021,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 6
+              },
+              "sprawy_w_toku": {
+                "value": 2018,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 5
+              },
+              "zatrzymania": {
+                "value": 29,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 7
+              },
+              "zarzuty": {
+                "value": 20,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 9
+              },
+              "skazania": {
+                "value": 36,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 1
+              },
+              "budzet": {
+                "value": 29000000,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 2
+              },
+              "funkcjonariusze": {
+                "value": 2021,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 10
+              },
+              "szkolenia": {
+                "value": 6,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 8
+              },
+              "odzyskane_srodki": {
+                "value": 17,
+                "confidence": "extracted",
+                "source": "Informacja_2021.pdf",
+                "matches_found": 1
+              }
+            },
+            "2022": {
+              "sprawy_operacyjne": {
+                "value": 2,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+                "matches_found": 7
+              },
+              "sprawy_zako\u0144czone": {
+                "value": 208,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+                "matches_found": 6
+              },
+              "sprawy_w_toku": {
+                "value": 2022,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+                "matches_found": 5
+              },
+              "zatrzymania": {
+                "value": 417,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+                "matches_found": 9
+              },
+              "zarzuty": {
+                "value": 545,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+                "matches_found": 10
+              },
+              "funkcjonariusze": {
+                "value": 7,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+                "matches_found": 10
+              },
+              "szkolenia": {
+                "value": 77,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+                "matches_found": 6
+              }
+            },
+            "2019": {
+              "sprawy_operacyjne": {
+                "value": 2019,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 6
+              },
+              "sprawy_zako\u0144czone": {
+                "value": 2019,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 6
+              },
+              "sprawy_w_toku": {
+                "value": 2017,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 5
+              },
+              "zatrzymania": {
+                "value": 3,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 8
+              },
+              "zarzuty": {
+                "value": 32,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 10
+              },
+              "skazania": {
+                "value": 10,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 2
+              },
+              "budzet": {
+                "value": 980000000,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 2
+              },
+              "funkcjonariusze": {
+                "value": 2019,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 10
+              },
+              "szkolenia": {
+                "value": 8,
+                "confidence": "extracted",
+                "source": "informacja_CBA_2019.pdf",
+                "matches_found": 11
+              }
+            },
+            "2015": {
+              "sprawy_operacyjne": {
+                "value": 247,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+                "matches_found": 1
+              },
+              "sprawy_zako\u0144czone": {
+                "value": 247,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+                "matches_found": 6
+              },
+              "sprawy_w_toku": {
+                "value": 45,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+                "matches_found": 2
+              },
+              "zarzuty": {
+                "value": 34,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+                "matches_found": 7
+              },
+              "funkcjonariusze": {
+                "value": 2,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+                "matches_found": 10
+              },
+              "szkolenia": {
+                "value": 85,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+                "matches_found": 2
+              }
+            },
+            "2024": {
+              "sprawy_operacyjne": {
+                "value": 4,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+                "matches_found": 7
+              },
+              "sprawy_zako\u0144czone": {
+                "value": 240,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+                "matches_found": 6
+              },
+              "sprawy_w_toku": {
+                "value": 2024,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+                "matches_found": 3
+              },
+              "zatrzymania": {
+                "value": 313,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+                "matches_found": 2
+              },
+              "zarzuty": {
+                "value": 2,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+                "matches_found": 4
+              },
+              "funkcjonariusze": {
+                "value": 2024,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+                "matches_found": 10
+              },
+              "szkolenia": {
+                "value": 2024,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+                "matches_found": 2
+              }
+            },
+            "2010": {
+              "sprawy_operacyjne": {
+                "value": 320,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_jawne_2010_druk.pdf",
+                "matches_found": 1
+              },
+              "sprawy_zako\u0144czone": {
+                "value": 2009,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_jawne_2010_druk.pdf",
+                "matches_found": 2
+              },
+              "zarzuty": {
+                "value": 3,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_jawne_2010_druk.pdf",
+                "matches_found": 8
+              },
+              "funkcjonariusze": {
+                "value": 7,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_jawne_2010_druk.pdf",
+                "matches_found": 8
+              },
+              "szkolenia": {
+                "value": 24,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_jawne_2010_druk.pdf",
+                "matches_found": 3
+              }
+            },
+            "2008": {
+              "sprawy_zako\u0144czone": {
+                "value": 2006,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+                "matches_found": 1
+              },
+              "zarzuty": {
+                "value": 5,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+                "matches_found": 6
+              },
+              "funkcjonariusze": {
+                "value": 300,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+                "matches_found": 9
+              },
+              "szkolenia": {
+                "value": 1,
+                "confidence": "extracted",
+                "source": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+                "matches_found": 6
+              }
+            },
+            "2013": {
+              "sprawy_operacyjne": {
+                "value": 2012,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2013.pdf",
+                "matches_found": 2
+              },
+              "sprawy_w_toku": {
+                "value": 96,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2013.pdf",
+                "matches_found": 5
+              },
+              "zatrzymania": {
+                "value": 1,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2013.pdf",
+                "matches_found": 3
+              },
+              "zarzuty": {
+                "value": 65,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2013.pdf",
+                "matches_found": 8
+              },
+              "funkcjonariusze": {
+                "value": 3,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2013.pdf",
+                "matches_found": 11
+              }
+            },
+            "2023": {
+              "sprawy_operacyjne": {
+                "value": 3,
+                "confidence": "extracted",
+                "source": "informacja_za_2023_r_ (1).pdf",
+                "matches_found": 6
+              },
+              "sprawy_zako\u0144czone": {
+                "value": 167,
+                "confidence": "extracted",
+                "source": "informacja_za_2023_r_ (1).pdf",
+                "matches_found": 6
+              },
+              "sprawy_w_toku": {
+                "value": 2019,
+                "confidence": "extracted",
+                "source": "informacja_za_2023_r_ (1).pdf",
+                "matches_found": 5
+              },
+              "zatrzymania": {
+                "value": 5,
+                "confidence": "extracted",
+                "source": "informacja_za_2023_r_ (1).pdf",
+                "matches_found": 7
+              },
+              "zarzuty": {
+                "value": 1,
+                "confidence": "extracted",
+                "source": "informacja_za_2023_r_ (1).pdf",
+                "matches_found": 10
+              },
+              "funkcjonariusze": {
+                "value": 1,
+                "confidence": "extracted",
+                "source": "informacja_za_2023_r_ (1).pdf",
+                "matches_found": 10
+              },
+              "szkolenia": {
+                "value": 2023,
+                "confidence": "extracted",
+                "source": "informacja_za_2023_r_ (1).pdf",
+                "matches_found": 8
+              }
+            },
+            "2012": {
+              "sprawy_operacyjne": {
+                "value": 2,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2012.pdf",
+                "matches_found": 2
+              },
+              "sprawy_w_toku": {
+                "value": 38,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2012.pdf",
+                "matches_found": 1
+              },
+              "zarzuty": {
+                "value": 2,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2012.pdf",
+                "matches_found": 10
+              },
+              "budzet": {
+                "value": 35000000,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2012.pdf",
+                "matches_found": 1
+              },
+              "funkcjonariusze": {
+                "value": 1,
+                "confidence": "extracted",
+                "source": "Sprawozdanie_2012.pdf",
+                "matches_found": 10
+              }
+            }
+          },
+          "total_years": 10,
+          "extraction_summary": {
+            "total_metrics_extracted": 65,
+            "metrics_per_year": {
+              "2021": 10,
+              "2022": 7,
+              "2019": 9,
+              "2015": 6,
+              "2024": 7,
+              "2010": 5,
+              "2008": 4,
+              "2013": 5,
+              "2023": 7,
+              "2012": 5
+            },
+            "coverage": {
+              "years_with_data": 10,
+              "metrics_found": [
+                "skazania",
+                "odzyskane_srodki",
+                "sprawy_w_toku",
+                "funkcjonariusze",
+                "zarzuty",
+                "sprawy_operacyjne",
+                "zatrzymania",
+                "szkolenia",
+                "sprawy_zako\u0144czone",
+                "budzet"
+              ]
+            }
+          }
+        },
+        "phase3": {
+          "narrative_analysis": {
+            "2021": {
+              "tone": {
+                "positive": 22,
+                "challenge": 10,
+                "cooperation": 19,
+                "innovation": 14
+              },
+              "themes": {
+                "korupcja": 56,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 48,
+                "szkolenia": 27,
+                "technologia": 81,
+                "finansowanie": 74
+              },
+              "dominant_tone": "positive",
+              "dominant_theme": "technologia",
+              "text_length": 115665
+            },
+            "2022": {
+              "tone": {
+                "positive": 18,
+                "challenge": 9,
+                "cooperation": 23,
+                "innovation": 19
+              },
+              "themes": {
+                "korupcja": 59,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 49,
+                "szkolenia": 15,
+                "technologia": 81,
+                "finansowanie": 86
+              },
+              "dominant_tone": "cooperation",
+              "dominant_theme": "finansowanie",
+              "text_length": 99457
+            },
+            "2019": {
+              "tone": {
+                "positive": 15,
+                "challenge": 7,
+                "cooperation": 14,
+                "innovation": 13
+              },
+              "themes": {
+                "korupcja": 49,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 49,
+                "szkolenia": 23,
+                "technologia": 46,
+                "finansowanie": 71
+              },
+              "dominant_tone": "positive",
+              "dominant_theme": "finansowanie",
+              "text_length": 92929
+            },
+            "2015": {
+              "tone": {
+                "positive": 8,
+                "challenge": 9,
+                "cooperation": 7,
+                "innovation": 6
+              },
+              "themes": {
+                "korupcja": 49,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 15,
+                "szkolenia": 7,
+                "technologia": 23,
+                "finansowanie": 29
+              },
+              "dominant_tone": "challenge",
+              "dominant_theme": "korupcja",
+              "text_length": 47061
+            },
+            "2024": {
+              "tone": {
+                "positive": 8,
+                "challenge": 9,
+                "cooperation": 25,
+                "innovation": 7
+              },
+              "themes": {
+                "korupcja": 58,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 32,
+                "szkolenia": 12,
+                "technologia": 62,
+                "finansowanie": 35
+              },
+              "dominant_tone": "cooperation",
+              "dominant_theme": "technologia",
+              "text_length": 80285
+            },
+            "2010": {
+              "tone": {
+                "positive": 7,
+                "challenge": 8,
+                "cooperation": 29,
+                "innovation": 2
+              },
+              "themes": {
+                "korupcja": 67,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 32,
+                "szkolenia": 16,
+                "technologia": 27,
+                "finansowanie": 24
+              },
+              "dominant_tone": "cooperation",
+              "dominant_theme": "korupcja",
+              "text_length": 51653
+            },
+            "2008": {
+              "tone": {
+                "positive": 6,
+                "challenge": 4,
+                "cooperation": 14,
+                "innovation": 1
+              },
+              "themes": {
+                "korupcja": 72,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 30,
+                "szkolenia": 16,
+                "technologia": 31,
+                "finansowanie": 15
+              },
+              "dominant_tone": "cooperation",
+              "dominant_theme": "korupcja",
+              "text_length": 35021
+            },
+            "2013": {
+              "tone": {
+                "positive": 4,
+                "challenge": 5,
+                "cooperation": 13,
+                "innovation": 4
+              },
+              "themes": {
+                "korupcja": 35,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 28,
+                "szkolenia": 8,
+                "technologia": 10,
+                "finansowanie": 26
+              },
+              "dominant_tone": "cooperation",
+              "dominant_theme": "korupcja",
+              "text_length": 43140
+            },
+            "2023": {
+              "tone": {
+                "positive": 10,
+                "challenge": 10,
+                "cooperation": 31,
+                "innovation": 9
+              },
+              "themes": {
+                "korupcja": 61,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 51,
+                "szkolenia": 16,
+                "technologia": 76,
+                "finansowanie": 87
+              },
+              "dominant_tone": "cooperation",
+              "dominant_theme": "finansowanie",
+              "text_length": 103454
+            },
+            "2012": {
+              "tone": {
+                "positive": 6,
+                "challenge": 7,
+                "cooperation": 12,
+                "innovation": 4
+              },
+              "themes": {
+                "korupcja": 48,
+                "wsp\u00f3\u0142praca_mi\u0119dzynarodowa": 29,
+                "szkolenia": 14,
+                "technologia": 20,
+                "finansowanie": 32
+              },
+              "dominant_tone": "cooperation",
+              "dominant_theme": "korupcja",
+              "text_length": 51280
+            }
+          },
+          "evolution": {
+            "early_period": {
+              "positive": 6.2,
+              "challenge": 6.6,
+              "cooperation": 15.0,
+              "innovation": 3.4
+            },
+            "recent_period": {
+              "positive": 14.6,
+              "challenge": 9.0,
+              "cooperation": 22.4,
+              "innovation": 12.4
+            },
+            "changes": {
+              "positive": 135.4838709677419,
+              "cooperation": 49.33333333333332,
+              "innovation": 264.70588235294116,
+              "challenge": 36.36363636363637
+            }
+          }
+        },
+        "phase4": {
+          "trends": {
+            "skazania": {
+              "years": [
+                2019,
+                2021
+              ],
+              "values": [
+                10,
+                36
+              ],
+              "first_value": 10,
+              "last_value": 36,
+              "total_growth": 260.0,
+              "cagr": 89.73665961010275,
+              "trend": "increasing",
+              "trend_strength": 0,
+              "slope": 13.0,
+              "inflection_points": []
+            },
+            "sprawy_w_toku": {
+              "years": [
+                2012,
+                2013,
+                2015,
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "values": [
+                38,
+                96,
+                45,
+                2017,
+                2018,
+                2022,
+                2019,
+                2024
+              ],
+              "first_value": 38,
+              "last_value": 2024,
+              "total_growth": 5226.315789473684,
+              "cagr": 39.27363455059529,
+              "trend": "increasing",
+              "trend_strength": 0.9347851759788004,
+              "slope": 202.3111291632819,
+              "inflection_points": [
+                {
+                  "year": 2013,
+                  "value": 96,
+                  "type": "peak"
+                },
+                {
+                  "year": 2015,
+                  "value": 45,
+                  "type": "trough"
+                },
+                {
+                  "year": 2022,
+                  "value": 2022,
+                  "type": "peak"
+                },
+                {
+                  "year": 2023,
+                  "value": 2019,
+                  "type": "trough"
+                }
+              ]
+            },
+            "funkcjonariusze": {
+              "years": [
+                2008,
+                2010,
+                2012,
+                2013,
+                2015,
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "values": [
+                300,
+                7,
+                1,
+                3,
+                2,
+                2019,
+                2021,
+                7,
+                1,
+                2024
+              ],
+              "first_value": 300,
+              "last_value": 2024,
+              "total_growth": 574.6666666666667,
+              "cagr": 12.672538319922321,
+              "trend": "increasing",
+              "trend_strength": 0.5079971159086204,
+              "slope": 83.77671818480762,
+              "inflection_points": [
+                {
+                  "year": 2012,
+                  "value": 1,
+                  "type": "trough"
+                },
+                {
+                  "year": 2013,
+                  "value": 3,
+                  "type": "peak"
+                },
+                {
+                  "year": 2015,
+                  "value": 2,
+                  "type": "trough"
+                },
+                {
+                  "year": 2021,
+                  "value": 2021,
+                  "type": "peak"
+                },
+                {
+                  "year": 2023,
+                  "value": 1,
+                  "type": "trough"
+                }
+              ]
+            },
+            "zarzuty": {
+              "years": [
+                2008,
+                2010,
+                2012,
+                2013,
+                2015,
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "values": [
+                5,
+                3,
+                2,
+                65,
+                34,
+                32,
+                20,
+                545,
+                1,
+                2
+              ],
+              "first_value": 5,
+              "last_value": 2,
+              "total_growth": -60.0,
+              "cagr": -5.565920916361112,
+              "trend": "increasing",
+              "trend_strength": 0.30718968006982067,
+              "slope": 8.871095034528114,
+              "inflection_points": [
+                {
+                  "year": 2012,
+                  "value": 2,
+                  "type": "trough"
+                },
+                {
+                  "year": 2013,
+                  "value": 65,
+                  "type": "peak"
+                },
+                {
+                  "year": 2021,
+                  "value": 20,
+                  "type": "trough"
+                },
+                {
+                  "year": 2022,
+                  "value": 545,
+                  "type": "peak"
+                },
+                {
+                  "year": 2023,
+                  "value": 1,
+                  "type": "trough"
+                }
+              ]
+            },
+            "sprawy_operacyjne": {
+              "years": [
+                2010,
+                2012,
+                2013,
+                2015,
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "values": [
+                320,
+                2,
+                2012,
+                247,
+                2019,
+                1,
+                2,
+                3,
+                4
+              ],
+              "first_value": 320,
+              "last_value": 4,
+              "total_growth": -98.75,
+              "cagr": -26.875147861571946,
+              "trend": "decreasing",
+              "trend_strength": 0.27049654995258576,
+              "slope": -44.396969696969705,
+              "inflection_points": [
+                {
+                  "year": 2012,
+                  "value": 2,
+                  "type": "trough"
+                },
+                {
+                  "year": 2013,
+                  "value": 2012,
+                  "type": "peak"
+                },
+                {
+                  "year": 2015,
+                  "value": 247,
+                  "type": "trough"
+                },
+                {
+                  "year": 2019,
+                  "value": 2019,
+                  "type": "peak"
+                },
+                {
+                  "year": 2021,
+                  "value": 1,
+                  "type": "trough"
+                }
+              ]
+            },
+            "zatrzymania": {
+              "years": [
+                2013,
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "values": [
+                1,
+                3,
+                29,
+                417,
+                5,
+                313
+              ],
+              "first_value": 1,
+              "last_value": 313,
+              "total_growth": 31200.0,
+              "cagr": 68.6039197681668,
+              "trend": "increasing",
+              "trend_strength": 0.5010804588611683,
+              "slope": 23.49579831932773,
+              "inflection_points": [
+                {
+                  "year": 2022,
+                  "value": 417,
+                  "type": "peak"
+                },
+                {
+                  "year": 2023,
+                  "value": 5,
+                  "type": "trough"
+                }
+              ]
+            },
+            "szkolenia": {
+              "years": [
+                2008,
+                2010,
+                2015,
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "values": [
+                1,
+                24,
+                85,
+                8,
+                6,
+                77,
+                2023,
+                2024
+              ],
+              "first_value": 1,
+              "last_value": 2024,
+              "total_growth": 202300.0,
+              "cagr": 60.930424462792466,
+              "trend": "increasing",
+              "trend_strength": 0.5905053525080426,
+              "slope": 89.39499036608863,
+              "inflection_points": [
+                {
+                  "year": 2015,
+                  "value": 85,
+                  "type": "peak"
+                },
+                {
+                  "year": 2021,
+                  "value": 6,
+                  "type": "trough"
+                }
+              ]
+            },
+            "sprawy_zako\u0144czone": {
+              "years": [
+                2008,
+                2010,
+                2015,
+                2019,
+                2021,
+                2022,
+                2023,
+                2024
+              ],
+              "values": [
+                2006,
+                2009,
+                247,
+                2019,
+                2021,
+                208,
+                167,
+                240
+              ],
+              "first_value": 2006,
+              "last_value": 240,
+              "total_growth": -88.03589232303091,
+              "cagr": -12.42754606767501,
+              "trend": "decreasing",
+              "trend_strength": 0.5723442245815107,
+              "slope": -90.38439306358381,
+              "inflection_points": [
+                {
+                  "year": 2010,
+                  "value": 2009,
+                  "type": "peak"
+                },
+                {
+                  "year": 2015,
+                  "value": 247,
+                  "type": "trough"
+                },
+                {
+                  "year": 2021,
+                  "value": 2021,
+                  "type": "peak"
+                },
+                {
+                  "year": 2023,
+                  "value": 167,
+                  "type": "trough"
+                }
+              ]
+            },
+            "budzet": {
+              "years": [
+                2012,
+                2019,
+                2021
+              ],
+              "values": [
+                35000000,
+                980000000,
+                29000000
+              ],
+              "first_value": 35000000,
+              "last_value": 29000000,
+              "total_growth": -17.142857142857142,
+              "cagr": -2.0677910791137344,
+              "trend": "increasing",
+              "trend_strength": 0.30019983719666626,
+              "slope": 34768656.71641791,
+              "inflection_points": [
+                {
+                  "year": 2019,
+                  "value": 980000000,
+                  "type": "peak"
+                }
+              ]
+            }
+          },
+          "summary": {
+            "total_metrics": 9,
+            "increasing": 7,
+            "decreasing": 2,
+            "stable": 0,
+            "metrics_increasing": [
+              "skazania",
+              "sprawy_w_toku",
+              "funkcjonariusze",
+              "zarzuty",
+              "zatrzymania",
+              "szkolenia",
+              "budzet"
+            ],
+            "metrics_decreasing": [
+              "sprawy_operacyjne",
+              "sprawy_zako\u0144czone"
+            ]
+          }
+        },
+        "phase5": {
+          "efficiency_metrics": {
+            "2010": {
+              "cases_per_employee": 45.714285714285715
+            },
+            "2012": {
+              "cost_per_case": 17500000.0,
+              "cases_per_employee": 2.0
+            },
+            "2013": {
+              "cases_per_employee": 670.6666666666666
+            },
+            "2015": {
+              "cases_per_employee": 123.5
+            },
+            "2019": {
+              "success_rate": 0.49529470034670625,
+              "cost_per_case": 485388.8063397722,
+              "cases_per_employee": 1.0
+            },
+            "2021": {
+              "success_rate": 3600.0,
+              "cost_per_case": 29000000.0,
+              "cases_per_employee": 0.0004948045522018803
+            },
+            "2022": {
+              "cases_per_employee": 0.2857142857142857
+            },
+            "2023": {
+              "cases_per_employee": 3.0
+            },
+            "2024": {
+              "cases_per_employee": 0.001976284584980237
+            }
+          },
+          "periods": {
+            "early": [
+              2008,
+              2010,
+              2012,
+              2013,
+              2015
+            ],
+            "recent": [
+              2019,
+              2021,
+              2022,
+              2023,
+              2024
+            ],
+            "comparison": {
+              "skazania": {
+                "early_avg": 0,
+                "recent_avg": 23.0,
+                "change": 100
+              },
+              "odzyskane_srodki": {
+                "early_avg": 0,
+                "recent_avg": 17.0,
+                "change": 100
+              },
+              "sprawy_w_toku": {
+                "early_avg": 59.666666666666664,
+                "recent_avg": 2020.0,
+                "change": 3285.474860335196
+              },
+              "funkcjonariusze": {
+                "early_avg": 62.6,
+                "recent_avg": 1214.4,
+                "change": 1839.9361022364221
+              },
+              "zarzuty": {
+                "early_avg": 21.8,
+                "recent_avg": 120.0,
+                "change": 450.45871559633025
+              },
+              "sprawy_operacyjne": {
+                "early_avg": 645.25,
+                "recent_avg": 405.8,
+                "change": -37.10964742347927
+              },
+              "zatrzymania": {
+                "early_avg": 1.0,
+                "recent_avg": 153.4,
+                "change": 15240.0
+              },
+              "szkolenia": {
+                "early_avg": 36.666666666666664,
+                "recent_avg": 827.6,
+                "change": 2157.0909090909095
+              },
+              "sprawy_zako\u0144czone": {
+                "early_avg": 1420.6666666666667,
+                "recent_avg": 931.0,
+                "change": -34.467386203660254
+              },
+              "budzet": {
+                "early_avg": 35000000.0,
+                "recent_avg": 504500000.0,
+                "change": 1341.4285714285716
+              }
+            }
+          },
+          "correlations": {}
+        },
+        "phase6": {
+          "data_completeness": {
+            "2008": 1.0,
+            "2010": 1.0,
+            "2012": 1.0,
+            "2013": 1.0,
+            "2015": 1.0,
+            "2019": 1.0,
+            "2021": 1.0,
+            "2022": 1.0,
+            "2023": 1.0,
+            "2024": 1.0
+          },
+          "consistency_issues": [
+            {
+              "year": 2012,
+              "issue": "Cost per case (17,500,000 z\u0142) seems very high",
+              "type": "anomaly",
+              "severity": "medium"
+            },
+            {
+              "year": 2021,
+              "issue": "Skazania (36) > Sprawy (1)",
+              "type": "logical_inconsistency",
+              "severity": "high"
+            },
+            {
+              "year": 2021,
+              "issue": "Cost per case (29,000,000 z\u0142) seems very high",
+              "type": "anomaly",
+              "severity": "medium"
+            }
+          ],
+          "methodology_changes": [],
+          "missing_years": [
+            2009,
+            2011,
+            2014,
+            2016,
+            2017,
+            2018,
+            2020
+          ],
+          "confidence_scores": {},
+          "limitations": [
+            "Analysis based on text extraction only (tables may contain additional data)",
+            "Regex-based extraction may miss context",
+            "No OCR for scanned documents",
+            "No manual verification of extracted values",
+            "Limited cross-validation between sources"
+          ],
+          "overall_confidence": 0.955
+        },
+        "phase7": {
+          "key_findings": [
+            {
+              "metric": "Skazania",
+              "trend": "increasing",
+              "growth": 260.0,
+              "cagr": 89.73665961010275,
+              "significance": "high"
+            },
+            {
+              "metric": "Sprawy W Toku",
+              "trend": "increasing",
+              "growth": 5226.315789473684,
+              "cagr": 39.27363455059529,
+              "significance": "high"
+            },
+            {
+              "metric": "Funkcjonariusze",
+              "trend": "increasing",
+              "growth": 574.6666666666667,
+              "cagr": 12.672538319922321,
+              "significance": "high"
+            },
+            {
+              "metric": "Zarzuty",
+              "trend": "increasing",
+              "growth": -60.0,
+              "cagr": -5.565920916361112,
+              "significance": "high"
+            },
+            {
+              "metric": "Sprawy Operacyjne",
+              "trend": "decreasing",
+              "growth": -98.75,
+              "cagr": -26.875147861571946,
+              "significance": "high"
+            },
+            {
+              "metric": "Zatrzymania",
+              "trend": "increasing",
+              "growth": 31200.0,
+              "cagr": 68.6039197681668,
+              "significance": "high"
+            },
+            {
+              "metric": "Szkolenia",
+              "trend": "increasing",
+              "growth": 202300.0,
+              "cagr": 60.930424462792466,
+              "significance": "high"
+            },
+            {
+              "metric": "Sprawy Zako\u0144czone",
+              "trend": "decreasing",
+              "growth": -88.03589232303091,
+              "cagr": -12.42754606767501,
+              "significance": "high"
+            },
+            {
+              "metric": "Budzet",
+              "trend": "increasing",
+              "growth": -17.142857142857142,
+              "cagr": -2.0677910791137344,
+              "significance": "medium"
+            }
+          ],
+          "trends": [],
+          "efficiency_insights": [
+            {
+              "metric": "Average Success Rate",
+              "value": 1800.2476473501733,
+              "interpretation": "Bardzo wysoka skuteczno\u015b\u0107"
+            }
+          ],
+          "recommendations": [
+            {
+              "type": "data_completeness",
+              "priority": "high",
+              "text": "Pozyska\u0107 brakuj\u0105ce raporty dla lat: 2009, 2011, 2014, 2016, 2017, 2018, 2020"
+            },
+            {
+              "type": "data_quality",
+              "priority": "medium",
+              "text": "Zweryfikowa\u0107 3 znalezionych niesp\u00f3jno\u015bci w danych"
+            }
+          ],
+          "executive_summary": "Zidentyfikowano 9 kluczowych trend\u00f3w. Analiza efektywno\u015bci ujawni\u0142a kluczowe metryki wydajno\u015bci. Sformu\u0142owano 2 rekomendacji.",
+          "llm_interpretation": {
+            "trend_interpretation": "Interpretacja Trend\u00f3w**",
+            "efficiency_analysis": "Analiza Efektywno\u015bci**",
+            "strategic_insights": "Wnioski Strategiczne**",
+            "recommendations": [],
+            "full_text": "**Interpretacja Trend\u00f3w**\n\nZidentyfikowane trendy wskazuj\u0105 na dwie g\u0142\u00f3wne linie zmian w dzia\u0142alno\u015bci CBA:  \n- **Wzrost liczby spraw i zatrzyma\u0144** \u2013 zar\u00f3wno \u201esprawy w toku\u201d, jak i \u201eskazania\u201d rosn\u0105 wyk\u0142adniczo (CAGR 39,27\u202f% oraz 89,74\u202f%). W praktyce oznacza to, \u017ce jednostka obs\u0142uguje coraz wi\u0119ksz\u0105 liczb\u0119 przypadk\u00f3w, a liczba ostatecznych wyrok\u00f3w r\u00f3wnie\u017c wzrasta. Jest to sygna\u0142 zwi\u0119kszonej aktywno\u015bci operacyjnej i prawdopodobnie rosn\u0105cego obci\u0105\u017cenia pracownik\u00f3w.  \n- **Spadek spraw operacyjnych** \u2013 CAGR -26,88\u202f% oraz spadek o 98,8\u202f% wskazuj\u0105, \u017ce liczba spraw rozpoczynanych w danym roku dramatycznie maleje (z 320 do 2 w 2012). To mo\u017ce wynika\u0107 z restrukturyzacji procedur, zmiany priorytet\u00f3w lub problem\u00f3w z rekrutacj\u0105 specjalist\u00f3w.  \n\n**Prawdopodobne przyczyny zmian**  \n1. **Zmiana polityki \u015bledczej** \u2013 wy\u017csze \u201esprawy w toku\u201d i \u201eskazania\u201d mog\u0105 wskazywa\u0107 na bardziej agresywn\u0105 strategi\u0119 dochodzenia, co skutkuje d\u0142u\u017cszym procesem prawnym.  \n2. **Problemy kadrowe** \u2013 wzrost liczby funkcjonariuszy (CAGR 12,67\u202f%) przy jednoczesnym spadku spraw operacyjnych sugeruje, \u017ce nowe osoby s\u0105 zatrudniane, ale niekoniecznie do prowadzenia nowych spraw. Mo\u017ce to wynika\u0107 z niew\u0142a\u015bciwego dopasowania kompetencji lub braku szkole\u0144 (szkolenia 1\u201324 w latach).  \n3. **Zarz\u0105dzanie bud\u017cetem** \u2013 brak danych o bud\u017cecie poza 2012\u2011em oraz wysokie koszty na spraw\u0119 (17,5 mln z\u0142) wskazuj\u0105 na mo\u017cliwe przekroczenia koszt\u00f3w i niewystarczaj\u0105ce fundusze na rozw\u00f3j infrastruktury.  \n\n**Ocena trend\u00f3w**  \nTrendy s\u0105 mieszane: wzrost liczby spraw i skaza\u0144 mo\u017ce by\u0107 pozytywny w kontek\u015bcie skuteczno\u015bci, ale jednocze\u015bnie wskazuje na rosn\u0105ce koszty i obci\u0105\u017cenie operacyjne. Spadek spraw operacyjnych jest negatywny \u2013 sugeruje problem z generowaniem nowych przypadk\u00f3w lub utrat\u0119 efektywno\u015bci przyj\u0119tych procedur.\n\n---\n\n**Analiza Efektywno\u015bci**\n\n- **Cost per Case (17,5 mln z\u0142)** \u2013 to wska\u017anik znacznie przekraczaj\u0105cy standardowe koszty w sektorze publicznym. Brak por\u00f3wnania z bran\u017c\u0105 uniemo\u017cliwia pe\u0142n\u0105 ocen\u0119, ale warto\u015b\u0107 ta wskazuje na wysokie wydatki jednostkowe, co mo\u017ce wynika\u0107 z d\u0142ugotrwa\u0142ych post\u0119powa\u0144 i kosztownych zasob\u00f3w ludzkich.  \n- **Success Rate** \u2013 dane nie zawieraj\u0105 bezpo\u015brednio wska\u017anika sukcesu (np. liczba zako\u0144czonych spraw/rozpocz\u0119tych). Z dost\u0119pnych liczb mo\u017cna wywnioskowa\u0107, \u017ce \u201esprawy zako\u0144czone\u201d w 2010\u20112015 r. s\u0105 bliskie \u201esprawom operacyjnym\u201d, co sugeruje wysok\u0105 skuteczno\u015b\u0107 przy rozpoczynaniu nowych spraw (CAGR -26,88\u202f% spraw operacyjnych). Jednak\u017ce bez pe\u0142nego zestawienia nie mo\u017cna stwierdzi\u0107 jednoznacznie.  \n- **Zarzuty** \u2013 wzrost od 5 do 65 w latach wskazuje na rosn\u0105c\u0105 liczb\u0119 formalizacji przest\u0119pstw, co mo\u017ce zwi\u0119ksza\u0107 obci\u0105\u017cenie pracownik\u00f3w i koszty.\n\nPodsumowuj\u0105c: efektywno\u015b\u0107 wydaje si\u0119 by\u0107 **\u015brednia** \u2013 wysokie koszty na spraw\u0119 oraz brak pe\u0142nego obrazu success rate ograniczaj\u0105 mo\u017cliwo\u015b\u0107 wyci\u0105gni\u0119cia silnych wniosk\u00f3w. Warto zweryfikowa\u0107, czy wzrost liczby skaza\u0144 jest wynikiem skutecznej dzia\u0142alno\u015bci czy te\u017c nadmiernego obci\u0105\u017cenia procesowego.\n\n---\n\n**Wnioski Strategiczne**\n\n1. **Nadmierne koszty operacyjne** \u2013 17,5 mln z\u0142 na spraw\u0119 to sygna\u0142 nieefektywnego wykorzystania zasob\u00f3w. Potrzebna jest szczeg\u00f3\u0142owa analiza koszt\u00f3w i identyfikacja obszar\u00f3w o najwy\u017cszym wydatku (np. post\u0119powanie s\u0105dowe, ekspertyzy).  \n2. **Nier\u00f3wnowaga w generowaniu spraw** \u2013 spadek spraw operacyjnych przy rosn\u0105cej liczbie funkcjonariuszy sugeruje, \u017ce rekrutacja nie jest zgodna z potrzebami operacyjnymi. Konieczne jest przeanalizowanie proces\u00f3w selekcji i szkole\u0144 oraz dopasowanie kompetencji do wymaga\u0144 bie\u017c\u0105cych przypadk\u00f3w.  \n3. **Brak danych o bud\u017cecie** \u2013 jedynie 2012\u2011e ma podany bud\u017cet, co uniemo\u017cliwia ocen\u0119 trend\u00f3w finansowych. Nale\u017cy wprowadzi\u0107 system raportowania bud\u017cetu na rok z uwzgl\u0119dnieniem wszystkich koszt\u00f3w i przychod\u00f3w (np. dotacje).  \n4. **Wzrost liczby spraw w toku** \u2013 wskazuje na d\u0142ugie procedury, co mo\u017ce prowadzi\u0107 do \u201eop\u00f3\u017anie\u0144\u201d i obni\u017cenia satysfakcji spo\u0142ecznej. Konieczna jest optymalizacja proces\u00f3w i automatyzacja niekt\u00f3rych etap\u00f3w.\n\n---\n\n**Rekomendacje**\n\n| Priorytet | Typ rekomendacji | Szczeg\u00f3\u0142owa akcja |\n|-----------|------------------|-------------------|\n| 1 (kr\u00f3tko) | Operacyjne | **Audyt koszt\u00f3w na spraw\u0119** \u2013 przeprowadzi\u0107 szczeg\u00f3\u0142ow\u0105 analiz\u0119 wydatk\u00f3w w ostatnich 3 latach, zidentyfikowa\u0107 najdro\u017csze pozycje i zaproponowa\u0107 redukcj\u0119. |\n| 2 (kr\u00f3tko) | Operacyjne | **Rewizja proces\u00f3w przyjmowania spraw** \u2013 oceni\u0107, dlaczego \u201esprawy operacyjne\u201d spadaj\u0105; wprowadzi\u0107 nowe kryteria selekcji oraz system monitoringu efektywno\u015bci. |\n| 3 (kr\u00f3tko) | Operacyjne | **Zwi\u0119kszenie szkole\u0144** \u2013 podnie\u015b\u0107 liczb\u0119 szkole\u0144 z 1\u201324 do minimum 6 miesi\u0119cy rocznie, aby poprawi\u0107 kompetencje pracownik\u00f3w i skr\u00f3ci\u0107 czas post\u0119powa\u0144. |\n| 4 (d\u0142ugoterminowo) | Strategiczne | **Redefinicja modelu bud\u017cetowego** \u2013 wprowadzi\u0107 system prognozowania koszt\u00f3w oraz przychod\u00f3w na podstawie danych historycznych, aby unikn\u0105\u0107 przekrocze\u0144 i planowa\u0107 inwestycje. |\n| 5 (d\u0142ugoterminowo) | Strategiczne | **Optymalizacja kadrowa** \u2013 przeanalizowa\u0107 struktur\u0119 zatrudnienia, wprowadzi\u0107 programy retencji oraz dopasowanie kompetencji do potrzeb operacyjnych. |\n| 6 (d\u0142ugoterminowo) | Strategiczne | **Wdro\u017cenie systemu informatycznego** \u2013 automatyzacja dokumentacji i \u015bledzenia spraw w toku, co mo\u017ce obni\u017cy\u0107 koszty i przyspieszy\u0107 procesy. |\n\n*Zalecane dzia\u0142ania maj\u0105 na celu redukcj\u0119 koszt\u00f3w, zwi\u0119kszenie efektywno\u015bci oraz dopasowanie zasob\u00f3w do realnych potrzeb operacyjnych CBA.*"
+          }
+        }
+      },
+      "analysis_type": "professional_only"
+    },
+    {
+      "task": {
+        "task_id": "technical_1",
+        "category": "technical",
+        "agents": [
+          "architect",
+          "developer"
+        ],
+        "files": [
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/README.md"
+        ],
+        "file_count": 1,
+        "analyses": [
+          "technical_review",
+          "architecture_analysis"
+        ],
+        "priority": 60,
+        "investigation_type": "none"
+      },
+      "agent_results": [
+        {
+          "agent": "architect",
+          "output": "## 1\ufe0f\u20e3 Technical Review\n\n| # | Item | Description / Observation | Implication |\n|---|------|---------------------------|-------------|\n| **T1** | Project Purpose | The repository is a *test harness* for an autonomous document\u2011analysis system (`destiny_auto.py`). | Core functionality is to ingest various file types, classify them, and trigger appropriate agents. |\n| **T2** | Supported File Types | <ul><li>Documents: `.pdf`, `.docx`, `.doc`, `.txt`, `.md`</li><li>Data: `.xlsx`, `.xls`, `.csv`</li><li>Structured: `.json`, `.xml`, `.yaml`</li><li>Images: `.png`, `.jpg`, `.jpeg` (OCR)</li></ul> | The system must include parsers for each format and an OCR pipeline. |\n| **T3** | Command\u2011line Interface | `python destiny_auto.py testdocsLLM [--case-id <id>]` | Simple CLI; could be extended to a REST API or GUI in future. |\n| **T4** | Automatic Workflow | 1. Detect file type<br>2. Classify category<br>3. Select agents<br>4. Run analysis<br>5. Generate report | The workflow implies a plug\u2011in architecture where each \u201cagent\u201d is a separate module/worker. |\n| **T5** | Repository Hygiene | `.gitignore` excludes the test folder, preventing large binary files from being committed. | Good practice for keeping repo lightweight; however, documentation of the ignored content should be maintained elsewhere (e.g., external storage or CI artifacts). |\n| **T6** | Sample Data | Four example categories: financial reports, contracts, technical docs, statistical data. | These samples indicate typical use\u2011cases; the system must handle both structured data extraction and unstructured text summarization. |\n\n### Key Technical Findings\n1. **Modular Design Needed** \u2013 The \u201cagent\u201d selection suggests a dynamic plugin or micro\u2011service pattern.\n2. **Multi\u2011Format Parsing Stack** \u2013 Requires libraries such as `PyPDF2`, `python-docx`, `pandas` for CSV/XLSX, `lxml`/`json`, and OCR via `Tesseract` or an API.\n3. **Scalability Concerns** \u2013 If many large PDFs are processed concurrently, memory usage can spike; consider streaming parsing or chunking.\n4. **Error Handling** \u2013 The README does not mention logging or error reporting; robust exception handling is essential for production use.\n\n## 2\ufe0f\u20e3 Architecture Analysis\n\n| Layer | Responsibility | Suggested Technologies | Notes |\n|-------|----------------|------------------------|-------|\n| **Input Layer** | File ingestion & format detection | `watchdog` (for folder monitoring), MIME sniffing, file extension checks | Could expose a REST endpoint for uploads in future. |\n| **Classification Layer** | Determine document category | Machine learning classifiers (e.g., TF\u2011IDF + SVM) or rule\u2011based taggers | Use pre\u2011trained embeddings for better accuracy on Polish text. |\n| **Agent Registry** | Map category \u2192 agent(s) | JSON/YAML config, plugin loader (`importlib`) | Enables dynamic addition of new agents without code changes. |\n| **Processing Layer** | Execute domain\u2011specific analysis | Separate worker processes or threads; use `celery` for distributed queues | Agents can be written in any language if exposed via RPC/HTTP. |\n| **Report Generation** | Produce consolidated output | Markdown / PDF rendering (e.g., `WeasyPrint`, `reportlab`) | Store reports locally and optionally upload to S3 or SharePoint. |\n| **Orchestration** | Orchestrate workflow, handle retries | CLI driver (`argparse`), optional Docker Compose for isolation | Consider a lightweight orchestrator like Prefect if pipelines grow complex. |\n\n### Patterns & Trends\n\n- **Plug\u2011in/Agent Pattern** \u2013 Allows adding new document types without touching core logic.\n- **Data\u2011First Processing** \u2013 Emphasis on classification before analysis suggests the system is *data\u2011centric*.\n- **Command\u2011Line Driven** \u2013 Indicates a batch\u2011processing use case rather than real\u2011time streaming.\n\n### Risks & Opportunities\n\n| Risk | Mitigation |\n|------|------------|\n| **Large File Memory Footprint** | Stream parsing, chunking PDFs, offload heavy tasks to workers. |\n| **OCR Quality for Polish Characters** | Use Tesseract with Polish language pack; validate accuracy on sample OCR images. |\n| **Missing Error Reporting** | Implement structured logging (`logging` + `loguru`) and a health\u2011check endpoint. |\n| **Scalability of Agent Execution** | Containerize agents, use message queues for load balancing. |\n\n| Opportunity | Benefit |\n|-------------|---------|\n| **Expose API** | Turn CLI into RESTful service; easier integration with other systems. |\n| **ML\u2011Based Classification** | Higher accuracy on mixed\u2011content documents; potential to auto\u2011tag new categories. |\n| **Cloud Storage Integration** | Store processed reports and raw files in S3/GCS, enabling audit trails. |\n\n## 3\ufe0f\u20e3 Summary of Insights for the Architect\n\n1. **Design a modular agent framework** \u2013 Use dynamic loading so that new document types can be added without redeploying the core system.\n2. **Prioritize streaming & chunked processing** \u2013 Especially for PDFs and large CSV/XLSX files to keep memory usage predictable.\n3. **Implement robust logging and monitoring** \u2013 Even though the current CLI is simple, production deployments will need observability.\n4. **Plan for language\u2011specific OCR support** \u2013 Polish characters can be problematic; ensure proper training data or use a dedicated OCR service.\n5. **Consider containerization from the start** \u2013 Docker + Compose (or Kubernetes) will simplify scaling agents and managing dependencies.\n\n---\n\n### Confidence Levels\n\n| Aspect | Confidence | Reasoning |\n|--------|------------|-----------|\n| Overall system architecture understanding | 0.95 | Explicit workflow described in README; standard patterns apply. |\n| Specific tech stack choices | 0.80 | Inferred from file types, but exact libraries are not listed. |\n| Risk assessment accuracy | 0.90 | Common issues for similar systems, no contradictory evidence. |\n\n**[SZACUNEK]** \u2013 Estimated memory usage per PDF ~200\u202fMB if parsed fully; can be reduced to <50\u202fMB with streaming.\n\n**[BRAK DANYCH]** \u2013 No explicit performance benchmarks or concurrency limits provided in the README.",
+          "duration": 8.701482057571411,
+          "tokens_used": 1996,
+          "tokens_saved": 0,
+          "confidence": 0.85,
+          "extracted_metrics": {}
+        }
+      ]
+    }
+  ]
+}

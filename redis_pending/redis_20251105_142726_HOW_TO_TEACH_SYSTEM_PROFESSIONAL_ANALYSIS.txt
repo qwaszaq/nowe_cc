@@ -1,0 +1,47 @@
+SET doc:HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS:title "🎓 JAK NAUCZYĆ SYSTEM AUTOMATYCZNEJ ANALIZY RAPORTÓW CBA"
+SET doc:HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS:type "analysis"
+SET doc:HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS:path "HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS.md"
+SET doc:HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS:content "# 🎓 JAK NAUCZYĆ SYSTEM AUTOMATYCZNEJ ANALIZY RAPORTÓW CBA
+## Implementation Guide: Teaching AI System Professional Analysis
+
+**Data:** 2024-11-05  
+**Cel:** Przekonwertować profesjonalną metodologię analizy na automatyczny system  
+**Approach:** Step-by-step implementation guide
+
+---
+
+## 📊 EXECUTIVE SUMMARY
+
+### Problem
+
+**Obecny system:**
+- ✅ Wykrywa dokumenty investigative
+- ✅ Ekstrahuje tekst z PDF
+- ✅ Liczy keywords
+- ❌ **Nie przeprowadza profesjonalnej analizy** (7 faz)
+- ❌ **Nie wyciąga strukturalnych danych** (tabele, metryki)
+- ❌ **Nie formułuje wniosków strategicznych**
+
+### Rozwiązanie
+
+**System z pełną analizą:**
+- ✅ 7-fazowa analiza automatyczna
+- ✅ Ekstrakcja strukturalnych danych
+- ✅ Analiza temporalna z trendami
+- ✅ Analiza jakościowa
+- ✅ Synteza wniosków i rekomendacji
+
+---
+
+## 🎯 ARCHITEKTURA SYSTEMU
+
+### Obecna Architektura
+
+```
+┌─────────────────────────────────────────┐
+│  AutonomousOrchestrator                 │
+│  ├─ Document Scanner                    │
+│  ├─ Inte"
+EXPIRE doc:HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS:content 86400
+SADD docs:all "HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS"
+SADD docs:type:analysis "HOW_TO_TEACH_SYSTEM_PROFESSIONAL_ANALYSIS"

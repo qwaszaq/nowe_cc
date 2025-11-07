@@ -1,0 +1,183 @@
+# ============================================
+# DESTINY DEVELOPMENT ENVIRONMENT
+# ============================================
+# Purpose: Framework development and testing
+# Data: CBA reports, test data, experiments
+# Access: Full read/write
+#
+# PORTS: Different from investigation to avoid conflicts
+#   - PostgreSQL: 5435 (investigation uses 5432, 5433, 5434)
+#   - Qdrant: 6335-6336 (investigation uses 6333-6334)
+#   - Neo4j: 7475, 7688 (investigation uses 7474, 7687)
+#   - Elasticsearch: 9201 (investigation uses 9200)
+#   - Redis: 6381 (investigation uses 6379, 6380)
+# ============================================
+
+version: '3.8'
+
+services:
+  # Development PostgreSQL with pgvector
+  postgres:
+    image: ankane/pgvector:latest
+    container_name: destiny-postgres
+    environment:
+      POSTGRES_DB: destiny_dev
+      POSTGRES_USER: destiny
+      POSTGRES_PASSWORD: destiny_dev_2024
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5435:5432"  # ← DIFFERENT from investigation (5432, 5433, 5434)
+    volumes:
+      - destiny_postgres_data:/var/lib/postgresql/data
+      - ./sql/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U destiny -d destiny_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - destiny_dev_network
+    restart: unless-stopped
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.purpose=framework-testing"
+
+  # Development Qdrant Vector Database
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: destiny-qdrant
+    ports:
+      - "6335:6333"  # ← DIFFERENT from investigation (6333)
+      - "6336:6334"
+    volumes:
+      - destiny_qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    # Healthcheck disabled - Qdrant image is minimal (no curl/wget/pgrep)
+    # Service is healthy if container is running (API tested: works!)
+    healthcheck:
+      disable: true
+    networks:
+      - destiny_dev_network
+    restart: unless-stopped
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.purpose=vector-embeddings"
+
+  # Development Neo4j Graph Database
+  neo4j:
+    image: neo4j:5.13-community
+    container_name: destiny-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/destiny_dev_2024
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_memory_heap_max__size: 1G
+      NEO4J_dbms_memory_pagecache_size: 512M
+    ports:
+      - "7475:7474"  # ← DIFFERENT from investigation (7474)
+      - "7688:7687"  # ← DIFFERENT from investigation (7687)
+    volumes:
+      - destiny_neo4j_data:/data
+      - destiny_neo4j_logs:/logs
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:7474 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    networks:
+      - destiny_dev_network
+    restart: unless-stopped
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.purpose=graph-relationships"
+
+  # Development Elasticsearch
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: destiny-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - bootstrap.memory_lock=true
+    ports:
+      - "9201:9200"  # ← DIFFERENT from investigation (9200)
+      - "9301:9300"
+    volumes:
+      - destiny_elasticsearch_data:/usr/share/elasticsearch/data
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    networks:
+      - destiny_dev_network
+    restart: unless-stopped
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.purpose=document-search"
+
+  # Development Redis (for caching and hot memory)
+  redis:
+    image: redis:7-alpine
+    container_name: destiny-redis
+    command: redis-server --appendonly yes
+    ports:
+      - "6381:6379"  # ← DIFFERENT from investigation (6379, 6380)
+    volumes:
+      - destiny_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - destiny_dev_network
+    restart: unless-stopped
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.purpose=caching"
+
+networks:
+  destiny_dev_network:
+    name: destiny_dev_network
+    driver: bridge
+    labels:
+      - "com.destiny.environment=development"
+
+volumes:
+  destiny_postgres_data:
+    name: destiny_postgres_data
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.backup=optional"
+  
+  destiny_qdrant_data:
+    name: destiny_qdrant_data
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.backup=optional"
+  
+  destiny_neo4j_data:
+    name: destiny_neo4j_data
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.backup=optional"
+  
+  destiny_neo4j_logs:
+    name: destiny_neo4j_logs
+  
+  destiny_elasticsearch_data:
+    name: destiny_elasticsearch_data
+    labels:
+      - "com.destiny.environment=development"
+      - "com.destiny.backup=optional"
+  
+  destiny_redis_data:
+    name: destiny_redis_data

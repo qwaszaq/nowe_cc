@@ -1,0 +1,28 @@
+SET doc:BENCHMARK_COMPARISON_2023:title "Financial Extraction Quality Benchmark - Grupa Azoty 2023"
+SET doc:BENCHMARK_COMPARISON_2023:type "general_documentation"
+SET doc:BENCHMARK_COMPARISON_2023:path "BENCHMARK_COMPARISON_2023.md"
+SET doc:BENCHMARK_COMPARISON_2023:content "# Financial Extraction Quality Benchmark - Grupa Azoty 2023
+
+**Test Date:** 2025-11-06
+**Source Document:** Grupa Azoty Tarnów - Śródroczne skrócone skonsolidowane sprawozdanie finansowe (6-month report ending June 30, 2023)
+**Document Size:** 2.2MB, 54 pages
+**Language:** Polish
+**Currency:** Thousands of Polish złoty (tys. zł)
+
+---
+
+## 🎯 Executive Summary
+
+This benchmark compares three extraction methods against the same Polish financial report:
+
+| System | Quality Score | Completeness | Accuracy | Processing Time | Production Ready? |
+|--------|--------------|--------------|----------|-----------------|-------------------|
+| **Claude Manual** | **100.0%** | 9/9 (100%) | 100% | ~60 seconds | ✅ Gold Standard |
+| **Local Regex** | **80.6%** | 7/8 (87.5%) | 100% | 10.6 seconds | 🟡 Acceptable |
+| **AI E5+LLM** | **33.7%** | 4/8 (50%) | 0% (wrong table) | 11.7 seconds | ❌ Needs Fix |
+
+**Key Findings:**
+- ✅ **Local Regex System is ACCURATE** - All 7 extracted values match gold standard (10"
+EXPIRE doc:BENCHMARK_COMPARISON_2023:content 86400
+SADD docs:all "BENCHMARK_COMPARISON_2023"
+SADD docs:type:general_documentation "BENCHMARK_COMPARISON_2023"

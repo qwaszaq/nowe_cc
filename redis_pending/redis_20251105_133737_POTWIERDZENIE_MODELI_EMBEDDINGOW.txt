@@ -1,0 +1,58 @@
+SET doc:POTWIERDZENIE_MODELI_EMBEDDINGOW:title "✅ POTWIERDZENIE MODELI EMBEDDINGÓW W LMSTUDIO"
+SET doc:POTWIERDZENIE_MODELI_EMBEDDINGOW:type "general_documentation"
+SET doc:POTWIERDZENIE_MODELI_EMBEDDINGOW:path "docs/implementation/POTWIERDZENIE_MODELI_EMBEDDINGOW.md"
+SET doc:POTWIERDZENIE_MODELI_EMBEDDINGOW:content "# ✅ POTWIERDZENIE MODELI EMBEDDINGÓW W LMSTUDIO
+
+**Data weryfikacji:** 2024-11-05  
+**Serwer:** http://192.168.200.226:1234/v1
+
+---
+
+## 📊 DOSTĘPNE MODELE EMBEDDINGÓW
+
+### ✅ **1. JINA V4 TEXT RETRIEVAL**
+
+```
+Model ID:     jina-embeddings-v4-text-retrieval
+Dimensions:   1024 ✅
+Status:       ✅ DZIAŁA
+Max Tokens:   8192
+Endpoint:     http://192.168.200.226:1234/v1/embeddings
+```
+
+**Test:**
+```python
+✅ Test zakończony sukcesem
+✅ Wymiary: 1024
+✅ Response time: ~0.03s
+```
+
+---
+
+### ✅ **2. E5-LARGE MULTILINGUAL (INTFLOAT)**
+
+```
+Model ID:     text-embedding-multilingual-e5-large-instruct
+Dimensions:   1024 ✅
+Status:       ✅ DZIAŁA
+Max Tokens:   512
+Endpoint:     http://192.168.200.226:1234/v1/embeddings
+```
+
+**Test:**
+```python
+✅ Test zakończony sukcesem
+✅ Wymiary: 1024
+✅ Response time: ~0.02s
+```
+
+---
+
+## 🎯 PODSUMOWANIE
+
+| Model | Status | Dimensions | Max Tokens | Use Case |
+|-------|--------|------------|------------|----------|
+| **Jina v4** | ✅ Działa | 1024 | 8192 | Tabele, długie dokum"
+EXPIRE doc:POTWIERDZENIE_MODELI_EMBEDDINGOW:content 86400
+SADD docs:all "POTWIERDZENIE_MODELI_EMBEDDINGOW"
+SADD docs:type:general_documentation "POTWIERDZENIE_MODELI_EMBEDDINGOW"

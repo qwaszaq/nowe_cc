@@ -1,0 +1,9 @@
+{
+  "file_path": "OCENA_JAKOSCI_ANALIZY.md",
+  "document_type": "general_documentation",
+  "title": "\u274c OCENA JAKO\u015aCI ANALIZY - SZCZEG\u00d3\u0141OWA WERYFIKACJA",
+  "detected_at": "2025-11-05T14:49:52.238321",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \u274c OCENA JAKO\u015aCI ANALIZY - SZCZEG\u00d3\u0141OWA WERYFIKACJA\n\n## \ud83d\udcca OCENA KO\u0143COWA: 1/5 (BARDZO S\u0141ABA)\n\n**Znalezionych problem\u00f3w:** 10\n\n---\n\n## \ud83d\udd0d ZIDENTYFIKOWANE PROBLEMY\n\n### 1. \u274c NIESP\u00d3JNO\u015aCI TREND\u00d3W (2 b\u0142\u0119dy)\n\n#### Bud\u017cet:\n- **Trend:** increasing\n- **Growth:** -17.1%\n- **Zakres:** 35,000,000 \u2192 29,000,000\n- **Problem:** System oznaczy\u0142 trend jako \"increasing\" ale growth jest ujemny i warto\u015b\u0107 faktycznie spad\u0142a!\n\n#### Zarzuty:\n- **Trend:** increasing  \n- **Growth:** -60.0%\n- **Zakres:** 5 \u2192 2\n- **Problem:*"
+}

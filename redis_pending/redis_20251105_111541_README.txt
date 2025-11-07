@@ -1,0 +1,45 @@
+SET doc:README:title "Test Documents for LLM Testing"
+SET doc:README:type "general_documentation"
+SET doc:README:path "testdocsLLM/README.md"
+SET doc:README:content "# Test Documents for LLM Testing
+
+## Folder do testowania systemu
+
+Wrzuć tutaj dokumenty testowe (PDF, Excel, txt, etc.) do przetestowania autonomicznego systemu.
+
+## Jak używać:
+
+```bash
+# Po dodaniu plików do tego folderu, uruchom:
+python destiny_auto.py testdocsLLM
+
+# Lub z custom case ID:
+python destiny_auto.py testdocsLLM --case-id test_001
+```
+
+## Obsługiwane formaty:
+
+- **Dokumenty:** .pdf, .docx, .doc, .txt, .md
+- **Dane:** .xlsx, .xls, .csv
+- **Strukturalne:** .json, .xml, .yaml
+- **Obrazy:** .png, .jpg, .jpeg (OCR)
+
+## Przykładowe pliki do testowania:
+
+1. **Raporty finansowe** - PDF/Excel z danymi finansowymi
+2. **Kontrakty** - PDF/Word z umowami
+3. **Dokumentacja techniczna** - txt/md z specyfikacjami
+4. **Dane** - CSV/Excel ze statystykami
+
+System automatycznie:
+- Zidentyfikuje typ każdego pliku
+- Sklasyfikuje kategorię
+- Wybierze odpowiednich agentów
+- Przeprowadzi analizę
+- Wygeneruje raport
+
+**Folder jest w .gitignore - pliki nie trafią do repozytorium.**
+"
+EXPIRE doc:README:content 86400
+SADD docs:all "README"
+SADD docs:type:general_documentation "README"

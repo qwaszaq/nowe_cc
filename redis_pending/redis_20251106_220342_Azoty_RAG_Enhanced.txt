@@ -1,0 +1,34 @@
+SET doc:Azoty_RAG_Enhanced:title "Comprehensive Intelligence Report: Grupa Azoty S.A."
+SET doc:Azoty_RAG_Enhanced:type "general_documentation"
+SET doc:Azoty_RAG_Enhanced:path "output/intelligence_reports/Azoty_RAG_Enhanced.md"
+SET doc:Azoty_RAG_Enhanced:content "# Comprehensive Intelligence Report: Grupa Azoty S.A.
+
+**Report Date:** 2025-11-06
+**Industry:** Chemicals & Fertilizers
+**Currency:** PLN (thousands)
+**Analysis Period:** 2023
+**Analysis Method:** Local LLM Intelligence System (Multi-Pass Analysis)
+
+---
+
+## EXECUTIVE SUMMARY
+
+**Financial Health Score:** 45/100
+**Overall Risk Level:** N/A
+**Investment Recommendation:** HOLD
+
+This comprehensive report analyzes the company across three critical dimensions: financial health, risk assessment, and investment viability. The analysis is based on automated extraction of financial statements, validated through accounting equation verification.
+
+### Key Findings
+
+
+
+
+
+**BASE CASE**
+Most Likely Outcome**
+
+The most realistic scenario is a **gradual stabilization** rather than an immediate turnaround. In the short‑term (next 12–18 months), Grupa Azoty will likely continue to post operating losses but may improve cash flow coverage as it implements cost‑control measures and renegotiates feedstock con"
+EXPIRE doc:Azoty_RAG_Enhanced:content 86400
+SADD docs:all "Azoty_RAG_Enhanced"
+SADD docs:type:general_documentation "Azoty_RAG_Enhanced"

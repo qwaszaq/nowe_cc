@@ -1,0 +1,9 @@
+{
+  "file_path": "ANALIZA_JAKOSCI_PROFESSIONAL_ANALYZER.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udcca ANALIZA JAKO\u015aCI PROFESSIONAL ANALYZER",
+  "detected_at": "2025-11-05T14:38:44.939437",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udcca ANALIZA JAKO\u015aCI PROFESSIONAL ANALYZER\n## Szczeg\u00f3\u0142owy raport z testu pe\u0142nej analizy CBA\n\n**Data testu:** 2024-11-05  \n**Case ID:** professional_analysis_20251105_143753  \n**Czas wykonania:** 30.6s  \n**Ocena jako\u015bci:** 5/5 (100%)\n\n---\n\n## \u2705 SUKCESY\n\n### 1. Professional Analyzer zosta\u0142 uruchomiony\n- \u2705 **Status:** Uruchomiony poprawnie\n- \u2705 **Fazy wykonane:** 7/7 (100%)\n- \u2705 **Routing:** Poprawnie przekierowany do Professional Analyzer\n\n### 2. Ekstrakcja danych ilo\u015bciowych\n- \u2705 **Lata z danymi:** 1"
+}

@@ -1,0 +1,9 @@
+{
+  "file_path": "IMPLEMENTACJA_POPRAWEK.md",
+  "document_type": "general_documentation",
+  "title": "\u2705 IMPLEMENTACJA POPRAWEK JAKO\u015aCI ANALIZY",
+  "detected_at": "2025-11-05T14:51:22.113060",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \u2705 IMPLEMENTACJA POPRAWEK JAKO\u015aCI ANALIZY\n\n## \ud83d\udccb Zaimplementowane Poprawki\n\n### 1. \u2705 Parsowanie Tabel PDF (pdfplumber)\n\n**Lokalizacja:** `src/analysis/quantitative_extractor.py`\n\n**Zmiany:**\n- Dodano import `pdfplumber`\n- Dodano metod\u0119 `_extract_from_pdf_tables()` kt\u00f3ra:\n  - Ekstrahuje tabele z PDF\n  - Szuka metryk w nag\u0142\u00f3wkach tabel\n  - Ekstrahuje warto\u015bci z kom\u00f3rek\n  - Aplikuje sanity checks\n- Priorytetyzacja: warto\u015bci z tabel maj\u0105 `VERIFIED` confidence (wy\u017cszy ni\u017c regex)\n\n**Korzy\u015bci:**\n- Leps"
+}

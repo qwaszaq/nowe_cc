@@ -1,0 +1,9 @@
+{
+  "file_path": "PRECYZYJNY_PODZIAL.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udd12 PRECYZYJNY PODZIA\u0141: Investigation vs Development",
+  "detected_at": "2025-11-05T12:13:05.917773",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd12 PRECYZYJNY PODZIA\u0141: Investigation vs Development\n\n**Data:** 5 Listopada 2024  \n**Cel:** Absolutna separacja danych \u015bledczych od rozwoju systemu\n\n---\n\n## \ud83d\udccb INWENTARYZACJA - Co Mamy Obecnie\n\n### **INVESTIGATION ENVIRONMENT (Production Cases)**\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Container                \u2502 Ports    \u2502 Purpose            \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 sms-postgres             \u2502 5432     \u2502 SMS investigations \u2502\n\u2502 sms"
+}

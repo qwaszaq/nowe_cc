@@ -1,0 +1,9 @@
+{
+  "file_path": "FINAL_EXTRACTION_REPORT.md",
+  "document_type": "analysis",
+  "title": "Final Extraction Quality Report: Manual vs Automated Comparison",
+  "detected_at": "2025-11-06T17:05:29.702710",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Final Extraction Quality Report: Manual vs Automated Comparison\n\n**Date:** 2025-11-06\n**Analyst:** Claude Code\n**Test Subject:** Grupa Azoty Tarn\u00f3w Annual Report 2024\n**Objective:** Compare automated extraction quality against manual PDF inspection\n\n---\n\n## Executive Summary\n\n**Technology Stack:** \u2705 **WORKING PERFECTLY**\n- Hybrid pdfplumber + Camelot extraction: **36.5% numeric cell density** (excellent)\n- E5 semantic matching: **5/5 matches**, 89.2% average confidence\n- Polish number parsing:"
+}

@@ -1,0 +1,9 @@
+{
+  "file_path": "reports/cba_weryfikacja_i_rekomendacje.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udd0d WERYFIKACJA ANALIZY MERYTORYCZNEJ CBA - RAPORT KRYTYCZNY",
+  "detected_at": "2025-11-05T13:34:43.588019",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd0d WERYFIKACJA ANALIZY MERYTORYCZNEJ CBA - RAPORT KRYTYCZNY\n\n**Data weryfikacji:** 2024-11-05  \n**Weryfikator:** Analiza rzeczywistych danych z PDF-\u00f3w  \n**Por\u00f3wnanie:** Analiza LLM vs. Rzeczywiste dane z dokument\u00f3w\n\n---\n\n## \ud83d\udcca EXECUTIVE SUMMARY\n\n### \u26a0\ufe0f **G\u0141\u00d3WNY PROBLEM: LLM GENEROWA\u0141 WYMY\u015aLONE DANE LICZBOWE**\n\nAnaliza przeprowadzona przez LLM (LMStudio) zawiera\u0142a **szczeg\u00f3\u0142owe dane liczbowe** (np. liczba spraw operacyjnych, bud\u017cet, zabezpieczone \u015brodki), kt\u00f3re **NIE zosta\u0142y wyekstrahowane z rzec"
+}

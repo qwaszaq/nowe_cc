@@ -1,0 +1,9 @@
+{
+  "file_path": "PIPELINE_ANALITYCZNY_PELNY_OPIS.md",
+  "document_type": "team_documentation",
+  "title": "\ud83d\udd04 PIPELINE ANALITYCZNY - PE\u0141NY OPIS PROCESU",
+  "detected_at": "2025-11-05T14:35:57.764141",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd04 PIPELINE ANALITYCZNY - PE\u0141NY OPIS PROCESU\n## Jak dzia\u0142a system analizy dokument\u00f3w CBA\n\n**Data:** 2024-11-05  \n**System:** Autonomous Document Analysis System  \n**Zakres:** Od skanowania folderu do profesjonalnej analizy 7-fazowej\n\n---\n\n## \ud83d\udcca OVERVIEW - ARCHITEKTURA SYSTEMU\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502  USER INPUT: folder_path + case_id (optional)              \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           "
+}

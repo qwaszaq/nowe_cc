@@ -1,0 +1,63 @@
+SET doc:NEO4J_STATUS:title "🕸️ NEO4J STATUS - Weryfikacja"
+SET doc:NEO4J_STATUS:type "status_report"
+SET doc:NEO4J_STATUS:path "NEO4J_STATUS.md"
+SET doc:NEO4J_STATUS:content "# 🕸️ NEO4J STATUS - Weryfikacja
+
+**Data:** 5 Listopada 2024
+
+---
+
+## ✅ NEO4J DZIAŁA!
+
+```bash
+# Kontener uruchomiony:
+sms-neo4j    Up 15 hours    0.0.0.0:7474->7474/tcp
+
+# HTTP endpoint odpowiada:
+curl http://localhost:7474
+# → {"bolt_routing":"neo4j://localhost:7687", ...}
+```
+
+**Status:** ✅ Neo4j is UP and running!
+
+---
+
+## ⚠️ PROBLEM: Autoryzacja
+
+```
+Neo4j Client.available = False
+
+Błąd: Rate limit / wrong password
+```
+
+**Przyczyna:**
+- Stary kontener `sms-neo4j` (nie nasz `destiny_neo4j`)
+- Nieznane hasło (lub stary rate limit)
+- Nasz kontener `destiny_neo4j` nie może wystartować (port zajęty)
+
+---
+
+## 🔧 ROZWIĄZANIE
+
+### **Opcja 1: Użyj istniejącego Neo4j**
+
+```bash
+# Sprawdź hasło:
+docker exec sms-neo4j cat /var/lib/neo4j/data/dbms/auth
+
+# Lub resetuj hasło:
+docker exec sms-neo4j neo4j-admin set-initial-password destiny_dev_2024
+```
+
+### **Opcja 2: Zastąp starym kontenerem**
+
+```bash
+# Stop stary:
+docker stop sms-neo4j
+docker rm sms-neo4j
+
+# Start nowy:
+docker-compose up -d neo4j"
+EXPIRE doc:NEO4J_STATUS:content 86400
+SADD docs:all "NEO4J_STATUS"
+SADD docs:type:status_report "NEO4J_STATUS"

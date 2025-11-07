@@ -1,0 +1,9 @@
+{
+  "file_path": "GRAF_RELACJI_STATUS.md",
+  "document_type": "status_report",
+  "title": "\ud83d\udd78\ufe0f GRAF RELACJI - Status Implementacji",
+  "detected_at": "2025-11-05T12:01:15.352763",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd78\ufe0f GRAF RELACJI - Status Implementacji\n\n**Data:** 5 Listopada 2024  \n**Pytanie:** Czy mamy lokalny graf relacji z heurystyk\u0105 i semantyk\u0105?\n\n---\n\n## \ud83d\udcca SZYBKA ODPOWIED\u0179\n\n```\nNeo4j (Full Graph DB):        \u2705 Zaimplementowany (ale offline)\nLokalny In-Memory Graph:      \u274c NIE zaimplementowany\nHeurystyczne Entity Extract:  \u274c NIE zaimplementowany\nSemantyczne Relationships:    \u274c NIE zaimplementowany\n```\n\n---\n\n## \u2705 CO MAMY: Neo4j Client\n\n**Lokalizacja:** `src/data/neo4j_client.py`\n\n### **Funkcjonalno\u015b\u0107:*"
+}

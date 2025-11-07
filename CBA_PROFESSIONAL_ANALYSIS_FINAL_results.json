@@ -1,0 +1,41 @@
+{
+  "structure": {
+    "total_documents": 0,
+    "structures": {}
+  },
+  "quantitative": {
+    "metrics": {}
+  },
+  "qualitative": {
+    "narrative": {}
+  },
+  "temporal": {
+    "trends": {}
+  },
+  "comparative": {
+    "efficiency": {}
+  },
+  "critical": {
+    "missing_years": [
+      2009,
+      2016,
+      2018,
+      2020
+    ],
+    "data_completeness": {},
+    "limitations": [
+      "Analysis based on text extraction only",
+      "Tables may contain additional data",
+      "No OCR for scanned documents"
+    ]
+  },
+  "synthesis": {
+    "key_findings": [],
+    "recommendations": [
+      {
+        "type": "data_completeness",
+        "text": "Pozyskać brakujące raporty: 2009, 2016, 2018, 2020"
+      }
+    ]
+  }
+}

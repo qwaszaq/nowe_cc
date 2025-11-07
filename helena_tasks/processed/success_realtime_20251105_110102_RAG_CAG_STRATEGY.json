@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/architecture/RAG_CAG_STRATEGY.md",
+  "document_type": "architecture",
+  "title": "\ud83d\ude80 RAG + CAG Strategy - Context Window Revolution",
+  "detected_at": "2025-11-05T11:01:02.418579",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\ude80 RAG + CAG Strategy - Context Window Revolution\n\n## Problem: 44k vs 200k Context Window\n\n```\nLOCAL LLM:    44,000 tokens  \ud83d\ude30\nCLAUDE:      200,000 tokens  \ud83c\udf89\n\nChallenge: 100 documents, 455 processing runs\nWithout optimization: IMPOSSIBLE for local LLM\n```\n\n## Solution: RAG + CAG = Magic! \u2728\n\n### What is CAG (Cache-Augmented Generation)?\n\n**CAG = \"Freezing\" static prompt components in KV cache**\n\n```python\n# WITHOUT CAG (traditional):\nfor run in range(455):\n    prompt = [\n        system_instructio"
+}

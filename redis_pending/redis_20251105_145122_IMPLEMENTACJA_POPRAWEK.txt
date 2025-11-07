@@ -1,0 +1,44 @@
+SET doc:IMPLEMENTACJA_POPRAWEK:title "✅ IMPLEMENTACJA POPRAWEK JAKOŚCI ANALIZY"
+SET doc:IMPLEMENTACJA_POPRAWEK:type "general_documentation"
+SET doc:IMPLEMENTACJA_POPRAWEK:path "IMPLEMENTACJA_POPRAWEK.md"
+SET doc:IMPLEMENTACJA_POPRAWEK:content "# ✅ IMPLEMENTACJA POPRAWEK JAKOŚCI ANALIZY
+
+## 📋 Zaimplementowane Poprawki
+
+### 1. ✅ Parsowanie Tabel PDF (pdfplumber)
+
+**Lokalizacja:** `src/analysis/quantitative_extractor.py`
+
+**Zmiany:**
+- Dodano import `pdfplumber`
+- Dodano metodę `_extract_from_pdf_tables()` która:
+  - Ekstrahuje tabele z PDF
+  - Szuka metryk w nagłówkach tabel
+  - Ekstrahuje wartości z komórek
+  - Aplikuje sanity checks
+- Priorytetyzacja: wartości z tabel mają `VERIFIED` confidence (wyższy niż regex)
+
+**Korzyści:**
+- Lepsza jakość ekstrakcji danych z tabel
+- Większa precyzja niż regex
+- Wyższy confidence dla danych z tabel
+
+---
+
+### 2. ✅ Sanity Checks dla Wartości
+
+**Lokalizacja:** `src/analysis/quantitative_extractor.py`
+
+**Zmiany:**
+- Dodano `sanity_limits` dla każdej metryki:
+  - sprawy_operacyjne: 10,000 max
+  - sprawy_zakończone: 10,000 max
+  - sprawy_w_toku: 10,000 max
+  - zatrzymania: 5,000 max
+  - zarzuty: 5,000 max
+  - skazania: 3,000 max
+  - budzet: 500,000,000 zł max (500 mln)
+  - funkcjonariusze: 5,0"
+EXPIRE doc:IMPLEMENTACJA_POPRAWEK:content 86400
+SADD docs:all "IMPLEMENTACJA_POPRAWEK"
+SADD docs:type:general_documentation "IMPLEMENTACJA_POPRAWEK"

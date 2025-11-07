@@ -1,0 +1,42 @@
+SET doc:STRATEGIA_EMBEDDINGOW_JINA_VS_E5:title "🎯 STRATEGIA WYBORU EMBEDDINGÓW: JINA vs E5/INTFLOAT"
+SET doc:STRATEGIA_EMBEDDINGOW_JINA_VS_E5:type "architecture"
+SET doc:STRATEGIA_EMBEDDINGOW_JINA_VS_E5:path "docs/implementation/STRATEGIA_EMBEDDINGOW_JINA_VS_E5.md"
+SET doc:STRATEGIA_EMBEDDINGOW_JINA_VS_E5:content "# 🎯 STRATEGIA WYBORU EMBEDDINGÓW: JINA vs E5/INTFLOAT
+
+**Data:** 2024-11-05  
+**Wersja:** 1.0  
+**Kontekst:** Analiza raportów CBA i dokumentów strukturalnych
+
+---
+
+## 📊 EXECUTIVE SUMMARY
+
+Szczegółowa strategia wyboru między **Jina v4** i **E5-Large (IntFloat)** dla różnych typów danych w systemie analizy CBA.
+
+**Kluczowe różnice:**
+- **Jina v4:** Tabele, dane strukturalne, długie dokumenty (8192 tokens)
+- **E5-Large:** Ogólny tekst, wielojęzyczność, krótkie dokumenty (512 tokens)
+
+---
+
+## 🔍 CHARAKTERYSTYKA MODELI
+
+### **1. JINA V4 TEXT RETRIEVAL**
+
+**Specyfikacja:**
+```
+Model:        jina-embeddings-v4-text-retrieval
+Dimensions:   1024 ✅ (zweryfikowane w LMStudio)
+Max Tokens:   8192 tokens
+Context:      Long documents, tables, structured data
+Optimized:    Retrieval/search, similarity matching
+Multilingual: ✅ (Polish + English)
+Cost:         Local (LMStudio) - $0
+Status:       ✅ Dostępny w LMStudio @ 192.168.200.226:1234
+```
+
+**Mocne strony:**
+- ✅ **Długie dokumenty** - do 8192 tokenó"
+EXPIRE doc:STRATEGIA_EMBEDDINGOW_JINA_VS_E5:content 86400
+SADD docs:all "STRATEGIA_EMBEDDINGOW_JINA_VS_E5"
+SADD docs:type:architecture "STRATEGIA_EMBEDDINGOW_JINA_VS_E5"

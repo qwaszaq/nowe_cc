@@ -1,0 +1,32 @@
+SET doc:PIPELINE_ANALITYCZNY_PELNY_OPIS:title "🔄 PIPELINE ANALITYCZNY - PEŁNY OPIS PROCESU"
+SET doc:PIPELINE_ANALITYCZNY_PELNY_OPIS:type "team_documentation"
+SET doc:PIPELINE_ANALITYCZNY_PELNY_OPIS:path "PIPELINE_ANALITYCZNY_PELNY_OPIS.md"
+SET doc:PIPELINE_ANALITYCZNY_PELNY_OPIS:content "# 🔄 PIPELINE ANALITYCZNY - PEŁNY OPIS PROCESU
+## Jak działa system analizy dokumentów CBA
+
+**Data:** 2024-11-05  
+**System:** Autonomous Document Analysis System  
+**Zakres:** Od skanowania folderu do profesjonalnej analizy 7-fazowej
+
+---
+
+## 📊 OVERVIEW - ARCHITEKTURA SYSTEMU
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  USER INPUT: folder_path + case_id (optional)              │
+└─────────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 1: DOCUMENT DISCOVERY & CLASSIFICATION               │
+│  ├─ DocumentScanner: skanuje folder                         │
+│  ├─ IntelligentFileClassifier: klasyfikuje pliki          │
+│  └─ AutomaticTaskGenerator: generuje zadania              │
+└─────────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+┌───────────────────────────────"
+EXPIRE doc:PIPELINE_ANALITYCZNY_PELNY_OPIS:content 86400
+SADD docs:all "PIPELINE_ANALITYCZNY_PELNY_OPIS"
+SADD docs:type:team_documentation "PIPELINE_ANALITYCZNY_PELNY_OPIS"

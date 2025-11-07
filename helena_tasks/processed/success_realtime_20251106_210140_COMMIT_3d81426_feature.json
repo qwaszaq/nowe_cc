@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-06/COMMIT_3d81426_feature.md",
+  "document_type": "general_documentation",
+  "title": "feat(ai-extraction): Integrate E5 semantic matching + LLM validation for financial data extraction",
+  "detected_at": "2025-11-06T21:01:40.867500",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# feat(ai-extraction): Integrate E5 semantic matching + LLM validation for financial data extraction\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-06 21:01:40\n**Commit:** `3d81426`\n**Type:** Feature\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**feat(ai-extraction): Integrate E5 semantic matching + LLM validation for financial data extraction**\n\nImplements comprehensive AI-enhanced extraction system using local LM Studio:\n- E5 embeddings for semantic row matching (93.3% confidence on Poli"
+}

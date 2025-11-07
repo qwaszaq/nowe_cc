@@ -1,0 +1,8 @@
+{
+  "file_path": "testdocsLLM/README.md",
+  "title": "Test Documents for LLM Testing",
+  "document_type": "general_documentation",
+  "content": "# Test Documents for LLM Testing\n\n## Folder do testowania systemu\n\nWrzu\u0107 tutaj dokumenty testowe (PDF, Excel, txt, etc.) do przetestowania autonomicznego systemu.\n\n## Jak u\u017cywa\u0107:\n\n```bash\n# Po dodaniu plik\u00f3w do tego folderu, uruchom:\npython destiny_auto.py testdocsLLM\n\n# Lub z custom case ID:\npython destiny_auto.py testdocsLLM --case-id test_001\n```\n\n## Obs\u0142ugiwane formaty:\n\n- **Dokumenty:** .pdf, .docx, .doc, .txt, .md\n- **Dane:** .xlsx, .xls, .csv\n- **Strukturalne:** .json, .xml, .yaml\n- **Obrazy:** .png, .jpg, .jpeg (OCR)\n\n## Przyk\u0142adowe pliki do testowania:\n\n1. **Raporty finansowe** - PDF/Excel z danymi finansowymi\n2. **Kontrakty** - PDF/Word z umowami\n3. **Dokumentacja techniczna** - txt/md z specyfikacjami\n4. **Dane** - CSV/Excel ze statystykami\n\nSystem automatycznie:\n- Zidentyfikuje typ ka\u017cdego pliku\n- Sklasyfikuje kategori\u0119\n- Wybierze odpowiednich agent\u00f3w\n- Przeprowadzi analiz\u0119\n- Wygeneruje raport\n\n**Folder jest w .gitignore - pliki nie trafi\u0105 do repozytorium.**\n",
+  "indexed_at": "2025-11-05T11:15:41.566992",
+  "source": "realtime_watcher"
+}

@@ -1,0 +1,9 @@
+{
+  "file_path": "ANALIZA_CBA_2008-2024.md",
+  "document_type": "protocol",
+  "title": "ANALIZA RAPORT\u00d3W CBA 2008-2024",
+  "detected_at": "2025-11-05T11:51:19.198555",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# ANALIZA RAPORT\u00d3W CBA 2008-2024\n\n**\u0179r\u00f3d\u0142o:** Autonomous System Analysis  \n**Data:** 5 Listopada 2024  \n**Dokumenty:** 13 raport\u00f3w CBA (912,156 znak\u00f3w)  \n**Agenci:** Legal, Risk, Architect\n\n---\n\n## \ud83d\udcc4 LOKALIZACJA PLIK\u00d3W\n\n### **G\u0142\u00f3wny raport (JSON):**\n```\nreports/autonomous_profound_test_cba_reports.json  (46KB)\n```\n\n### **Jak otworzy\u0107:**\n\n```bash\n# Wy\u015bwietl ca\u0142y raport:\ncat reports/autonomous_profound_test_cba_reports.json | jq '.'\n\n# Tylko analiz\u0119 LEGAL:\ncat reports/autonomous_profound_test_cba_"
+}

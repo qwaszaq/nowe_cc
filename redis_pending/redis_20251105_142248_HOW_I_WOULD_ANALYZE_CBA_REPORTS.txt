@@ -1,0 +1,44 @@
+SET doc:HOW_I_WOULD_ANALYZE_CBA_REPORTS:title "🔍 JAK ANALIZOWAŁBYM RAPORTY CBA"
+SET doc:HOW_I_WOULD_ANALYZE_CBA_REPORTS:type "analysis"
+SET doc:HOW_I_WOULD_ANALYZE_CBA_REPORTS:path "HOW_I_WOULD_ANALYZE_CBA_REPORTS.md"
+SET doc:HOW_I_WOULD_ANALYZE_CBA_REPORTS:content "# 🔍 JAK ANALIZOWAŁBYM RAPORTY CBA
+## Professional Analysis Methodology
+
+**Perspective:** AI Analyst with investigative capabilities  
+**Document Type:** CBA Annual Reports (2008-2024)  
+**Approach:** Multi-dimensional, systematic, evidence-based
+
+---
+
+## 🎯 METODOLOGIA ANALIZY - 7 FAZ
+
+### Faza 1: DOCUMENT STRUCTURE ANALYSIS (15-20 min)
+
+#### Co robię:
+
+1. **Mapowanie Struktury**
+   - Przeglądam spis treści każdego dokumentu
+   - Identyfikuję powtarzające się sekcje
+   - Tworzę uniwersalny template struktury
+   - Notuję zmiany strukturalne w czasie
+
+**Pytania:**
+- Czy struktura raportów jest spójna?
+- Jakie sekcje są zawsze obecne?
+- Co się zmieniło w strukturze na przestrzeni lat?
+- Gdzie są kluczowe dane (tabele, wykresy)?
+
+#### Przykładowa Struktura (typowa dla CBA):
+```
+1. Wprowadzenie / Wstęp
+2. Podstawowe informacje o CBA
+3. Działalność operacyjna
+   - Liczba spraw prowadzonych
+   - Zatrzymania
+   - Współpraca z innymi organami
+4. Wyniki finansowe
+5. Kadra i rozwój
+6. Współpraca m"
+EXPIRE doc:HOW_I_WOULD_ANALYZE_CBA_REPORTS:content 86400
+SADD docs:all "HOW_I_WOULD_ANALYZE_CBA_REPORTS"
+SADD docs:type:analysis "HOW_I_WOULD_ANALYZE_CBA_REPORTS"

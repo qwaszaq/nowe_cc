@@ -1,0 +1,57 @@
+{
+  "total_files": 13,
+  "analyzed": 5,
+  "results": {
+    "Informacja_2021.pdf": {
+      "year": 2021,
+      "file": "Informacja_2021.pdf",
+      "text_length": 114115,
+      "has_numbers": false,
+      "mentions_sprawy": true,
+      "mentions_vat": true,
+      "mentions_ue": true,
+      "sample_text": "1 \n \nSpis treści \n\n\n2 \n \nWykaz skrótów .......................................................................................................................... 3 \nWprowadzenie ………………………………………………………………………………………3 \nXV-lecie CBA ............................................................................................................................ 5 \nDZIAŁANIA OPERACYJNO-PROCESOWE ............................................................................... 8 \nSprawy operacyjne ............."
+    },
+    "Informacja_o_wynikach_CBA_2014.pdf": {
+      "year": 2014,
+      "file": "Informacja_o_wynikach_CBA_2014.pdf",
+      "text_length": 44677,
+      "has_numbers": false,
+      "mentions_sprawy": false,
+      "mentions_vat": true,
+      "mentions_ue": true,
+      "sample_text": " \n1 \n \n \nInformacja o wynikach działalności \nCentralnego Biura Antykorupcyjnego \nw 2014 roku \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nWarszawa, 31 marca 2015 r. \n \n \n\n\n \n2 \nSPIS TREŚCI \n \n \n \n \nWSTĘP  ......................................................................................................................................  3 \nI. PODSTAWOWE OBSZARY DZIAŁANIA CBA  ..........................................................................  4 \n1. Działania operacyjne i procesowe  ........."
+    },
+    "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf": {
+      "year": 2015,
+      "file": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+      "text_length": 45550,
+      "has_numbers": false,
+      "mentions_sprawy": true,
+      "mentions_vat": false,
+      "mentions_ue": true,
+      "sample_text": "1 \n \n \n \nInformacja o wynikach działalności \nCentralnego Biura Antykorupcyjnego \nw 2015 r. \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nWarszawa, 31 marca 2016 r. \n \n\n\n2 \n \nSPIS TREŚCI \n \n \n \n \nWSTĘP ................................................................................................................. 3 \nI. OCENA DZIAŁALNOŚCI JEDNOSTEK ORGANIZACYJNYCH CBA W LATACH 2009-2015 .... 4 \nII. PODSTAWOWE OBSZARY DZIAŁANIA CBA ............................................................. 5 \n1. Dział"
+    },
+    "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf": {
+      "year": 2008,
+      "file": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+      "text_length": 34779,
+      "has_numbers": false,
+      "mentions_sprawy": false,
+      "mentions_vat": false,
+      "mentions_ue": true,
+      "sample_text": "Informacja o wynikach działalności Centralnego Biura Antykorupcyjnego w 2008 roku \nSpis treści \n  \nDział I. Charakterystyka zadań realizowanych przez CBA \n1. Działania operacyjno-śledcze \n2. Działania kontrolne \n3. Działania analityczne \n4. Działania prewencyjne i edukacyjne \nDział II. Sprawy organizacyjno-finansowe, rekrutacja i szkolenia funkcjonariuszy \n1. Finansowanie służby \n2. Rekrutacja \n3. Szkolenia \n4. Sprawy organizacyjne \nDział III. Bezpieczeństwo wewnętrzne \n1. Ochrona informacji nie"
+    },
+    "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2017_r..pdf": {
+      "year": 2017,
+      "file": "Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2017_r..pdf",
+      "text_length": 96651,
+      "has_numbers": false,
+      "mentions_sprawy": true,
+      "mentions_vat": true,
+      "mentions_ue": true,
+      "sample_text": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nINFORMACJA \no wynikach działalności \nCentralnego Biura Antykorupcyjnego \nw 2017 r. \n \n \n\n\n \n \n \n \n \n \n \n \nSPIS TREŚCI \nWPROWADZENIE ........................................................................................................................................................ 4 \nDZIAŁALNOŚĆ OPERACYJNA I PROCESOWA .......................................................................................................... 6 \nLiczba spraw operacyjnych ........."
+    }
+  },
+  "note": "Partial extraction for verification purposes"
+}

@@ -1,0 +1,54 @@
+SET doc:CBA_FULL_CONTENT_ANALYSIS:title "🔍 CBA - PEŁNA ANALIZA TREŚCI DOKUMENTÓW"
+SET doc:CBA_FULL_CONTENT_ANALYSIS:type "analysis"
+SET doc:CBA_FULL_CONTENT_ANALYSIS:path "CBA_FULL_CONTENT_ANALYSIS.md"
+SET doc:CBA_FULL_CONTENT_ANALYSIS:content "# 🔍 CBA - PEŁNA ANALIZA TREŚCI DOKUMENTÓW
+## Comprehensive Content Analysis (2008-2024)
+
+**Data Analizy:** 2025-11-05 14:12:09  
+**Analizowanych Dokumentów:** 13  
+**Metoda:** Full PDF text extraction & analysis  
+**Zakres:** 2008-2024
+
+---
+
+## 📊 PODSUMOWANIE WYKONAWCZE
+
+### Korpus Dokumentów
+
+- **Dokumenty:** 13 raportów CBA
+- **Całkowita treść:** 876,753 znaków
+- **Średnia długość:** 67,442 znaków/dokument
+- **Zakres:** 2008-2024
+- **Pokrycie:** 13 lat
+
+### Kluczowe Liczby
+
+**Ekstrakcja danych numerycznych:**
+- **sprawy_liczba:** 77 wystąpień w dokumentach
+- **zatrzymania:** 3 wystąpień w dokumentach
+
+
+### Najważniejsze Instytucje
+
+- **CBA:** 967 wzmianek
+- **Prokuratura:** 237 wzmianek
+- **Policja:** 108 wzmianek
+- **Sąd:** 38 wzmianek
+- **ABW:** 16 wzmianek
+
+
+---
+
+## 📅 ANALIZA TEMPORALNA
+
+### Pokrycie Lat
+
+**Lata z dokumentacją:** 2008, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2019, 2021, 2022, 2023, 2024
+
+### Dokumenty według Lat
+
+| Rok | Dokumenty | Znaki |
+|-----|-----------|--"
+EXPIRE doc:CBA_FULL_CONTENT_ANALYSIS:content 86400
+SADD docs:all "CBA_FULL_CONTENT_ANALYSIS"
+SADD docs:type:analysis "CBA_FULL_CONTENT_ANALYSIS"

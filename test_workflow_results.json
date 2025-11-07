@@ -1,0 +1,22 @@
+{
+  "test_date": "2025-11-06T14:46:17.055499",
+  "document": "Grupa Azoty H1 2024",
+  "workflow": "Alex (parse) \u2192 Marcus (analyze)",
+  "alex": {
+    "duration_seconds": 18.028837,
+    "status": "done",
+    "pages_parsed": 61,
+    "tables_extracted": 92,
+    "sections_detected": 39,
+    "financial_statements": [
+      "balance_sheet",
+      "income_statement"
+    ]
+  },
+  "marcus": {
+    "duration_seconds": 1.992702,
+    "status": "done",
+    "analysis_length": 872
+  },
+  "total_duration_seconds": 20.021539
+}

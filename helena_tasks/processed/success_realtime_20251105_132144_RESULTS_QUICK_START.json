@@ -1,0 +1,9 @@
+{
+  "file_path": "RESULTS_QUICK_START.md",
+  "document_type": "architecture",
+  "title": "\ud83d\ude80 Results Storage - Quick Start Guide",
+  "detected_at": "2025-11-05T13:21:44.771812",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\ude80 Results Storage - Quick Start Guide\n\n**Welcome!** This guide shows you how to use the new results storage system.\n\n---\n\n## \ud83d\udccb What's New?\n\n### **Before:**\n```\nreports/\n  \u251c\u2500\u2500 autonomous_case_001.json\n  \u251c\u2500\u2500 autonomous_case_002.json\n  \u2514\u2500\u2500 ... (flat structure)\n```\n\n### **After:**\n```\ncases/\n  \u251c\u2500\u2500 case_001/\n  \u2502   \u251c\u2500\u2500 metadata.json\n  \u2502   \u251c\u2500\u2500 input/\n  \u2502   \u251c\u2500\u2500 results/\n  \u2502   \u251c\u2500\u2500 audit/\n  \u2502   \u2514\u2500\u2500 archives/\n  \u251c\u2500\u2500 case_002/\n  \u2514\u2500\u2500 index.json (fast lookup)\n```\n\n**Benefits:**\n- \u2705 Organized by case\n- \u2705 Mult"
+}

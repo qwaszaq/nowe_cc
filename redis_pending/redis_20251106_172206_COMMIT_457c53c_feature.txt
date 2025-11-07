@@ -1,0 +1,35 @@
+SET doc:COMMIT_457c53c_feature:title "feat(round2): Implement text-based PDF extraction for Polish financial reports"
+SET doc:COMMIT_457c53c_feature:type "team_documentation"
+SET doc:COMMIT_457c53c_feature:path "docs/auto-generated/2025-11-06/COMMIT_457c53c_feature.md"
+SET doc:COMMIT_457c53c_feature:content "# feat(round2): Implement text-based PDF extraction for Polish financial reports
+
+**Auto-Generated Documentation**
+
+**Date:** 2025-11-06 17:22:05
+**Commit:** `457c53c`
+**Type:** Feature
+**Author:** artur
+
+---
+
+## 📝 Commit Message
+
+**feat(round2): Implement text-based PDF extraction for Polish financial reports**
+
+🎯 ACHIEVEMENT: Round 2 Transformation Complete
+Transform agents from methodology providers to quantitative analysts with real data extraction.
+
+## What Changed
+
+### Core Implementation (src/document_processing/pdf_parser.py)
+- Added `_extract_balance_sheet_from_text()` method for borderless table extraction
+- Added `_has_key_balance_sheet_items()` validator for balance sheet identification
+- Implemented hybrid extraction strategy: pdfplumber → Camelot → Text extraction fallback
+- Handles Polish number format (spaces as thousand separators, multi-line values)
+- Regex patterns for 12+ financial statement line items
+
+### Text Extraction Features
+- Multi-page scanning (pages 4-7) "
+EXPIRE doc:COMMIT_457c53c_feature:content 86400
+SADD docs:all "COMMIT_457c53c_feature"
+SADD docs:type:team_documentation "COMMIT_457c53c_feature"

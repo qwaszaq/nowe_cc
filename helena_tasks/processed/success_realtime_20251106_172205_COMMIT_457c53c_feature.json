@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-06/COMMIT_457c53c_feature.md",
+  "document_type": "team_documentation",
+  "title": "feat(round2): Implement text-based PDF extraction for Polish financial reports",
+  "detected_at": "2025-11-06T17:22:05.845247",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# feat(round2): Implement text-based PDF extraction for Polish financial reports\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-06 17:22:05\n**Commit:** `457c53c`\n**Type:** Feature\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**feat(round2): Implement text-based PDF extraction for Polish financial reports**\n\n\ud83c\udfaf ACHIEVEMENT: Round 2 Transformation Complete\nTransform agents from methodology providers to quantitative analysts with real data extraction.\n\n## What Changed\n\n### Core Implementation "
+}

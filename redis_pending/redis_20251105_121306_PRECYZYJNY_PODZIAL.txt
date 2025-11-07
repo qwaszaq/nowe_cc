@@ -1,0 +1,35 @@
+SET doc:PRECYZYJNY_PODZIAL:title "🔒 PRECYZYJNY PODZIAŁ: Investigation vs Development"
+SET doc:PRECYZYJNY_PODZIAL:type "general_documentation"
+SET doc:PRECYZYJNY_PODZIAL:path "PRECYZYJNY_PODZIAL.md"
+SET doc:PRECYZYJNY_PODZIAL:content "# 🔒 PRECYZYJNY PODZIAŁ: Investigation vs Development
+
+**Data:** 5 Listopada 2024  
+**Cel:** Absolutna separacja danych śledczych od rozwoju systemu
+
+---
+
+## 📋 INWENTARYZACJA - Co Mamy Obecnie
+
+### **INVESTIGATION ENVIRONMENT (Production Cases)**
+
+```
+┌──────────────────────────┬──────────┬────────────────────┐
+│ Container                │ Ports    │ Purpose            │
+├──────────────────────────┼──────────┼────────────────────┤
+│ sms-postgres             │ 5432     │ SMS investigations │
+│ sms-neo4j                │ 7474     │ SMS graph          │
+│ sms-qdrant               │ 6333     │ SMS embeddings     │
+│ hercules-postgres        │ 5433     │ Hercules cases     │
+│ hercules-elasticsearch   │ 9200     │ OSINT documents    │
+│ hercules-kibana          │ 5601     │ OSINT analytics    │
+└──────────────────────────┴──────────┴────────────────────┘
+```
+
+**Zawartość (Investigation Data):**
+- SMS investigation cases
+- OSINT reports & documents
+- Hercules analytical data
+- Real-world sens"
+EXPIRE doc:PRECYZYJNY_PODZIAL:content 86400
+SADD docs:all "PRECYZYJNY_PODZIAL"
+SADD docs:type:general_documentation "PRECYZYJNY_PODZIAL"

@@ -1,0 +1,23 @@
+{
+  "pdf_path": "investigations/external/grupa_azoty_reports/run_20251104_205052/pdfs/Grupa_Azoty_Skonsolidowane_Sprawozdanie_Finansowe_2023.pdf",
+  "extraction_timestamp": "2025-11-06T20:41:46.210865",
+  "tables_found": 10,
+  "best_table_numeric_density": 0.47023809523809523,
+  "financial_values": {
+    "total_assets": 2429652025865644.0,
+    "current_assets": 70314048916891.0,
+    "fixed_assets": 1726511616948753.0,
+    "total_equity": 64682899956367.0,
+    "total_liabilities": 1782823115909277.0,
+    "current_liabilities": 148307528614858.0
+  },
+  "quality_metrics": {
+    "completeness": 1.0,
+    "validation_score": 0.0,
+    "overall_score": 0.5
+  },
+  "processing_time": {
+    "camelot": 0.8807992935180664,
+    "pdfplumber": 0.5513110160827637
+  }
+}

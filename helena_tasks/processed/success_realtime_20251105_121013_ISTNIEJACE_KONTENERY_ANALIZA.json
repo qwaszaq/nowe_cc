@@ -1,0 +1,9 @@
+{
+  "file_path": "ISTNIEJACE_KONTENERY_ANALIZA.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udd0d ISTNIEJ\u0104CE KONTENERY - Analiza",
+  "detected_at": "2025-11-05T12:10:13.614106",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd0d ISTNIEJ\u0104CE KONTENERY - Analiza\n\n**Data:** 5 Listopada 2024  \n**Problem:** Mamy ju\u017c dzia\u0142aj\u0105ce kontenery z danymi!\n\n---\n\n## \u2705 CO MAMY URUCHOMIONE\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Kontener               \u2502 Port            \u2502 Status           \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 sms-qdrant             \u2502 6333-6334       \u2502 Up 15h \u2705        \u2502\n\u2502 sms-neo4j              \u2502 7474, 7687      \u2502 Up 15h \u2705        \u2502\n\u2502 sms-postgres           \u2502 5"
+}

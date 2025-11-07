@@ -1,0 +1,27 @@
+SET doc:WERYFIKACJA_PODZIALU:title "✅ WERYFIKACJA PODZIAŁU - Investigation vs Development"
+SET doc:WERYFIKACJA_PODZIALU:type "general_documentation"
+SET doc:WERYFIKACJA_PODZIALU:path "WERYFIKACJA_PODZIALU.md"
+SET doc:WERYFIKACJA_PODZIALU:content "# ✅ WERYFIKACJA PODZIAŁU - Investigation vs Development
+
+**Data:** 5 Listopada 2024
+
+---
+
+## 📊 FINAL PORT ALLOCATION
+
+### **INVESTIGATION Environment (Production - DO NOT MODIFY)**
+
+```
+Container Name              Port(s)           Purpose                   Data
+─────────────────────────────────────────────────────────────────────────────
+sms-postgres                5432              SMS Cases DB              Production
+sms-qdrant                  6333-6334         SMS Embeddings            96,100+ vectors
+sms-neo4j                   7474, 7687        SMS Relationships         Production
+hercules-postgres           5433              Hercules Cases            Production
+hercules-elasticsearch      9200, 9300        OSINT Documents           Production
+hercules-kibana             5601              OSINT Dashboard           Analytics
+hercules-redis              6380              Hercules Cache            Production
+hercules-minio              9000-9001         File Storage              Pr"
+EXPIRE doc:WERYFIKACJA_PODZIALU:content 86400
+SADD docs:all "WERYFIKACJA_PODZIALU"
+SADD docs:type:general_documentation "WERYFIKACJA_PODZIALU"

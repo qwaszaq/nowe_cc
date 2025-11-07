@@ -1,0 +1,9 @@
+{
+  "file_path": "WYSZUKIWANIE_STATUS.md",
+  "document_type": "status_report",
+  "title": "\ud83d\udd0d STATUS WYSZUKIWANIA - Co Mamy Zaimplementowane?",
+  "detected_at": "2025-11-05T11:59:28.698532",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd0d STATUS WYSZUKIWANIA - Co Mamy Zaimplementowane?\n\n**Data:** 5 Listopada 2024  \n**Status:** Cz\u0119\u015bciowo zaimplementowane\n\n---\n\n## \ud83d\udcca PODSUMOWANIE\n\n```\n\u2705 SEMANTYCZNE:     Zaimplementowane (80%)\n\u26a0\ufe0f  HEURYSTYCZNE:   Cz\u0119\u015bciowo (40%)\n```\n\n---\n\n## \u2705 SEMANTYCZNE WYSZUKIWANIE - Zaimplementowane!\n\n### **1. Dual Embedding System** \u2705\n\n**Lokalizacja:** `src/data/embedding_pipeline.py`\n\n**Co mamy:**\n```python\nclass DualEmbeddingSystem:\n    \"\"\"\n    Dual model embedding system\n    - E5-Large: General text, mult"
+}

@@ -1,0 +1,62 @@
+SET doc:RESULTS_QUICK_START:title "🚀 Results Storage - Quick Start Guide"
+SET doc:RESULTS_QUICK_START:type "architecture"
+SET doc:RESULTS_QUICK_START:path "RESULTS_QUICK_START.md"
+SET doc:RESULTS_QUICK_START:content "# 🚀 Results Storage - Quick Start Guide
+
+**Welcome!** This guide shows you how to use the new results storage system.
+
+---
+
+## 📋 What's New?
+
+### **Before:**
+```
+reports/
+  ├── autonomous_case_001.json
+  ├── autonomous_case_002.json
+  └── ... (flat structure)
+```
+
+### **After:**
+```
+cases/
+  ├── case_001/
+  │   ├── metadata.json
+  │   ├── input/
+  │   ├── results/
+  │   ├── audit/
+  │   └── archives/
+  ├── case_002/
+  └── index.json (fast lookup)
+```
+
+**Benefits:**
+- ✅ Organized by case
+- ✅ Multiple report formats (JSON, MD, HTML)
+- ✅ Complete audit trail
+- ✅ Easy to search and query
+- ✅ Scalable to 1000s of cases
+
+---
+
+## 🎯 Quick Start (5 minutes)
+
+### **Step 1: Migrate Existing Results**
+
+```bash
+# One-time migration
+python migrate_existing_results.py
+```
+
+This moves your existing `reports/autonomous_*.json` to the new `cases/` structure.
+
+---
+
+### **Step 2: Run New Analysis**
+
+```bash
+# Run autonomous analysis (automatically uses new structure)
+python destiny_auto.py testdocsLLM/ --"
+EXPIRE doc:RESULTS_QUICK_START:content 86400
+SADD docs:all "RESULTS_QUICK_START"
+SADD docs:type:architecture "RESULTS_QUICK_START"

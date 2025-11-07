@@ -41,3 +41,10 @@ temp/
 # Investigation PDFs
 investigations/external/*/pdfs/
 investigations/**/*.pdf
+
+# Test documents for LLM testing
+testdocsLLM/
+testdocsLLM/*
+
+# Analysis reports (generated outputs)
+analysis_reports/

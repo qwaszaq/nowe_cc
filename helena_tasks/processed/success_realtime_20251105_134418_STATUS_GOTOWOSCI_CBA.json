@@ -1,0 +1,9 @@
+{
+  "file_path": "reports/STATUS_GOTOWOSCI_CBA.md",
+  "document_type": "status_report",
+  "title": "\u2705 STATUS GOTOWO\u015aCI SYSTEMU DO PRACY Z RAPORTAMI CBA",
+  "detected_at": "2025-11-05T13:44:18.137252",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \u2705 STATUS GOTOWO\u015aCI SYSTEMU DO PRACY Z RAPORTAMI CBA\n\n**Data:** 2024-11-05  \n**Status:** \u26a0\ufe0f **Cz\u0119\u015bciowo gotowy** - podstawy dzia\u0142aj\u0105, integracja wymaga uko\u0144czenia\n\n---\n\n## \ud83c\udfaf CO DZIA\u0141A \u2705\n\n### **1. Ekstrakcja Tabel z PDF** \u2705\n- \u2705 Modu\u0142 `PDFTableExtractor` dzia\u0142a\n- \u2705 Znaleziono 40 tabel w raportach CBA\n- \u2705 Gotowy do u\u017cycia\n\n### **2. Routing Embedding\u00f3w** \u2705\n- \u2705 Inteligentny wyb\u00f3r Jina vs E5\n- \u2705 Automatyczna detekcja tabel i d\u0142ugo\u015bci dokument\u00f3w\n- \u2705 100% poprawno\u015bci w testach\n- \u2705 Raporty CBA \u2192 automat"
+}

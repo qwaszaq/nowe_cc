@@ -1,0 +1,54 @@
+
+================================================================================
+🚀 CBA FULL CONTENT ANALYSIS - STARTING
+================================================================================
+
+================================================================================
+🔍 PARSING CBA DOCUMENTS - FULL CONTENT ANALYSIS
+================================================================================
+
+📂 Found 13 PDF files
+--------------------------------------------------------------------------------
+
+[1/13] Parsing: Informacja_2021.pdf
+   ❌ Failed: No PDF library available
+
+[2/13] Parsing: Informacja_o_wynikach_CBA_2014.pdf
+   ❌ Failed: No PDF library available
+
+[3/13] Parsing: Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf
+   ❌ Failed: No PDF library available
+
+[4/13] Parsing: Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf
+   ❌ Failed: No PDF library available
+
+[5/13] Parsing: Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2017_r..pdf
+   ❌ Failed: No PDF library available
+
+[6/13] Parsing: Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf
+   ❌ Failed: No PDF library available
+
+[7/13] Parsing: Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf
+   ❌ Failed: No PDF library available
+
+[8/13] Parsing: Sprawozdanie_2012.pdf
+   ❌ Failed: No PDF library available
+
+[9/13] Parsing: Sprawozdanie_2013.pdf
+   ❌ Failed: No PDF library available
+
+[10/13] Parsing: Sprawozdanie__jawne_2011_druk.pdf
+   ❌ Failed: No PDF library available
+
+[11/13] Parsing: Sprawozdanie_jawne_2010_druk.pdf
+   ❌ Failed: No PDF library available
+
+[12/13] Parsing: informacja_CBA_2019.pdf
+   ❌ Failed: No PDF library available
+
+[13/13] Parsing: informacja_za_2023_r_ (1).pdf
+   ❌ Failed: No PDF library available
+
+✅ Successfully parsed: 0/13 documents
+
+❌ No documents parsed successfully!

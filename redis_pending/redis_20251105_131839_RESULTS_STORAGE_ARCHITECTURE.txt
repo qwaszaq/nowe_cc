@@ -1,0 +1,37 @@
+SET doc:RESULTS_STORAGE_ARCHITECTURE:title "🗂️ Results Storage Architecture - Design Document"
+SET doc:RESULTS_STORAGE_ARCHITECTURE:type "architecture"
+SET doc:RESULTS_STORAGE_ARCHITECTURE:path "RESULTS_STORAGE_ARCHITECTURE.md"
+SET doc:RESULTS_STORAGE_ARCHITECTURE:content "# 🗂️ Results Storage Architecture - Design Document
+
+**Date:** November 5, 2024  
+**System:** Destiny Autonomous Analysis  
+**Author:** Architecture Team
+
+---
+
+## 🎯 Design Goals
+
+1. **Discoverable** - Easy to find results by case_id, date, agent, category
+2. **Scalable** - Handle 1000s of analyses without performance degradation
+3. **Multi-Layer** - Different storage for different needs (files, DB, search, graph)
+4. **Auditable** - Complete trace from input → processing → output
+5. **Queryable** - Fast search across historical analyses
+6. **Archivable** - Clear retention policies and backup strategy
+
+---
+
+## 📁 File System Structure
+
+```
+destiny-project/
+│
+├── cases/                          # 🎯 PRIMARY: All case data
+│   ├── {case_id}/                  # One folder per case
+│   │   ├── metadata.json           # Case metadata
+│   │   ├── input/                  # Original documents
+│   │   │   ├── documents/
+│   │   │   ├── manifest.json      # List of all input files
+│   │   │   └── ch"
+EXPIRE doc:RESULTS_STORAGE_ARCHITECTURE:content 86400
+SADD docs:all "RESULTS_STORAGE_ARCHITECTURE"
+SADD docs:type:architecture "RESULTS_STORAGE_ARCHITECTURE"

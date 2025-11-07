@@ -1,0 +1,40 @@
+SET doc:RAG_CAG_STRATEGY:title "🚀 RAG + CAG Strategy - Context Window Revolution"
+SET doc:RAG_CAG_STRATEGY:type "architecture"
+SET doc:RAG_CAG_STRATEGY:path "docs/architecture/RAG_CAG_STRATEGY.md"
+SET doc:RAG_CAG_STRATEGY:content "# 🚀 RAG + CAG Strategy - Context Window Revolution
+
+## Problem: 44k vs 200k Context Window
+
+```
+LOCAL LLM:    44,000 tokens  😰
+CLAUDE:      200,000 tokens  🎉
+
+Challenge: 100 documents, 455 processing runs
+Without optimization: IMPOSSIBLE for local LLM
+```
+
+## Solution: RAG + CAG = Magic! ✨
+
+### What is CAG (Cache-Augmented Generation)?
+
+**CAG = "Freezing" static prompt components in KV cache**
+
+```python
+# WITHOUT CAG (traditional):
+for run in range(455):
+    prompt = [
+        system_instruction,      # 1000 tokens - REPEATED 455 times!
+        domain_knowledge,        # 500 tokens  - REPEATED 455 times!
+        case_context,            # 500 tokens  - REPEATED 455 times!
+        running_summary,         # 1000 tokens - REPEATED 455 times!
+        new_document             # 2000 tokens - NEW each time
+    ]
+    # Total: 5000 tokens × 455 = 2,275,000 tokens wasted!
+
+# WITH CAG (optimized):
+# ONCE: Cache static components
+cache.store('system_instruction', 1000 tokens)
+cache.store('domai"
+EXPIRE doc:RAG_CAG_STRATEGY:content 86400
+SADD docs:all "RAG_CAG_STRATEGY"
+SADD docs:type:architecture "RAG_CAG_STRATEGY"

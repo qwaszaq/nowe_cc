@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-05T14:34:33.634662",
+  "duration_seconds": 25.656765937805176,
+  "summary": {
+    "total_files": 14,
+    "files_by_type": {
+      "pdf": 13,
+      "text": 1
+    },
+    "total_size_mb": 17.2,
+    "total_tasks": 2,
+    "successful_agents": 0,
+    "extracted_metrics_count": 0
+  },
+  "professional_analysis": {
+    "was_used": false,
+    "phases_found": 0,
+    "results": {}
+  },
+  "quality_metrics": {},
+  "issues": [
+    "Professional Analyzer nie został uruchomiony",
+    "Professional Analyzer nie został uruchomiony"
+  ],
+  "recommendations": [
+    "Sprawdź czy Professional Analyzer jest poprawnie zintegrowany",
+    "Poprawić ekstrakcję danych ilościowych",
+    "Sprawdzić analizę trendów temporalnych"
+  ],
+  "quality_score": 0,
+  "quality_percentage": 0.0
+}

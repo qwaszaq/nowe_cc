@@ -1,0 +1,44 @@
+SET doc:RESULTS_STORAGE_SEPARATION:title "🔀 Results Storage - Investigation vs Development"
+SET doc:RESULTS_STORAGE_SEPARATION:type "general_documentation"
+SET doc:RESULTS_STORAGE_SEPARATION:path "RESULTS_STORAGE_SEPARATION.md"
+SET doc:RESULTS_STORAGE_SEPARATION:content "# 🔀 Results Storage - Investigation vs Development
+
+**CRITICAL:** System ma DWA całkowicie oddzielne środowiska!
+
+---
+
+## 📊 Podział Środowisk
+
+### **🔬 INVESTIGATION (Production)**
+```
+Purpose:  Real investigation data analysis
+Data:     SMS messages (143K vectors), OSINT data
+Access:   READ-ONLY ⚠️
+Databases: sms-*, hercules-*
+```
+
+### **🧪 DEVELOPMENT (Testing)**
+```
+Purpose:  Framework development, testing
+Data:     CBA reports, test documents
+Access:   FULL (read/write/delete)
+Databases: destiny-*
+```
+
+---
+
+## 🗺️ Mapa Kompletna
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     DESTINY SYSTEM                              │
+└─────────────────────────────────────────────────────────────────┘
+           │                            │
+           ▼                            ▼
+┌──────────────────────┐    ┌──────────────────────┐
+│   INVESTIGATION      │    │   DEVELOPMENT        │
+│   (Production)       │    │   (Testing)          │
+└───────────"
+EXPIRE doc:RESULTS_STORAGE_SEPARATION:content 86400
+SADD docs:all "RESULTS_STORAGE_SEPARATION"
+SADD docs:type:general_documentation "RESULTS_STORAGE_SEPARATION"

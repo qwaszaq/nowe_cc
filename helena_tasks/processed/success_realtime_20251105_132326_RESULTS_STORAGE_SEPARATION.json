@@ -1,0 +1,9 @@
+{
+  "file_path": "RESULTS_STORAGE_SEPARATION.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udd00 Results Storage - Investigation vs Development",
+  "detected_at": "2025-11-05T13:23:26.092660",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd00 Results Storage - Investigation vs Development\n\n**CRITICAL:** System ma DWA ca\u0142kowicie oddzielne \u015brodowiska!\n\n---\n\n## \ud83d\udcca Podzia\u0142 \u015arodowisk\n\n### **\ud83d\udd2c INVESTIGATION (Production)**\n```\nPurpose:  Real investigation data analysis\nData:     SMS messages (143K vectors), OSINT data\nAccess:   READ-ONLY \u26a0\ufe0f\nDatabases: sms-*, hercules-*\n```\n\n### **\ud83e\uddea DEVELOPMENT (Testing)**\n```\nPurpose:  Framework development, testing\nData:     CBA reports, test documents\nAccess:   FULL (read/write/delete)\nDatabases: desti"
+}

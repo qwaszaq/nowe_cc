@@ -1,0 +1,43 @@
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU:title "📊 ANALIZA WYNIKÓW LOKALNEGO SYSTEMU"
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU:type "general_documentation"
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU:path "ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU.md"
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU:content "# 📊 ANALIZA WYNIKÓW LOKALNEGO SYSTEMU
+## Ocena analizy przeprowadzonej przez system on-premise
+
+**Data:** 2024-11-05  
+**System:** Local Professional Analyzer (fully autonomous)  
+**Case ID:** professional_analysis_20251105_144547  
+**Czas wykonania:** 36.9s
+
+---
+
+## 🔍 WYNIKI SYSTEMU - PEŁNA ANALIZA
+
+### ✅ Professional Analyzer - Status
+
+**Status:** ✅ **Uruchomiony poprawnie**  
+**Fazy wykonane:** 7/7 (100%)  
+**Czas wykonania:** 6.0s dla Professional Analysis
+
+---
+
+### 📊 PHASE 2: Ekstrakcja Danych Ilościowych
+
+**Rezultaty:**
+- ✅ **Lata z danymi:** 10 lat
+- ✅ **Łącznie wartości:** 65 metryk
+- ✅ **Pokrycie:** Wysokie (10 z 13 dokumentów)
+
+**Wyekstrahowane metryki (przykłady):**
+- `sprawy_operacyjne` - liczba spraw operacyjnych
+- `sprawy_zakończone` - sprawy zakończone
+- `zatrzymania` - liczba zatrzymań
+- `zarzuty` - postawione zarzuty
+- `skazania` - liczba skazań
+- `budzet` - budżet
+- `funkcjonariusze` - liczba funkcjonariuszy
+- `szkolenia` - liczba szkoleń
+- `odzyskane_srodki` - odzysk"
+EXPIRE doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU:content 86400
+SADD docs:all "ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU"
+SADD docs:type:general_documentation "ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU"

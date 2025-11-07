@@ -1,0 +1,9 @@
+{
+  "file_path": "reports/EWALUACJA_SYSTEMU_CBA_SUMMARY.md",
+  "document_type": "status_report",
+  "title": "\u2705 EWALUACJA SYSTEMU ANALIZY CBA - RAPORT KO\u0143COWY",
+  "detected_at": "2025-11-05T13:50:41.037668",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \u2705 EWALUACJA SYSTEMU ANALIZY CBA - RAPORT KO\u0143COWY\n\n**Data:** 2024-11-05  \n**Test:** Pe\u0142na analiza 13 raport\u00f3w CBA  \n**Status:** \u2705 **SUKCES**\n\n---\n\n## \ud83c\udfaf PODSUMOWANIE WYKONAWCZE\n\n### \u2705 **G\u0141\u00d3WNE OSI\u0104GNI\u0118CIA:**\n\n| Aspekt | Przed | Po | Poprawa |\n|--------|-------|----|---------|\n| **Halucynacje** | \u274c Tak | \u2705 Nie | 100% |\n| **\u0179r\u00f3d\u0142a danych** | \u274c Brak | \u2705 Tak | 100% |\n| **Ekstrakcja metryk** | \u274c 0% | \u2705 16 metryk | 100% |\n| **Routing embedding\u00f3w** | \u26a0\ufe0f Podstawowy | \u2705 Inteligentny | 100% |\n\n---\n\n## \ud83d\udcca W"
+}

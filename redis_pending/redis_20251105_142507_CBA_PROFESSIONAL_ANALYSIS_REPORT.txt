@@ -1,0 +1,64 @@
+SET doc:CBA_PROFESSIONAL_ANALYSIS_REPORT:title "🔍 PROFESJONALNA ANALIZA RAPORTÓW CBA"
+SET doc:CBA_PROFESSIONAL_ANALYSIS_REPORT:type "analysis"
+SET doc:CBA_PROFESSIONAL_ANALYSIS_REPORT:path "CBA_PROFESSIONAL_ANALYSIS_REPORT.md"
+SET doc:CBA_PROFESSIONAL_ANALYSIS_REPORT:content "# 🔍 PROFESJONALNA ANALIZA RAPORTÓW CBA
+## Comprehensive Multi-Dimensional Analysis (2008-2024)
+
+**Data Analizy:** 2025-11-05 14:25:06  
+**Metodologia:** 7-Phase Professional Analysis  
+**Dokumenty:** 13 raportów CBA  
+**Zakres:** 2008-2024
+
+---
+
+## 📊 EXECUTIVE SUMMARY
+
+### Kluczowe Ustalenia
+
+
+
+### Metryki Efektywności
+
+
+
+---
+
+## 1. ANALIZA STRUKTURY DOKUMENTÓW
+
+### Struktura Raportów
+
+**Wspólne sekcje (identyfikowane w dokumentach):**
+
+
+### Ewolucja Struktury
+
+**Dokumenty przeanalizowane:** 0  
+**Pokrycie czasowe:** N/A - N/A
+
+---
+
+## 2. EKSTRAKCJA DANYCH ILOŚCIOWYCH
+
+### Kluczowe Metryki według Lat
+
+| Rok | Sprawy Operacyjne | Zatrzymania | Skazania | Budżet (mln zł) | Funkcjonariusze |
+|-----|-------------------|-------------|----------|-----------------|-----------------|
+
+
+**Uwaga:** Niektóre wartości mogą być niepełne lub wymagać weryfikacji w pełnych dokumentach.
+
+---
+
+## 3. ANALIZA JAKOŚCIOWA
+
+### Analiza Narracji i Tonu
+
+**Dominujące tematy według lat:**
+
+
+---
+
+## 4. ANALIZA T"
+EXPIRE doc:CBA_PROFESSIONAL_ANALYSIS_REPORT:content 86400
+SADD docs:all "CBA_PROFESSIONAL_ANALYSIS_REPORT"
+SADD docs:type:analysis "CBA_PROFESSIONAL_ANALYSIS_REPORT"

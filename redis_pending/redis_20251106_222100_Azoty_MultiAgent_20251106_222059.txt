@@ -1,0 +1,29 @@
+SET doc:Azoty_MultiAgent_20251106_222059:title "Multi-Agent Intelligence Report: Grupa Azoty S.A."
+SET doc:Azoty_MultiAgent_20251106_222059:type "team_documentation"
+SET doc:Azoty_MultiAgent_20251106_222059:path "output/intelligence_reports/Azoty_MultiAgent_20251106_222059.md"
+SET doc:Azoty_MultiAgent_20251106_222059:content "# Multi-Agent Intelligence Report: Grupa Azoty S.A.
+
+**Generated:** 2025-11-06T22:20:59.643381
+**Model:** openai/gpt-oss-20b
+**Agents:** 6
+**Generation Time:** 80.32s
+**RAG:** True
+
+---
+
+**COMPREHENSIVE INTELLIGENCE REPORT: Grupa Azoty S.A.**
+
+═══════════════════════════════════════════════════════════════
+
+## EXECUTIVE SUMMARY  
+
+Grupa Azoty is a large Polish chemical‑fertilizer producer with a solid asset base but weak short‑term liquidity, high leverage and no disclosed profitability data. The company’s “Zielone Azoty” green‑nitrogen strategy signals a shift toward lower‑carbon operations, yet execution risk remains high due to workforce shortages, commodity price volatility and an uncertain regulatory environment.  
+
+**Overall Assessment Score:** **48/100**  
+**Investment Recommendation:** **HOLD**  
+
+*One‑Paragraph Summary:*  
+Grupa Azoty’s balance sheet shows a sizeable asset pool but is undermined by a current ratio of 0.70, negative working capital and a debt‑to‑equity of 1.96."
+EXPIRE doc:Azoty_MultiAgent_20251106_222059:content 86400
+SADD docs:all "Azoty_MultiAgent_20251106_222059"
+SADD docs:type:team_documentation "Azoty_MultiAgent_20251106_222059"

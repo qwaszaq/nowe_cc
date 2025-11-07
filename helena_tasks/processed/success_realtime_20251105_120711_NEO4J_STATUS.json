@@ -1,0 +1,9 @@
+{
+  "file_path": "NEO4J_STATUS.md",
+  "document_type": "status_report",
+  "title": "\ud83d\udd78\ufe0f NEO4J STATUS - Weryfikacja",
+  "detected_at": "2025-11-05T12:07:11.355403",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd78\ufe0f NEO4J STATUS - Weryfikacja\n\n**Data:** 5 Listopada 2024\n\n---\n\n## \u2705 NEO4J DZIA\u0141A!\n\n```bash\n# Kontener uruchomiony:\nsms-neo4j    Up 15 hours    0.0.0.0:7474->7474/tcp\n\n# HTTP endpoint odpowiada:\ncurl http://localhost:7474\n# \u2192 {\"bolt_routing\":\"neo4j://localhost:7687\", ...}\n```\n\n**Status:** \u2705 Neo4j is UP and running!\n\n---\n\n## \u26a0\ufe0f PROBLEM: Autoryzacja\n\n```\nNeo4j Client.available = False\n\nB\u0142\u0105d: Rate limit / wrong password\n```\n\n**Przyczyna:**\n- Stary kontener `sms-neo4j` (nie nasz `destiny_neo4j`)\n-"
+}

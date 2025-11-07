@@ -62,7 +62,8 @@ class QdrantClient:
     def _check_availability(self) -> bool:
         """Check if Qdrant is available"""
         try:
-            req = urllib.request.Request(f"{self.base_url}/health")
+            # Qdrant doesn't have /health, use root endpoint
+            req = urllib.request.Request(f"{self.base_url}/")
             with urllib.request.urlopen(req, timeout=5) as response:
                 return response.status == 200
         except:

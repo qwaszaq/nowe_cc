@@ -1,0 +1,9 @@
+{
+  "file_path": "LOCAL_INTERPRETATION_LAYER.md",
+  "document_type": "general_documentation",
+  "title": "\ud83c\udfd7\ufe0f ROZSZERZENIE SYSTEMU O LOKALN\u0104 INTERPRETACJ\u0118",
+  "detected_at": "2025-11-05T14:42:57.411475",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83c\udfd7\ufe0f ROZSZERZENIE SYSTEMU O LOKALN\u0104 INTERPRETACJ\u0118\n## On-Premise Professional Analyzer z warstw\u0105 interpretacyjn\u0105\n\n**Data:** 2024-11-05  \n**Cel:** System w pe\u0142ni on-premise z lokaln\u0105 interpretacj\u0105 przez LMStudio  \n**Approach:** Rozszerzenie Professional Analyzer o LLM layer dla interpretacji\n\n---\n\n## \ud83c\udfaf ZMIANY IMPLEMENTOWANE\n\n### 1. SynthesisEngine z LLM Interpretation\n\n**Plik:** `src/analysis/synthesis_engine.py`\n\n**Zmiany:**\n- \u2705 Dodano `llm_client` parameter do `__init__`\n- \u2705 Dodano `_generate_ll"
+}

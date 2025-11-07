@@ -1,0 +1,34 @@
+{
+  "2014": {
+    "file": "Informacja_o_wynikach_CBA_2014.pdf",
+    "year": 2014,
+    "tables_count": 23,
+    "metrics": {
+      "budzet": 152000000.0,
+      "pracownicy": 74
+    },
+    "sources_count": 2
+  },
+  "2015": {
+    "file": "Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+    "year": 2015,
+    "tables_count": 8,
+    "metrics": {
+      "sprawy_operacyjne": 247,
+      "pracownicy": 139
+    },
+    "sources_count": 2
+  },
+  "2019": {
+    "file": "informacja_CBA_2019.pdf",
+    "year": 2019,
+    "tables_count": 9,
+    "metrics": {
+      "sprawy_operacyjne": 2019,
+      "sprawy_kontrolne": 64,
+      "budzet": 980000000.0,
+      "pracownicy": 12
+    },
+    "sources_count": 4
+  }
+}

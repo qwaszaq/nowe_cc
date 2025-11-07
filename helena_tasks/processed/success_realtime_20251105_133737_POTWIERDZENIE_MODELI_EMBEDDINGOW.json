@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/implementation/POTWIERDZENIE_MODELI_EMBEDDINGOW.md",
+  "document_type": "general_documentation",
+  "title": "\u2705 POTWIERDZENIE MODELI EMBEDDING\u00d3W W LMSTUDIO",
+  "detected_at": "2025-11-05T13:37:37.389022",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \u2705 POTWIERDZENIE MODELI EMBEDDING\u00d3W W LMSTUDIO\n\n**Data weryfikacji:** 2024-11-05  \n**Serwer:** http://192.168.200.226:1234/v1\n\n---\n\n## \ud83d\udcca DOST\u0118PNE MODELE EMBEDDING\u00d3W\n\n### \u2705 **1. JINA V4 TEXT RETRIEVAL**\n\n```\nModel ID:     jina-embeddings-v4-text-retrieval\nDimensions:   1024 \u2705\nStatus:       \u2705 DZIA\u0141A\nMax Tokens:   8192\nEndpoint:     http://192.168.200.226:1234/v1/embeddings\n```\n\n**Test:**\n```python\n\u2705 Test zako\u0144czony sukcesem\n\u2705 Wymiary: 1024\n\u2705 Response time: ~0.03s\n```\n\n---\n\n### \u2705 **2. E5-LARGE MUL"
+}

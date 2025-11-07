@@ -1,0 +1,9 @@
+{
+  "file_path": "WNIOSKI_ARTUR.md",
+  "document_type": "team_documentation",
+  "title": "\ud83c\udfaf PROFOUND TEST - WNIOSKI DLA ARTURA",
+  "detected_at": "2025-11-05T11:41:07.153291",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83c\udfaf PROFOUND TEST - WNIOSKI DLA ARTURA\n\n## TL;DR\n\n```\n\u2705 PARSING: DZIA\u0141A IDEALNIE (912k chars, 13 PDF\u00f3w)\n\u2705 WORKFLOW: DZIA\u0141A AUTONOMICZNIE  \n\u2705 LMSTUDIO: PO\u0141\u0104CZONY I GOTOWY\n\u274c ANALYSIS: NIE DZIA\u0141A (3 bugi blokuj\u0105)\n\nFIX TIME: 3-4 godziny\nRESULT: System production-ready\n```\n\n---\n\n## \ud83d\udcca CO PRZETESTOWALI\u015aMY\n\n```\nInput:\n  - 13 raport\u00f3w CBA (2008-2024)\n  - 17.2 MB, 389 stron\n  - 912,156 znak\u00f3w tekstu\n\nProces:\n  1. Parse wszystkich PDF\u00f3w\n  2. Klasyfikacja dokument\u00f3w\n  3. Generowanie task\u00f3w\n  4. Wykonanie 3 "
+}

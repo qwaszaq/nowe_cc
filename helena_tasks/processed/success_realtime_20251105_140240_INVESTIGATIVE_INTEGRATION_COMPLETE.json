@@ -1,0 +1,9 @@
+{
+  "file_path": "INVESTIGATIVE_INTEGRATION_COMPLETE.md",
+  "document_type": "general_documentation",
+  "title": "\ud83c\udf89 INVESTIGATIVE INTEGRATION - COMPLETE",
+  "detected_at": "2025-11-05T14:02:40.445306",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83c\udf89 INVESTIGATIVE INTEGRATION - COMPLETE\n\n**Data:** 2024-11-05  \n**Status:** \u2705 GOTOWE I PRZETESTOWANE\n\n---\n\n## \ud83d\udccb Co zosta\u0142o zaimplementowane\n\n### 1. Rozszerzenie klasyfikacji dokument\u00f3w\n\n**Plik:** `src/autonomous/document_discovery.py`\n\n\u2705 Dodano kategori\u0119 `investigative` do `CLASSIFICATION_RULES`\n```python\n'investigative': {\n    'keywords': ['investigation', 'osint', 'intelligence', 'fraud', 'corruption', \n                'scandal', 'cba', 'prokuratura', '\u015bledztwo', 'post\u0119powanie', 'afera'],\n   "
+}

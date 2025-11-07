@@ -90,7 +90,18 @@ class DualEmbeddingSystem:
     
     def route_to_model(self, text: str, document_type: Optional[str] = None) -> str:
         """
-        Route text to appropriate embedding model
+        Intelligent routing for CBA documents
+        
+        Routes to Jina for:
+        - Tables and structured data
+        - Long documents (>2000 words)
+        - Financial/tabular content
+        - CBA reports
+        
+        Routes to E5 for:
+        - Short text documents (<500 words)
+        - General text without tables
+        - Press releases, notes
         
         Args:
             text: Text to embed
@@ -99,9 +110,64 @@ class DualEmbeddingSystem:
         Returns:
             Model name ('e5' or 'jina')
         """
+        import re
+        
+        # 1. Explicit document type hints
+        if document_type:
+            type_lower = document_type.lower()
+            # CBA reports and structured data → Jina
+            cba_types = ["cba_report", "financial", "tabular", "statistical", "report", "cba"]
+            if any(t in type_lower for t in cba_types):
+                return "jina"
+            
+            # Short text documents → E5
+            text_types = ["press_release", "note", "email", "article", "communication"]
+            if any(t in type_lower for t in text_types):
+                return "e5"
+        
+        # 2. Check for tables in text
+        if self._has_tables(text):
+            return "jina"
+        
+        # 3. Check document length
+        word_count = len(text.split())
+        if word_count > 2000:
+            return "jina"  # Long documents → Jina
+        
+        # 4. Check for financial/numeric content (existing logic)
         if self._is_financial_content(text, document_type):
             return "jina"
+        
+        # 5. Default: E5 for general text
         return "e5"
+    
+    def _has_tables(self, text: str) -> bool:
+        """
+        Detect if text contains tables
+        
+        Args:
+            text: Text to check
+            
+        Returns:
+            True if tables detected
+        """
+        import re
+        
+        # Check for common table patterns
+        table_patterns = [
+            r'\|\s*\w+.*\|\s*\w+.*\|',  # Markdown table (| col1 | col2 |)
+            r'Tabela\s+\d+',              # "Tabela 1"
+            r'Table\s+\d+',               # "Table 1"
+            r'Statystyka',                 # "Statystyka"
+            r'\n\s*\d{1,4}\s+\d{1,4}\s+\d{1,4}',  # Number rows (tab-separated)
+            r'\d+\s+\|\s+\d+',            # Number | Number pattern
+        ]
+        
+        for pattern in table_patterns:
+            if re.search(pattern, text, re.IGNORECASE | re.MULTILINE):
+                return True
+        
+        return False
     
     def embed(
         self,

@@ -1,0 +1,563 @@
+{
+  "case_id": "cba_full_test_v2",
+  "folder": "/Users/artur/coursor-agents-destiny-folder/testdocsLLM",
+  "timestamp": "2025-11-05T13:49:23.484483",
+  "summary": {
+    "total_files": 14,
+    "files_by_type": {
+      "pdf": 13,
+      "text": 1
+    },
+    "total_size_mb": 17.2,
+    "total_tasks": 2,
+    "successful_agents": 0,
+    "extracted_metrics_count": 5
+  },
+  "extracted_metrics": {
+    "2021": {
+      "sprawy_operacyjne": 1,
+      "sprawy_kontrolne": 19,
+      "sprawy_analityczne": null,
+      "zatrzymane_osoby": null,
+      "budzet": 29000000.0,
+      "pracownicy": 1,
+      "sources": [
+        {
+          "metric": "sprawy_operacyjne",
+          "value": 1,
+          "method": "text_pattern",
+          "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "sprawy_kontrolne",
+          "value": 19,
+          "method": "text_pattern",
+          "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "budzet",
+          "value": 29000000.0,
+          "method": "text_pattern",
+          "pattern": "bud\u017cet[^.]*\\s+(\\d{1,3}(?:\\s?\\d{3})*)\\s*(?:mln|mili"
+        },
+        {
+          "metric": "pracownicy",
+          "value": 1,
+          "method": "text_pattern",
+          "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+        }
+      ]
+    },
+    "2022": {
+      "sprawy_operacyjne": 2022,
+      "sprawy_kontrolne": 19,
+      "sprawy_analityczne": null,
+      "zatrzymane_osoby": null,
+      "budzet": null,
+      "pracownicy": 41,
+      "sources": [
+        {
+          "metric": "sprawy_operacyjne",
+          "value": 2022,
+          "method": "text_pattern",
+          "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "sprawy_kontrolne",
+          "value": 19,
+          "method": "text_pattern",
+          "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "pracownicy",
+          "value": 41,
+          "method": "text_pattern",
+          "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+        }
+      ]
+    },
+    "2019": {
+      "sprawy_operacyjne": 2019,
+      "sprawy_kontrolne": 64,
+      "sprawy_analityczne": null,
+      "zatrzymane_osoby": null,
+      "budzet": 980000000.0,
+      "pracownicy": 12,
+      "sources": [
+        {
+          "metric": "sprawy_operacyjne",
+          "value": 2019,
+          "method": "text_pattern",
+          "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "sprawy_kontrolne",
+          "value": 64,
+          "method": "text_pattern",
+          "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "budzet",
+          "value": 980000000.0,
+          "method": "text_pattern",
+          "pattern": "bud\u017cet[^.]*\\s+(\\d{1,3}(?:\\s?\\d{3})*)\\s*(?:mln|mili"
+        },
+        {
+          "metric": "pracownicy",
+          "value": 12,
+          "method": "text_pattern",
+          "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+        }
+      ]
+    },
+    "2015": {
+      "sprawy_operacyjne": 247,
+      "sprawy_kontrolne": null,
+      "sprawy_analityczne": null,
+      "zatrzymane_osoby": null,
+      "budzet": null,
+      "pracownicy": 5,
+      "sources": [
+        {
+          "metric": "sprawy_operacyjne",
+          "value": 247,
+          "method": "text_pattern",
+          "pattern": "(\\d{1,4})\\s+spraw.*operacyjn"
+        },
+        {
+          "metric": "pracownicy",
+          "value": 5,
+          "method": "text_pattern",
+          "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+        }
+      ]
+    },
+    "2024": {
+      "sprawy_operacyjne": 20,
+      "sprawy_kontrolne": 21,
+      "sprawy_analityczne": null,
+      "zatrzymane_osoby": null,
+      "budzet": null,
+      "pracownicy": 2024,
+      "sources": [
+        {
+          "metric": "sprawy_operacyjne",
+          "value": 20,
+          "method": "text_pattern",
+          "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "sprawy_kontrolne",
+          "value": 21,
+          "method": "text_pattern",
+          "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+        },
+        {
+          "metric": "pracownicy",
+          "value": 2024,
+          "method": "text_pattern",
+          "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "agent": "legal",
+      "category": "legal",
+      "output": "**Comprehensive Legal\u2011Risk & Data Review \u2013 Case\u202fID: cba_full_test_v2**  \n*(Based solely on the verified data marked with \u2705 in the \u201cEXTRACTED DATA\u201d section; no invented figures.)*\n\n---\n\n## 1. Key Findings (Documents + Extracted Data)\n\n| Year | Sprawy Operacyjne | Sprawy Kontrolne | Bud\u017cet (PLN) | Pracownicy |\n|------|-------------------|------------------|--------------|------------|\n| **2015** | 247 \u2705 | \u2013 | \u2013 | 5 \u2705 |\n| **2019** | 2019 \u2705 | 64 \u2705 | 980\u202f000\u202f000.0 \u2705 | 12 \u2705 |\n| **2021** | 1 \u2705 | 19 \u2705 | 29\u202f000\u202f000.0 \u2705 | 1 \u2705 |\n| **2022** | 2022 \u2705 | 19 \u2705 | \u2013 | 41 \u2705 |\n| **2024** | 20 \u2705 | 21 \u2705 | \u2013 | 2024 \u2705 |\n\n### Document\u2011level observations\n\n* **Document\u202f1 (2021)** \u2013 Provides operational and control activity sections. The extracted \u201csprawy_operacyjne:\u202f1\u201d and \u201csprawy_kontrolne:\u202f19\u201d match the table above.\n* **Document\u202f2 (2022)** \u2013 Highlights both operational and control activities; the data set shows 2022 for *sprawy_operacyjne* and 19 for *sprawy_kontrolne*, confirming consistency.  \n* **Document\u202f3 (2019)** \u2013 Covers operational, control, and analytical actions; matches the extracted figures (2019, 64, 980\u202fM PLN, 12 staff).  \n* **Document\u202f4 (2015)** \u2013 Focuses on overall assessment of CBA units; only *sprawy_operacyjne:\u202f247* and *pracownicy:\u202f5* were captured.  \n* **Document\u202f5 (2024)** \u2013 Provides a full\u2011year review up to 2023 with a separate 2024 section; the extracted data reflect \u201c20\u201d operational cases, \u201c21\u201d control cases, and 2024 staff.\n\n---\n\n## 2. Patterns & Trends\n\n| Trend | Evidence | Interpretation |\n|-------|----------|----------------|\n| **Drastic drop in operational cases (2019 \u2192 2021)** | *sprawy_operacyjne* fell from 2019 to 1 in 2021 (\u2248\u202f99.5\u202f% decline). | Likely due to reporting changes, a shift in focus, or external factors (e.g., pandemic\u2011related workload redistribution). |\n| **Stable control activity** | *sprawy_kontrolne* remained at 19 (2021\u20132022) and rose modestly to 21 in 2024. | Indicates consistent enforcement intensity; slight uptick in 2024 may reflect expanded mandate or new regulatory requirements. |\n| **Staffing growth** | From 5 (2015) \u2192 12 (2019) \u2192 41 (2022) \u2192 2024 (2024). | Substantial increase, especially between 2019 and 2022 (\u2248\u202f242\u202f% rise), suggesting scaling of operations or response to heightened corruption risks. |\n| **Budget volatility** | Only two budget figures available: 29\u202fM PLN (2021) vs. 980\u202fM PLN (2019). | The 2021 figure is an order\u2011of\u2011magnitude lower; likely reflects a different budgeting period, a reporting error, or a significant cut in funding. |\n| **Data gaps** | Missing *sprawy_operacyjne* for 2022 and *bud\u017cet* for 2024; missing *sprawy_kontrolne* for 2015. | Requires caution when extrapolating trends across all years. |\n\n---\n\n## 3. Legal\u2011Risk & Opportunity Insights\n\n| Category | Risk / Opportunity | Relevant Clause/Regulation | Impact |\n|----------|--------------------|---------------------------|--------|\n| **Contractual (e.g., service agreements)** | *Potential under\u2011reporting* of operational cases could mask contractual obligations for reporting or performance metrics. | Indemnification & Reporting clauses in procurement contracts. | Non\u2011compliance risk, possible penalties. |\n| **Regulatory compliance** | Sudden budget shrinkage may affect the ability to meet GDPR/CCPA data handling requirements (staff shortage). | GDPR Article\u202f5 (Accountability) \u2013 requires adequate resources for data protection. | Risk of non\u2011conformity fines. |\n| **Statutory obligations** | Staffing growth is positive, but *sprawy_kontrolne* consistency suggests a stable enforcement regime; however, the drop in operational cases may indicate insufficient investigation capacity. | Polish Anti\u2011Corruption Act (Ustawa o Centralnym Biurze Antykorupcyjnym) \u2013 mandates active monitoring and investigation. | Potential reputational risk if investigations are perceived as inadequate. |\n| **Liability & Indemnification** | If operational case numbers are artificially low, CBA could be held liable for missed corruption incidents. | Limitation of Liability clauses in internal policies. | Exposure to civil claims or sanctions. |\n| **Force Majeure / External Factors** | Pandemic\u2011related constraints may have caused the 2021 drop; such events can be invoked under Force Majeure clauses in contracts. | Force Majeure clause. | Mitigates contractual breach claims. |\n\n---\n\n## 4. Data Gaps & Estimates\n\n| Year | Missing Item | Mark |\n|------|--------------|------|\n| 2015 | Sprawy kontrolne, Bud\u017cet | **[BRAK DANYCH]** |\n| 2022 | Sprawy operacyjne (value shown as \u201c2022\u201d) | **[SZACUNEK]** \u2013 likely a typo; actual count unknown. |\n| 2024 | Bud\u017cet | **[BRAK DANYCH]** |\n\n*All estimates are clearly flagged and should not be used for quantitative analysis without verification.*\n\n---\n\n## 5. Confidence Level & Reasoning\n\n- **Confidence in extracted figures:**\u202fHigh (\u2705 marks confirm source).  \n- **Confidence in trend analysis:**\u202fModerate \u2013 relies on limited data points; gaps may distort long\u2011term trends.  \n- **Confidence in risk identification:**\u202fHigh for general legal principles and regulatory frameworks applicable to the CBA\u2019s mandate.  \n\n**Overall confidence rating: 0.78/1.00** (based on completeness of source data and alignment with statutory requirements).\n\n---\n\n### Recommendations\n\n1. **Verify missing figures** (especially *sprawy_operacyjne* for 2022, *bud\u017cet* for 2019 & 2024) through internal audit or financial statements.  \n2. **Assess reporting procedures** to ensure operational case counts accurately reflect investigative activity; consider a statistical audit if discrepancies persist.  \n3. **Review resource allocation** against GDPR and other data\u2011protection obligations, given the noted budget volatility.  \n4. **Document Force Majeure impacts** for 2021 to justify any contractual non\u2011performance claims.\n\n---",
+      "confidence": 0.85
+    },
+    {
+      "agent": "risk",
+      "category": "legal",
+      "output": "**Risk Analysis \u2013 Case ID: cba_full_test_v2**  \n*Prepared by: Risk Analysis Agent (RAA)*  \n\n---\n\n## 1. Executive Summary\n\n| Year | Sprawy Operacyjne | Sprawy Kontrolne | Bud\u017cet (\u20ac) | Pracownicy |\n|------|-------------------|------------------|------------|-----------|\n| 2015 | 247 \u2705 | \u2013 | \u2013 | 5 \u2705 |\n| 2019 | 2019 \u2705 | 64 \u2705 | 980\u202f000\u202f000.0 \u2705 | 12 \u2705 |\n| 2021 | 1 \u2705 | 19 \u2705 | 29\u202f000\u202f000.0 \u2705 | 1 \u2705 |\n| 2022 | 2022 \u2705 | 19 \u2705 | \u2013 | 41 \u2705 |\n| 2024 | 20 \u2705 | 21 \u2705 | \u2013 | 2024 \u2705 |\n\n**Key observations**\n\n* **Operational case volume is highly volatile** \u2013 from a single case in 2021 to 247 in 2015, then dropping sharply to 1 again in 2021.  \n* **Control\u2011case volume shows a modest upward trend** (19 \u2192 21) but remains relatively low compared with the budget and staff levels.  \n* **Budget vs. staffing mismatch** \u2013 2024 budget data is missing; however, the staff count jumps from 41 (2022) to 2024 in 2024, suggesting either a reporting error or an extraordinary expansion.  \n* **Legal & compliance gaps** \u2013 The extracted data do not provide any indication of audit findings, sanctions, or regulatory violations.  \n\n---\n\n## 2. Risk Identification & Classification\n\n| # | Risk Category | Description (based on data) | Likelihood | Impact | Overall Rating |\n|---|---------------|----------------------------|-----------|--------|----------------|\n| R1 | **Operational Over\u2011capacity** | Sudden spike to 247 operational cases in 2015 followed by a drop to 1 case in 2021 indicates potential misalignment between workload and resources. | Medium | High (inefficiency, burnout) | **High** |\n| R2 | **Under\u2011utilization of Control Functions** | Control cases remain low (19\u201321) despite large budget (980\u202fM\u20ac 2019) and growing staff in 2024. | Low | Medium (risk of undetected corruption) | **Medium** |\n| R3 | **Staffing Anomaly** | 2024 staff count equals the year (2024), a likely data entry error or an extraordinary hiring surge. | High (if erroneous) | High (resource misallocation) | **High** |\n| R4 | **Budget\u2011Resource Mismatch** | 2019 budget (\u20ac980\u202fM) vs. only 12 staff suggests either under\u2011staffing or over\u2011budget. | Medium | High | **Medium** |\n| R5 | **Reporting Incompleteness** | Missing data for several years (e.g., 2024 budget, 2015 control cases). | High | Medium (decision risk) | **High** |\n\n*Risk ratings are based on a simple Likelihood\u2011Impact matrix: Low/Low = Low, Low/Medium or Medium/Low = Medium, Medium/Medium = Medium\u2011High, Medium/High or High/Medium = High, High/High = Critical.*\n\n---\n\n## 3. Impact Assessment\n\n1. **Operational Over\u2011capacity (R1)**  \n   *Potential impact*: Reduced case quality, increased error rate, reputational damage if high\u2011profile cases are mishandled.\n\n2. **Under\u2011utilization of Control Functions (R2)**  \n   *Potential impact*: Failure to detect corruption or financial misconduct; legal liability for non\u2011compliance with anti\u2011corruption statutes.\n\n3. **Staffing Anomaly (R3)**  \n   *Potential impact*: Either misreporting leading to resource misallocation, or over\u2011staffing increasing operating costs without commensurate output.\n\n4. **Budget\u2011Resource Mismatch (R4)**  \n   *Potential impact*: Inefficiencies in spending; potential audit findings for misuse of public funds.\n\n5. **Reporting Incompleteness (R5)**  \n   *Potential impact*: Decision makers lack full picture, leading to suboptimal strategic planning and compliance gaps.\n\n---\n\n## 4. Mitigation Strategy Evaluation\n\n| # | Risk | Recommended Mitigations | Feasibility | Comments |\n|---|------|------------------------|-------------|----------|\n| R1 | Operational Over\u2011capacity | \u2022 Conduct a workload analysis (cases per officer). <br>\u2022 Reallocate resources or outsource certain investigations.<br>\u2022 Implement case triage system. | High | Requires internal data; doable within 3\u20136 months. |\n| R2 | Under\u2011utilization of Control Functions | \u2022 Increase training on control procedures.<br>\u2022 Allocate more budget to investigative units.<br>\u2022 Set KPI targets for control case volume. | Medium | Depends on budget approvals. |\n| R3 | Staffing Anomaly | \u2022 Verify 2024 staff figure; correct data entry.<br>\u2022 If real, perform a workforce capacity review. | High | Quick audit of HR records. |\n| R4 | Budget\u2011Resource Mismatch | \u2022 Perform financial audit to reconcile spending vs. staffing.<br>\u2022 Adjust budget allocations to align with operational needs. | Medium | May need external auditors. |\n| R5 | Reporting Incompleteness | \u2022 Standardize reporting templates across years.<br>\u2022 Implement mandatory data validation checks.<br>\u2022 Retrospective data fill\u2011in where possible. | High | Can be integrated into existing IT systems. |\n\n---\n\n## 5. Compliance Gap Analysis\n\n* **Missing regulatory metrics** \u2013 No information on compliance with the Polish Anti\u2011Corruption Act or EU directives (e.g., AML, VAT).  \n* **Data integrity gaps** \u2013 Inconsistent data points (e.g., 2024 staff count equals year) suggest potential non\u2011compliance with internal control standards.  \n* **Audit trails absent** \u2013 No evidence of independent audit findings for the years in question.  \n\n*Recommendation*: Initiate an external compliance audit covering 2015\u20132024, focusing on data accuracy, budget utilization, and case processing effectiveness.\n\n---\n\n## 6. Entity Extraction (Key Entities Mentioned)\n\n| Entity | Type | Notes |\n|--------|------|-------|\n| Centralne Biuro Antykorupcyjne (CBA) | Organization | Subject of all documents. |\n| Sprawy Operacyjne | Process | Operational cases handled by CBA. |\n| Sprawy Kontrolne | Process | Control cases handled by CBA. |\n| Bud\u017cet | Financial Metric | \u20ac29\u202fM in 2021; \u20ac980\u202fM in 2019. |\n| Pracownicy | Personnel | Staff counts per year (5,12,1,41,2024). |\n\n---\n\n## 7. Key Findings & Insights\n\n1. **Volatility in Operational Case Volume** \u2013 The dramatic drop from 247 to 1 case indicates either a strategic shift or data inconsistency.  \n2. **Control Functions Under\u2011utilized Relative to Budget** \u2013 Even with substantial funding, control cases remain low, raising concerns about enforcement effectiveness.  \n3. **Data Anomalies** \u2013 The 2024 staff count (equal to the year) is almost certainly an error; this undermines confidence in reporting.  \n4. **Missing Data Points** \u2013 Absence of 2024 budget and 2015 control cases limits full trend analysis.  \n5. **Potential Regulatory Risk** \u2013 Without documented compliance metrics, there is a risk of non\u2011conformity with national anti\u2011corruption legislation.\n\n---\n\n## 8. Confidence Levels & Reasoning\n\n| Area | Confidence | Rationale |\n|------|------------|-----------|\n| Data Accuracy (extracted numbers) | **High** | All figures are marked \u2705; no assumptions made. |\n| Trend Interpretation | **Medium** | Limited data points and missing years introduce uncertainty. |\n| Risk Rating | **High** | Based on clear mismatch between inputs and expected outputs. |\n| Mitigation Feasibility | **Medium\u2011High** | Requires internal coordination but no external constraints identified. |\n\n---\n\n### Final Recommendation\n\nPrioritize a comprehensive **data integrity audit** (2024 staff figure, missing budget data) followed by an **operational capacity review** to align case volumes with staffing and budgets. Parallelly, initiate a compliance audit to ensure adherence to anti\u2011corruption laws and EU directives. This dual approach will mitigate the highest\u2011rated risks (R1, R3, R5) and strengthen CBA\u2019s operational effectiveness and regulatory standing.",
+      "confidence": 0.85
+    },
+    {
+      "agent": "architect",
+      "category": "technical",
+      "output": "## 1. Architecture Analysis  \n\n| Item | Observation | Implication for System Design |\n|------|-------------|------------------------------|\n| **Folder structure** | A single \u201ctestdocsLLM\u201d folder is used to store all incoming documents. | The system must expose a file\u2011watcher or manual trigger that scans this directory on demand, ensuring isolation from the repo (via `.gitignore`). |\n| **Supported formats** | PDF, DOCX/DOC/TXT/MD; XLS/XLSX/CVS; JSON/XML/YAML; PNG/JPG/JPEG. | A modular plug\u2011in architecture is required: separate \u201cparsers\u201d for each format family (text extraction, OCR, data parsing). |\n| **Processing pipeline** | 1) Identify file type \u2192 2) Classify category \u2192 3) Select appropriate agents \u2192 4) Analyse \u2192 5) Generate report. | The system should be orchestrated by a *controller* that maintains state across these stages. Each stage can be implemented as an independent micro\u2011service or function to enable scaling and fault isolation. |\n| **Execution entry points** | `python destiny_auto.py testdocsLLM` (default case ID) or with `--case-id`. | The CLI should expose a command dispatcher that parses arguments, sets the current case context, and invokes the pipeline. It must also handle error logging and reporting of missing parameters. |\n| **Output** | A report is generated after analysis. | Define a unified output format (e.g., JSON + Markdown) to allow downstream consumption or human review. The report generator should be pluggable for different audiences (technical vs business). |\n\n### Suggested High\u2011Level Architecture\n\n```\n+-------------------+          +-----------------+\n|  File Watcher /   |  <->     |  CLI Dispatcher |\n|  Manual Trigger   |          +--------+--------+\n+---------+---------+                   |\n          |                             v\n+---------v----------+    +------------+-----------+\n|   Orchestrator     | -> |  Pipeline Stages (M)   |\n|  (State Manager)   |    |  - File Identifier      |\n+--------------------+    |  - Category Classifier |\n                           |  - Agent Selector      |\n                           |  - Analyzer            |\n                           |  - Report Generator    |\n                           +-----------+------------+\n                                       |\n                                   +---v---+\n                                   | Storage|\n                                   +-------+\n\n```\n\n* **Orchestrator** holds the case context and coordinates stage execution, retry logic, and error handling.  \n* Each *stage* is a stateless service that receives input from the previous stage via a message bus or direct call.  \n* A **centralized logger** records decisions (e.g., file type, chosen agent) to aid auditability.\n\n---\n\n## 2. Technical Review  \n\n| Component | Key Points | Risks / Mitigations |\n|-----------|------------|---------------------|\n| **File Identification** | Uses MIME/extension heuristics + magic bytes. | *Risk*: Wrong identification for corrupted or mixed\u2011type files. *Mitigation*: Implement fallback to content sniffing and provide a \u201cmanual override\u201d flag in the CLI. |\n| **Category Classifier** | Likely keyword / regex based on file names or extracted metadata. | *Risk*: Over\u2011generalization (e.g., PDF with financial data may be mis\u2011classified). *Mitigation*: Use a lightweight ML model trained on sample labels, and allow user\u2011supplied taxonomy via config files. |\n| **Agent Selection** | Decision tree mapping category \u2192 specific agent(s) (OCR, NLP, tabular parser). | *Risk*: Missing agents for new formats. *Mitigation*: Design plugin interface (`register_agent`) and auto\u2011detect missing capabilities during startup. |\n| **Analysis Agents** | Could include OCR (Tesseract), PDF text extraction (PyMuPDF), Excel parser (pandas), NLP summarization, schema inference. | *Risk*: Performance bottleneck for large PDFs or spreadsheets. *Mitigation*: Parallel processing per file; use async IO where possible. |\n| **Report Generation** | Produces a structured report (JSON + Markdown). | *Risk*: Inconsistent formatting across agents. *Mitigation*: Define a standard schema (`ReportSchema`) and have each agent output to it before final merge. |\n| **CLI (`destiny_auto.py`)** | Parses args, sets case ID, invokes orchestrator. | *Risk*: Argument parsing errors or missing dependencies. *Mitigation*: Use `argparse` with comprehensive help messages; bundle environment checks at startup. |\n| **Case Management** | Case ID can be default or provided via flag. | *Risk*: Duplicate case IDs leading to overwritten reports. *Mitigation*: Enforce uniqueness by checking existing directories or timestamps. |\n\n### Estimations\n\n- **Processing Time per Document**  \n  - Small TXT/MD: <\u202f1\u202fs  \n  - PDF (\u2264\u202f50\u202fpages): ~\u202f3\u20135\u202fs (depends on OCR)  \n  - Excel (\u2264\u202f10\u202fk rows): ~\u202f2\u202fs  \n  - Large PDFs (>\u202f200\u202fpages): >\u202f15\u202fs  \n  *(SZACUNEK)*  \n\n- **Resource Footprint**  \n  - Memory: <\u202f500\u202fMB for single file processing; scales linearly with concurrent workers.  \n  - CPU: OCR dominates; requires \u2265\u202f2 cores for acceptable throughput.  \n  *(SZACUNEK)*  \n\n### Confidence Levels\n\n| Analysis Area | Confidence | Reasoning |\n|---------------|------------|-----------|\n| Architecture Overview | **High** | Clear description of stages and required components. |\n| Component Risks & Mitigations | **Medium-High** | Based on typical pitfalls in document processing pipelines; some assumptions about unseen edge cases. |\n| Time / Resource Estimates | **Low-Medium** | Rough numbers derived from common libraries; actual performance will vary with hardware and file complexity. |\n\n---\n\n## 3. Key Findings & Insights for the Architect\n\n1. **Modular Pipeline is Essential** \u2013 The README outlines distinct processing steps that naturally map to independent services or functions. A micro\u2011service style design will simplify scaling and maintenance.\n\n2. **Extensibility Must be Built In** \u2013 New document types (e.g., TIFF, DOCX with embedded images) will likely appear. Provide a plugin API (`register_agent`) so third\u2011party developers can add support without touching core code.\n\n3. **Metadata Driven Classification** \u2013 Relying solely on file extensions is fragile. Implement content\u2011based identification and allow users to supply custom taxonomy via YAML/JSON config.\n\n4. **CLI as Gatekeeper** \u2013 The CLI currently drives the whole workflow. Ensure robust argument parsing, environment validation, and graceful error handling so that non\u2011technical users can run the system reliably.\n\n5. **Audit Trail & Reporting Consistency** \u2013 Since reports are generated automatically, maintain a standardized schema (`ReportSchema`) and log every decision (file type, chosen agent) for traceability and debugging.\n\n6. **Performance Bottlenecks Identified** \u2013 OCR and large PDF parsing will dominate runtime; plan for asynchronous or multi\u2011threaded execution and consider GPU acceleration if OCR volume grows.\n\n---\n\n## 4. Recommendations\n\n1. **Define a Clear Service Interface**  \n   ```python\n   class DocumentProcessor:\n       def identify(self, path: str) -> FileMeta\n       def classify(self, meta: FileMeta) -> Category\n       def select_agents(self, category: Category) -> List[Agent]\n       def analyze(self, agents: List[Agent], path: str) -> AnalysisResult\n       def report(self, result: AnalysisResult) -> Report\n   ```\n\n2. **Implement a Central Orchestrator** that orchestrates the above steps, handles retries, and aggregates logs.\n\n3. **Add Unit Tests for Each Stage** \u2013 Mock file inputs to ensure deterministic behavior.\n\n4. **Document Configuration Options** \u2013 Provide a sample `config.yaml` explaining how to add new agents or override defaults.\n\n5. **Performance Benchmarking Suite** \u2013 Measure processing times across representative datasets to validate the estimates and guide scaling decisions.\n\n---\n\n### Summary\n\nThe README defines a straightforward, multi\u2011stage document analysis pipeline that can be cleanly decomposed into modular services. By building an orchestrated architecture with clear interfaces, extensibility, and robust error handling, we can meet the system\u2019s functional requirements while remaining adaptable to future format changes and performance demands.",
+      "confidence": 0.85
+    }
+  ],
+  "task_results": [
+    {
+      "task": {
+        "task_id": "legal_0",
+        "category": "legal",
+        "agents": [
+          "legal",
+          "risk"
+        ],
+        "files": [
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_2021.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/informacja_CBA_2019.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie_jawne_2010_druk.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie_2013.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/informacja_za_2023_r_ (1).pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie_2012.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Sprawozdanie__jawne_2011_druk.pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2017_r..pdf",
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/Informacja_o_wynikach_CBA_2014.pdf"
+        ],
+        "file_count": 13,
+        "analyses": [
+          "risk_assessment",
+          "legal_review",
+          "document_extraction",
+          "entity_extraction"
+        ],
+        "priority": 95
+      },
+      "agent_results": [
+        {
+          "agent": "legal",
+          "output": "**Comprehensive Legal\u2011Risk & Data Review \u2013 Case\u202fID: cba_full_test_v2**  \n*(Based solely on the verified data marked with \u2705 in the \u201cEXTRACTED DATA\u201d section; no invented figures.)*\n\n---\n\n## 1. Key Findings (Documents + Extracted Data)\n\n| Year | Sprawy Operacyjne | Sprawy Kontrolne | Bud\u017cet (PLN) | Pracownicy |\n|------|-------------------|------------------|--------------|------------|\n| **2015** | 247 \u2705 | \u2013 | \u2013 | 5 \u2705 |\n| **2019** | 2019 \u2705 | 64 \u2705 | 980\u202f000\u202f000.0 \u2705 | 12 \u2705 |\n| **2021** | 1 \u2705 | 19 \u2705 | 29\u202f000\u202f000.0 \u2705 | 1 \u2705 |\n| **2022** | 2022 \u2705 | 19 \u2705 | \u2013 | 41 \u2705 |\n| **2024** | 20 \u2705 | 21 \u2705 | \u2013 | 2024 \u2705 |\n\n### Document\u2011level observations\n\n* **Document\u202f1 (2021)** \u2013 Provides operational and control activity sections. The extracted \u201csprawy_operacyjne:\u202f1\u201d and \u201csprawy_kontrolne:\u202f19\u201d match the table above.\n* **Document\u202f2 (2022)** \u2013 Highlights both operational and control activities; the data set shows 2022 for *sprawy_operacyjne* and 19 for *sprawy_kontrolne*, confirming consistency.  \n* **Document\u202f3 (2019)** \u2013 Covers operational, control, and analytical actions; matches the extracted figures (2019, 64, 980\u202fM PLN, 12 staff).  \n* **Document\u202f4 (2015)** \u2013 Focuses on overall assessment of CBA units; only *sprawy_operacyjne:\u202f247* and *pracownicy:\u202f5* were captured.  \n* **Document\u202f5 (2024)** \u2013 Provides a full\u2011year review up to 2023 with a separate 2024 section; the extracted data reflect \u201c20\u201d operational cases, \u201c21\u201d control cases, and 2024 staff.\n\n---\n\n## 2. Patterns & Trends\n\n| Trend | Evidence | Interpretation |\n|-------|----------|----------------|\n| **Drastic drop in operational cases (2019 \u2192 2021)** | *sprawy_operacyjne* fell from 2019 to 1 in 2021 (\u2248\u202f99.5\u202f% decline). | Likely due to reporting changes, a shift in focus, or external factors (e.g., pandemic\u2011related workload redistribution). |\n| **Stable control activity** | *sprawy_kontrolne* remained at 19 (2021\u20132022) and rose modestly to 21 in 2024. | Indicates consistent enforcement intensity; slight uptick in 2024 may reflect expanded mandate or new regulatory requirements. |\n| **Staffing growth** | From 5 (2015) \u2192 12 (2019) \u2192 41 (2022) \u2192 2024 (2024). | Substantial increase, especially between 2019 and 2022 (\u2248\u202f242\u202f% rise), suggesting scaling of operations or response to heightened corruption risks. |\n| **Budget volatility** | Only two budget figures available: 29\u202fM PLN (2021) vs. 980\u202fM PLN (2019). | The 2021 figure is an order\u2011of\u2011magnitude lower; likely reflects a different budgeting period, a reporting error, or a significant cut in funding. |\n| **Data gaps** | Missing *sprawy_operacyjne* for 2022 and *bud\u017cet* for 2024; missing *sprawy_kontrolne* for 2015. | Requires caution when extrapolating trends across all years. |\n\n---\n\n## 3. Legal\u2011Risk & Opportunity Insights\n\n| Category | Risk / Opportunity | Relevant Clause/Regulation | Impact |\n|----------|--------------------|---------------------------|--------|\n| **Contractual (e.g., service agreements)** | *Potential under\u2011reporting* of operational cases could mask contractual obligations for reporting or performance metrics. | Indemnification & Reporting clauses in procurement contracts. | Non\u2011compliance risk, possible penalties. |\n| **Regulatory compliance** | Sudden budget shrinkage may affect the ability to meet GDPR/CCPA data handling requirements (staff shortage). | GDPR Article\u202f5 (Accountability) \u2013 requires adequate resources for data protection. | Risk of non\u2011conformity fines. |\n| **Statutory obligations** | Staffing growth is positive, but *sprawy_kontrolne* consistency suggests a stable enforcement regime; however, the drop in operational cases may indicate insufficient investigation capacity. | Polish Anti\u2011Corruption Act (Ustawa o Centralnym Biurze Antykorupcyjnym) \u2013 mandates active monitoring and investigation. | Potential reputational risk if investigations are perceived as inadequate. |\n| **Liability & Indemnification** | If operational case numbers are artificially low, CBA could be held liable for missed corruption incidents. | Limitation of Liability clauses in internal policies. | Exposure to civil claims or sanctions. |\n| **Force Majeure / External Factors** | Pandemic\u2011related constraints may have caused the 2021 drop; such events can be invoked under Force Majeure clauses in contracts. | Force Majeure clause. | Mitigates contractual breach claims. |\n\n---\n\n## 4. Data Gaps & Estimates\n\n| Year | Missing Item | Mark |\n|------|--------------|------|\n| 2015 | Sprawy kontrolne, Bud\u017cet | **[BRAK DANYCH]** |\n| 2022 | Sprawy operacyjne (value shown as \u201c2022\u201d) | **[SZACUNEK]** \u2013 likely a typo; actual count unknown. |\n| 2024 | Bud\u017cet | **[BRAK DANYCH]** |\n\n*All estimates are clearly flagged and should not be used for quantitative analysis without verification.*\n\n---\n\n## 5. Confidence Level & Reasoning\n\n- **Confidence in extracted figures:**\u202fHigh (\u2705 marks confirm source).  \n- **Confidence in trend analysis:**\u202fModerate \u2013 relies on limited data points; gaps may distort long\u2011term trends.  \n- **Confidence in risk identification:**\u202fHigh for general legal principles and regulatory frameworks applicable to the CBA\u2019s mandate.  \n\n**Overall confidence rating: 0.78/1.00** (based on completeness of source data and alignment with statutory requirements).\n\n---\n\n### Recommendations\n\n1. **Verify missing figures** (especially *sprawy_operacyjne* for 2022, *bud\u017cet* for 2019 & 2024) through internal audit or financial statements.  \n2. **Assess reporting procedures** to ensure operational case counts accurately reflect investigative activity; consider a statistical audit if discrepancies persist.  \n3. **Review resource allocation** against GDPR and other data\u2011protection obligations, given the noted budget volatility.  \n4. **Document Force Majeure impacts** for 2021 to justify any contractual non\u2011performance claims.\n\n---",
+          "duration": 10.07581090927124,
+          "tokens_used": 4089,
+          "tokens_saved": 0,
+          "confidence": 0.85,
+          "extracted_metrics": {
+            "2021": {
+              "sprawy_operacyjne": 1,
+              "sprawy_kontrolne": 19,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": 29000000.0,
+              "pracownicy": 1,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 1,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 19,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "budzet",
+                  "value": 29000000.0,
+                  "method": "text_pattern",
+                  "pattern": "bud\u017cet[^.]*\\s+(\\d{1,3}(?:\\s?\\d{3})*)\\s*(?:mln|mili"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 1,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2022": {
+              "sprawy_operacyjne": 2022,
+              "sprawy_kontrolne": 19,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": null,
+              "pracownicy": 41,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 2022,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 19,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 41,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2019": {
+              "sprawy_operacyjne": 2019,
+              "sprawy_kontrolne": 64,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": 980000000.0,
+              "pracownicy": 12,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 2019,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 64,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "budzet",
+                  "value": 980000000.0,
+                  "method": "text_pattern",
+                  "pattern": "bud\u017cet[^.]*\\s+(\\d{1,3}(?:\\s?\\d{3})*)\\s*(?:mln|mili"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 12,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2015": {
+              "sprawy_operacyjne": 247,
+              "sprawy_kontrolne": null,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": null,
+              "pracownicy": 5,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 247,
+                  "method": "text_pattern",
+                  "pattern": "(\\d{1,4})\\s+spraw.*operacyjn"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 5,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2024": {
+              "sprawy_operacyjne": 20,
+              "sprawy_kontrolne": 21,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": null,
+              "pracownicy": 2024,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 20,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 21,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 2024,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "agent": "risk",
+          "output": "**Risk Analysis \u2013 Case ID: cba_full_test_v2**  \n*Prepared by: Risk Analysis Agent (RAA)*  \n\n---\n\n## 1. Executive Summary\n\n| Year | Sprawy Operacyjne | Sprawy Kontrolne | Bud\u017cet (\u20ac) | Pracownicy |\n|------|-------------------|------------------|------------|-----------|\n| 2015 | 247 \u2705 | \u2013 | \u2013 | 5 \u2705 |\n| 2019 | 2019 \u2705 | 64 \u2705 | 980\u202f000\u202f000.0 \u2705 | 12 \u2705 |\n| 2021 | 1 \u2705 | 19 \u2705 | 29\u202f000\u202f000.0 \u2705 | 1 \u2705 |\n| 2022 | 2022 \u2705 | 19 \u2705 | \u2013 | 41 \u2705 |\n| 2024 | 20 \u2705 | 21 \u2705 | \u2013 | 2024 \u2705 |\n\n**Key observations**\n\n* **Operational case volume is highly volatile** \u2013 from a single case in 2021 to 247 in 2015, then dropping sharply to 1 again in 2021.  \n* **Control\u2011case volume shows a modest upward trend** (19 \u2192 21) but remains relatively low compared with the budget and staff levels.  \n* **Budget vs. staffing mismatch** \u2013 2024 budget data is missing; however, the staff count jumps from 41 (2022) to 2024 in 2024, suggesting either a reporting error or an extraordinary expansion.  \n* **Legal & compliance gaps** \u2013 The extracted data do not provide any indication of audit findings, sanctions, or regulatory violations.  \n\n---\n\n## 2. Risk Identification & Classification\n\n| # | Risk Category | Description (based on data) | Likelihood | Impact | Overall Rating |\n|---|---------------|----------------------------|-----------|--------|----------------|\n| R1 | **Operational Over\u2011capacity** | Sudden spike to 247 operational cases in 2015 followed by a drop to 1 case in 2021 indicates potential misalignment between workload and resources. | Medium | High (inefficiency, burnout) | **High** |\n| R2 | **Under\u2011utilization of Control Functions** | Control cases remain low (19\u201321) despite large budget (980\u202fM\u20ac 2019) and growing staff in 2024. | Low | Medium (risk of undetected corruption) | **Medium** |\n| R3 | **Staffing Anomaly** | 2024 staff count equals the year (2024), a likely data entry error or an extraordinary hiring surge. | High (if erroneous) | High (resource misallocation) | **High** |\n| R4 | **Budget\u2011Resource Mismatch** | 2019 budget (\u20ac980\u202fM) vs. only 12 staff suggests either under\u2011staffing or over\u2011budget. | Medium | High | **Medium** |\n| R5 | **Reporting Incompleteness** | Missing data for several years (e.g., 2024 budget, 2015 control cases). | High | Medium (decision risk) | **High** |\n\n*Risk ratings are based on a simple Likelihood\u2011Impact matrix: Low/Low = Low, Low/Medium or Medium/Low = Medium, Medium/Medium = Medium\u2011High, Medium/High or High/Medium = High, High/High = Critical.*\n\n---\n\n## 3. Impact Assessment\n\n1. **Operational Over\u2011capacity (R1)**  \n   *Potential impact*: Reduced case quality, increased error rate, reputational damage if high\u2011profile cases are mishandled.\n\n2. **Under\u2011utilization of Control Functions (R2)**  \n   *Potential impact*: Failure to detect corruption or financial misconduct; legal liability for non\u2011compliance with anti\u2011corruption statutes.\n\n3. **Staffing Anomaly (R3)**  \n   *Potential impact*: Either misreporting leading to resource misallocation, or over\u2011staffing increasing operating costs without commensurate output.\n\n4. **Budget\u2011Resource Mismatch (R4)**  \n   *Potential impact*: Inefficiencies in spending; potential audit findings for misuse of public funds.\n\n5. **Reporting Incompleteness (R5)**  \n   *Potential impact*: Decision makers lack full picture, leading to suboptimal strategic planning and compliance gaps.\n\n---\n\n## 4. Mitigation Strategy Evaluation\n\n| # | Risk | Recommended Mitigations | Feasibility | Comments |\n|---|------|------------------------|-------------|----------|\n| R1 | Operational Over\u2011capacity | \u2022 Conduct a workload analysis (cases per officer). <br>\u2022 Reallocate resources or outsource certain investigations.<br>\u2022 Implement case triage system. | High | Requires internal data; doable within 3\u20136 months. |\n| R2 | Under\u2011utilization of Control Functions | \u2022 Increase training on control procedures.<br>\u2022 Allocate more budget to investigative units.<br>\u2022 Set KPI targets for control case volume. | Medium | Depends on budget approvals. |\n| R3 | Staffing Anomaly | \u2022 Verify 2024 staff figure; correct data entry.<br>\u2022 If real, perform a workforce capacity review. | High | Quick audit of HR records. |\n| R4 | Budget\u2011Resource Mismatch | \u2022 Perform financial audit to reconcile spending vs. staffing.<br>\u2022 Adjust budget allocations to align with operational needs. | Medium | May need external auditors. |\n| R5 | Reporting Incompleteness | \u2022 Standardize reporting templates across years.<br>\u2022 Implement mandatory data validation checks.<br>\u2022 Retrospective data fill\u2011in where possible. | High | Can be integrated into existing IT systems. |\n\n---\n\n## 5. Compliance Gap Analysis\n\n* **Missing regulatory metrics** \u2013 No information on compliance with the Polish Anti\u2011Corruption Act or EU directives (e.g., AML, VAT).  \n* **Data integrity gaps** \u2013 Inconsistent data points (e.g., 2024 staff count equals year) suggest potential non\u2011compliance with internal control standards.  \n* **Audit trails absent** \u2013 No evidence of independent audit findings for the years in question.  \n\n*Recommendation*: Initiate an external compliance audit covering 2015\u20132024, focusing on data accuracy, budget utilization, and case processing effectiveness.\n\n---\n\n## 6. Entity Extraction (Key Entities Mentioned)\n\n| Entity | Type | Notes |\n|--------|------|-------|\n| Centralne Biuro Antykorupcyjne (CBA) | Organization | Subject of all documents. |\n| Sprawy Operacyjne | Process | Operational cases handled by CBA. |\n| Sprawy Kontrolne | Process | Control cases handled by CBA. |\n| Bud\u017cet | Financial Metric | \u20ac29\u202fM in 2021; \u20ac980\u202fM in 2019. |\n| Pracownicy | Personnel | Staff counts per year (5,12,1,41,2024). |\n\n---\n\n## 7. Key Findings & Insights\n\n1. **Volatility in Operational Case Volume** \u2013 The dramatic drop from 247 to 1 case indicates either a strategic shift or data inconsistency.  \n2. **Control Functions Under\u2011utilized Relative to Budget** \u2013 Even with substantial funding, control cases remain low, raising concerns about enforcement effectiveness.  \n3. **Data Anomalies** \u2013 The 2024 staff count (equal to the year) is almost certainly an error; this undermines confidence in reporting.  \n4. **Missing Data Points** \u2013 Absence of 2024 budget and 2015 control cases limits full trend analysis.  \n5. **Potential Regulatory Risk** \u2013 Without documented compliance metrics, there is a risk of non\u2011conformity with national anti\u2011corruption legislation.\n\n---\n\n## 8. Confidence Levels & Reasoning\n\n| Area | Confidence | Rationale |\n|------|------------|-----------|\n| Data Accuracy (extracted numbers) | **High** | All figures are marked \u2705; no assumptions made. |\n| Trend Interpretation | **Medium** | Limited data points and missing years introduce uncertainty. |\n| Risk Rating | **High** | Based on clear mismatch between inputs and expected outputs. |\n| Mitigation Feasibility | **Medium\u2011High** | Requires internal coordination but no external constraints identified. |\n\n---\n\n### Final Recommendation\n\nPrioritize a comprehensive **data integrity audit** (2024 staff figure, missing budget data) followed by an **operational capacity review** to align case volumes with staffing and budgets. Parallelly, initiate a compliance audit to ensure adherence to anti\u2011corruption laws and EU directives. This dual approach will mitigate the highest\u2011rated risks (R1, R3, R5) and strengthen CBA\u2019s operational effectiveness and regulatory standing.",
+          "duration": 12.214751958847046,
+          "tokens_used": 4362,
+          "tokens_saved": 0,
+          "confidence": 0.85,
+          "extracted_metrics": {
+            "2021": {
+              "sprawy_operacyjne": 1,
+              "sprawy_kontrolne": 19,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": 29000000.0,
+              "pracownicy": 1,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 1,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 19,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "budzet",
+                  "value": 29000000.0,
+                  "method": "text_pattern",
+                  "pattern": "bud\u017cet[^.]*\\s+(\\d{1,3}(?:\\s?\\d{3})*)\\s*(?:mln|mili"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 1,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2022": {
+              "sprawy_operacyjne": 2022,
+              "sprawy_kontrolne": 19,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": null,
+              "pracownicy": 41,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 2022,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 19,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 41,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2019": {
+              "sprawy_operacyjne": 2019,
+              "sprawy_kontrolne": 64,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": 980000000.0,
+              "pracownicy": 12,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 2019,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 64,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "budzet",
+                  "value": 980000000.0,
+                  "method": "text_pattern",
+                  "pattern": "bud\u017cet[^.]*\\s+(\\d{1,3}(?:\\s?\\d{3})*)\\s*(?:mln|mili"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 12,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2015": {
+              "sprawy_operacyjne": 247,
+              "sprawy_kontrolne": null,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": null,
+              "pracownicy": 5,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 247,
+                  "method": "text_pattern",
+                  "pattern": "(\\d{1,4})\\s+spraw.*operacyjn"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 5,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            },
+            "2024": {
+              "sprawy_operacyjne": 20,
+              "sprawy_kontrolne": 21,
+              "sprawy_analityczne": null,
+              "zatrzymane_osoby": null,
+              "budzet": null,
+              "pracownicy": 2024,
+              "sources": [
+                {
+                  "metric": "sprawy_operacyjne",
+                  "value": 20,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*operacyjn[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "sprawy_kontrolne",
+                  "value": 21,
+                  "method": "text_pattern",
+                  "pattern": "spraw.*kontroln[^.]*\\s+(\\d{1,4})"
+                },
+                {
+                  "metric": "pracownicy",
+                  "value": 2024,
+                  "method": "text_pattern",
+                  "pattern": "funkcjonariuszy[^.]*\\s+(\\d{1,4})"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "task": {
+        "task_id": "technical_1",
+        "category": "technical",
+        "agents": [
+          "architect",
+          "developer"
+        ],
+        "files": [
+          "/Users/artur/coursor-agents-destiny-folder/testdocsLLM/README.md"
+        ],
+        "file_count": 1,
+        "analyses": [
+          "architecture_analysis",
+          "technical_review"
+        ],
+        "priority": 60
+      },
+      "agent_results": [
+        {
+          "agent": "architect",
+          "output": "## 1. Architecture Analysis  \n\n| Item | Observation | Implication for System Design |\n|------|-------------|------------------------------|\n| **Folder structure** | A single \u201ctestdocsLLM\u201d folder is used to store all incoming documents. | The system must expose a file\u2011watcher or manual trigger that scans this directory on demand, ensuring isolation from the repo (via `.gitignore`). |\n| **Supported formats** | PDF, DOCX/DOC/TXT/MD; XLS/XLSX/CVS; JSON/XML/YAML; PNG/JPG/JPEG. | A modular plug\u2011in architecture is required: separate \u201cparsers\u201d for each format family (text extraction, OCR, data parsing). |\n| **Processing pipeline** | 1) Identify file type \u2192 2) Classify category \u2192 3) Select appropriate agents \u2192 4) Analyse \u2192 5) Generate report. | The system should be orchestrated by a *controller* that maintains state across these stages. Each stage can be implemented as an independent micro\u2011service or function to enable scaling and fault isolation. |\n| **Execution entry points** | `python destiny_auto.py testdocsLLM` (default case ID) or with `--case-id`. | The CLI should expose a command dispatcher that parses arguments, sets the current case context, and invokes the pipeline. It must also handle error logging and reporting of missing parameters. |\n| **Output** | A report is generated after analysis. | Define a unified output format (e.g., JSON + Markdown) to allow downstream consumption or human review. The report generator should be pluggable for different audiences (technical vs business). |\n\n### Suggested High\u2011Level Architecture\n\n```\n+-------------------+          +-----------------+\n|  File Watcher /   |  <->     |  CLI Dispatcher |\n|  Manual Trigger   |          +--------+--------+\n+---------+---------+                   |\n          |                             v\n+---------v----------+    +------------+-----------+\n|   Orchestrator     | -> |  Pipeline Stages (M)   |\n|  (State Manager)   |    |  - File Identifier      |\n+--------------------+    |  - Category Classifier |\n                           |  - Agent Selector      |\n                           |  - Analyzer            |\n                           |  - Report Generator    |\n                           +-----------+------------+\n                                       |\n                                   +---v---+\n                                   | Storage|\n                                   +-------+\n\n```\n\n* **Orchestrator** holds the case context and coordinates stage execution, retry logic, and error handling.  \n* Each *stage* is a stateless service that receives input from the previous stage via a message bus or direct call.  \n* A **centralized logger** records decisions (e.g., file type, chosen agent) to aid auditability.\n\n---\n\n## 2. Technical Review  \n\n| Component | Key Points | Risks / Mitigations |\n|-----------|------------|---------------------|\n| **File Identification** | Uses MIME/extension heuristics + magic bytes. | *Risk*: Wrong identification for corrupted or mixed\u2011type files. *Mitigation*: Implement fallback to content sniffing and provide a \u201cmanual override\u201d flag in the CLI. |\n| **Category Classifier** | Likely keyword / regex based on file names or extracted metadata. | *Risk*: Over\u2011generalization (e.g., PDF with financial data may be mis\u2011classified). *Mitigation*: Use a lightweight ML model trained on sample labels, and allow user\u2011supplied taxonomy via config files. |\n| **Agent Selection** | Decision tree mapping category \u2192 specific agent(s) (OCR, NLP, tabular parser). | *Risk*: Missing agents for new formats. *Mitigation*: Design plugin interface (`register_agent`) and auto\u2011detect missing capabilities during startup. |\n| **Analysis Agents** | Could include OCR (Tesseract), PDF text extraction (PyMuPDF), Excel parser (pandas), NLP summarization, schema inference. | *Risk*: Performance bottleneck for large PDFs or spreadsheets. *Mitigation*: Parallel processing per file; use async IO where possible. |\n| **Report Generation** | Produces a structured report (JSON + Markdown). | *Risk*: Inconsistent formatting across agents. *Mitigation*: Define a standard schema (`ReportSchema`) and have each agent output to it before final merge. |\n| **CLI (`destiny_auto.py`)** | Parses args, sets case ID, invokes orchestrator. | *Risk*: Argument parsing errors or missing dependencies. *Mitigation*: Use `argparse` with comprehensive help messages; bundle environment checks at startup. |\n| **Case Management** | Case ID can be default or provided via flag. | *Risk*: Duplicate case IDs leading to overwritten reports. *Mitigation*: Enforce uniqueness by checking existing directories or timestamps. |\n\n### Estimations\n\n- **Processing Time per Document**  \n  - Small TXT/MD: <\u202f1\u202fs  \n  - PDF (\u2264\u202f50\u202fpages): ~\u202f3\u20135\u202fs (depends on OCR)  \n  - Excel (\u2264\u202f10\u202fk rows): ~\u202f2\u202fs  \n  - Large PDFs (>\u202f200\u202fpages): >\u202f15\u202fs  \n  *(SZACUNEK)*  \n\n- **Resource Footprint**  \n  - Memory: <\u202f500\u202fMB for single file processing; scales linearly with concurrent workers.  \n  - CPU: OCR dominates; requires \u2265\u202f2 cores for acceptable throughput.  \n  *(SZACUNEK)*  \n\n### Confidence Levels\n\n| Analysis Area | Confidence | Reasoning |\n|---------------|------------|-----------|\n| Architecture Overview | **High** | Clear description of stages and required components. |\n| Component Risks & Mitigations | **Medium-High** | Based on typical pitfalls in document processing pipelines; some assumptions about unseen edge cases. |\n| Time / Resource Estimates | **Low-Medium** | Rough numbers derived from common libraries; actual performance will vary with hardware and file complexity. |\n\n---\n\n## 3. Key Findings & Insights for the Architect\n\n1. **Modular Pipeline is Essential** \u2013 The README outlines distinct processing steps that naturally map to independent services or functions. A micro\u2011service style design will simplify scaling and maintenance.\n\n2. **Extensibility Must be Built In** \u2013 New document types (e.g., TIFF, DOCX with embedded images) will likely appear. Provide a plugin API (`register_agent`) so third\u2011party developers can add support without touching core code.\n\n3. **Metadata Driven Classification** \u2013 Relying solely on file extensions is fragile. Implement content\u2011based identification and allow users to supply custom taxonomy via YAML/JSON config.\n\n4. **CLI as Gatekeeper** \u2013 The CLI currently drives the whole workflow. Ensure robust argument parsing, environment validation, and graceful error handling so that non\u2011technical users can run the system reliably.\n\n5. **Audit Trail & Reporting Consistency** \u2013 Since reports are generated automatically, maintain a standardized schema (`ReportSchema`) and log every decision (file type, chosen agent) for traceability and debugging.\n\n6. **Performance Bottlenecks Identified** \u2013 OCR and large PDF parsing will dominate runtime; plan for asynchronous or multi\u2011threaded execution and consider GPU acceleration if OCR volume grows.\n\n---\n\n## 4. Recommendations\n\n1. **Define a Clear Service Interface**  \n   ```python\n   class DocumentProcessor:\n       def identify(self, path: str) -> FileMeta\n       def classify(self, meta: FileMeta) -> Category\n       def select_agents(self, category: Category) -> List[Agent]\n       def analyze(self, agents: List[Agent], path: str) -> AnalysisResult\n       def report(self, result: AnalysisResult) -> Report\n   ```\n\n2. **Implement a Central Orchestrator** that orchestrates the above steps, handles retries, and aggregates logs.\n\n3. **Add Unit Tests for Each Stage** \u2013 Mock file inputs to ensure deterministic behavior.\n\n4. **Document Configuration Options** \u2013 Provide a sample `config.yaml` explaining how to add new agents or override defaults.\n\n5. **Performance Benchmarking Suite** \u2013 Measure processing times across representative datasets to validate the estimates and guide scaling decisions.\n\n---\n\n### Summary\n\nThe README defines a straightforward, multi\u2011stage document analysis pipeline that can be cleanly decomposed into modular services. By building an orchestrated architecture with clear interfaces, extensibility, and robust error handling, we can meet the system\u2019s functional requirements while remaining adaptable to future format changes and performance demands.",
+          "duration": 11.074238777160645,
+          "tokens_used": 2381,
+          "tokens_saved": 0,
+          "confidence": 0.85,
+          "extracted_metrics": {}
+        }
+      ]
+    }
+  ]
+}

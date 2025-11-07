@@ -1,0 +1,9 @@
+{
+  "file_path": "MIGRACJA_VOLUMES.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udd04 MIGRACJA VOLUMES - Stare vs Nowe",
+  "detected_at": "2025-11-05T12:17:36.739194",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd04 MIGRACJA VOLUMES - Stare vs Nowe\n\n**Data:** 5 Listopada 2024\n\n---\n\n## \ud83d\udd0d SYTUACJA\n\n### **Problem:**\nMieli\u015bmy **DWA zestawy** Docker Compose:\n\n1. **Stary:** `docker-compose.yml`\n   - Volumes: `coursor-agents-destiny-folder_*`\n   - Porty: 5432, 6333, 7474, 9200\n   - **KONFLIKT z investigation containers!**\n   - Status: Volumes utworzone, ale kontenery nigdy nie dzia\u0142a\u0142y\n\n2. **Nowy:** `docker-compose-dev.yml`\n   - Volumes: `destiny_*`\n   - Porty: 5434, 6335, 7475, 9201\n   - **ZERO konflikt\u00f3w!**\n"
+}

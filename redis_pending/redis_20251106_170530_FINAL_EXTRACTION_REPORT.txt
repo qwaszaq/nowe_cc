@@ -1,0 +1,37 @@
+SET doc:FINAL_EXTRACTION_REPORT:title "Final Extraction Quality Report: Manual vs Automated Comparison"
+SET doc:FINAL_EXTRACTION_REPORT:type "analysis"
+SET doc:FINAL_EXTRACTION_REPORT:path "FINAL_EXTRACTION_REPORT.md"
+SET doc:FINAL_EXTRACTION_REPORT:content "# Final Extraction Quality Report: Manual vs Automated Comparison
+
+**Date:** 2025-11-06
+**Analyst:** Claude Code
+**Test Subject:** Grupa Azoty Tarnów Annual Report 2024
+**Objective:** Compare automated extraction quality against manual PDF inspection
+
+---
+
+## Executive Summary
+
+**Technology Stack:** ✅ **WORKING PERFECTLY**
+- Hybrid pdfplumber + Camelot extraction: **36.5% numeric cell density** (excellent)
+- E5 semantic matching: **5/5 matches**, 89.2% average confidence
+- Polish number parsing: **17 values extracted** correctly
+
+**Critical Issue:** ❌ **WRONG DATA SOURCE**
+- Automated system extracts **Page 40** (asset breakdown schedule)
+- **SHOULD** extract **Pages 5-6** (consolidated balance sheet)
+- Impact: **0/15 financial ratio inputs available**
+
+**Status:** Technology proven, data routing needs fix
+
+---
+
+## Part 1: What the Automated System Found
+
+### Extraction Test Results (test_extraction_quality.py)
+
+**System Configuration:**
+- PDF Parser: Hybrid pdfplumber → Camelot fallba"
+EXPIRE doc:FINAL_EXTRACTION_REPORT:content 86400
+SADD docs:all "FINAL_EXTRACTION_REPORT"
+SADD docs:type:analysis "FINAL_EXTRACTION_REPORT"

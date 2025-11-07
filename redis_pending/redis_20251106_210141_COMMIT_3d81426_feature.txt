@@ -1,0 +1,35 @@
+SET doc:COMMIT_3d81426_feature:title "feat(ai-extraction): Integrate E5 semantic matching + LLM validation for financial data extraction"
+SET doc:COMMIT_3d81426_feature:type "general_documentation"
+SET doc:COMMIT_3d81426_feature:path "docs/auto-generated/2025-11-06/COMMIT_3d81426_feature.md"
+SET doc:COMMIT_3d81426_feature:content "# feat(ai-extraction): Integrate E5 semantic matching + LLM validation for financial data extraction
+
+**Auto-Generated Documentation**
+
+**Date:** 2025-11-06 21:01:40
+**Commit:** `3d81426`
+**Type:** Feature
+**Author:** artur
+
+---
+
+## 📝 Commit Message
+
+**feat(ai-extraction): Integrate E5 semantic matching + LLM validation for financial data extraction**
+
+Implements comprehensive AI-enhanced extraction system using local LM Studio:
+- E5 embeddings for semantic row matching (93.3% confidence on Polish financial terms)
+- Local LLM (openai/gpt-oss-20b) for validation and assessment
+- Superior semantic understanding vs regex patterns
+
+## New Components
+
+### 1. E5 Semantic Matcher (semantic_matcher.py)
+- Connects to LM Studio E5-large-instruct model
+- Pre-loads 33 financial concept embeddings (multi-language: PL/EN/DE)
+- Semantic matching with 93.3% average confidence
+- Handles Polish financial terminology: "Aktywa ogółem" → total_assets (94.7%)
+
+### 2. LLM Financial Validator (llm_validator.p"
+EXPIRE doc:COMMIT_3d81426_feature:content 86400
+SADD docs:all "COMMIT_3d81426_feature"
+SADD docs:type:general_documentation "COMMIT_3d81426_feature"

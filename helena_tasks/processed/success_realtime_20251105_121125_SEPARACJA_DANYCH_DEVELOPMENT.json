@@ -1,0 +1,9 @@
+{
+  "file_path": "SEPARACJA_DANYCH_DEVELOPMENT.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udd12 SEPARACJA: Investigation Data vs Development System",
+  "detected_at": "2025-11-05T12:11:25.006452",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udd12 SEPARACJA: Investigation Data vs Development System\n\n**Data:** 5 Listopada 2024  \n**Critical Issue:** Musimy rozdzieli\u0107 dane \u015bledcze od rozwoju systemu!\n\n---\n\n## \u26a0\ufe0f PROBLEM - Nie Mo\u017cemy Miesza\u0107!\n\n```\n\u274c \u0179LE: Development system u\u017cywa investigation databases\n\u274c \u0179LE: Test data miesza si\u0119 z production cases\n\u274c \u0179LE: Jeden kontener dla wszystkiego\n```\n\n**Dlaczego to problem:**\n- \ud83d\udd10 Security: Investigation data jest wra\u017cliwe\n- \ud83e\uddea Testing: Nie mo\u017cemy testowa\u0107 na production data\n- \ud83d\uddd1\ufe0f Cleanup: Nie mo\u017cemy u"
+}

@@ -1,0 +1,28 @@
+SET doc:cba_weryfikacja_i_rekomendacje:title "🔍 WERYFIKACJA ANALIZY MERYTORYCZNEJ CBA - RAPORT KRYTYCZNY"
+SET doc:cba_weryfikacja_i_rekomendacje:type "general_documentation"
+SET doc:cba_weryfikacja_i_rekomendacje:path "reports/cba_weryfikacja_i_rekomendacje.md"
+SET doc:cba_weryfikacja_i_rekomendacje:content "# 🔍 WERYFIKACJA ANALIZY MERYTORYCZNEJ CBA - RAPORT KRYTYCZNY
+
+**Data weryfikacji:** 2024-11-05  
+**Weryfikator:** Analiza rzeczywistych danych z PDF-ów  
+**Porównanie:** Analiza LLM vs. Rzeczywiste dane z dokumentów
+
+---
+
+## 📊 EXECUTIVE SUMMARY
+
+### ⚠️ **GŁÓWNY PROBLEM: LLM GENEROWAŁ WYMYŚLONE DANE LICZBOWE**
+
+Analiza przeprowadzona przez LLM (LMStudio) zawierała **szczegółowe dane liczbowe** (np. liczba spraw operacyjnych, budżet, zabezpieczone środki), które **NIE zostały wyekstrahowane z rzeczywistych PDF-ów**, ale zostały **wygenerowane przez model na podstawie:**
+- Tytułów plików
+- Wiedzy o strukturze typowych raportów CBA
+- Wzorcach statystycznych z innych podobnych organizacji
+- **HALUCYNACJI** - model "wymyślił" liczby, które brzmią realistycznie
+
+### ✅ **CO DZIAŁAŁO DOBRZE:**
+
+1. **Rozpoznanie struktury dokumentów** - LLM poprawnie zidentyfikował, że to raporty roczne CBA
+2. **Obszary tematyczne** - Poprawnie wskazał główne obszary działania (VAT, fundusze UE, zamówienia publi"
+EXPIRE doc:cba_weryfikacja_i_rekomendacje:content 86400
+SADD docs:all "cba_weryfikacja_i_rekomendacje"
+SADD docs:type:general_documentation "cba_weryfikacja_i_rekomendacje"

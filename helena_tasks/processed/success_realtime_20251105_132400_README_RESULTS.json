@@ -1,0 +1,9 @@
+{
+  "file_path": "README_RESULTS.md",
+  "document_type": "architecture",
+  "title": "\ud83d\udcca Results Storage - README",
+  "detected_at": "2025-11-05T13:24:00.362665",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udcca Results Storage - README\n\n## \ud83c\udfaf Quick Navigation\n\n### **I'm working with...**\n\n#### **\ud83e\uddea Development / Testing (CBA reports, experiments)**\n\u2192 Read: `RESULTS_QUICK_START.md`  \n\u2192 CLI: `python case_cli.py --help`  \n\u2192 Use: `cases/` directory\n\n#### **\ud83d\udd2c Investigation (SMS/OSINT, real data)**\n\u2192 Use: existing `investigations/` directory  \n\u2192 Tools: investigation query tools  \n\u2192 **READ-ONLY** access\n\n#### **\u2753 Not sure which environment?**\n\u2192 Read: `RESULTS_STORAGE_SEPARATION.md`\n\n---\n\n## \ud83d\udcda Documentation\n"
+}

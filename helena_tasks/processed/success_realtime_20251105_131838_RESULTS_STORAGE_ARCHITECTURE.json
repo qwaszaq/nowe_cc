@@ -1,0 +1,9 @@
+{
+  "file_path": "RESULTS_STORAGE_ARCHITECTURE.md",
+  "document_type": "architecture",
+  "title": "\ud83d\uddc2\ufe0f Results Storage Architecture - Design Document",
+  "detected_at": "2025-11-05T13:18:38.785106",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\uddc2\ufe0f Results Storage Architecture - Design Document\n\n**Date:** November 5, 2024  \n**System:** Destiny Autonomous Analysis  \n**Author:** Architecture Team\n\n---\n\n## \ud83c\udfaf Design Goals\n\n1. **Discoverable** - Easy to find results by case_id, date, agent, category\n2. **Scalable** - Handle 1000s of analyses without performance degradation\n3. **Multi-Layer** - Different storage for different needs (files, DB, search, graph)\n4. **Auditable** - Complete trace from input \u2192 processing \u2192 output\n5. **Queryable**"
+}

@@ -1,0 +1,40 @@
+SET doc:ANALIZA_CBA_2008-2024:title "ANALIZA RAPORTÓW CBA 2008-2024"
+SET doc:ANALIZA_CBA_2008-2024:type "protocol"
+SET doc:ANALIZA_CBA_2008-2024:path "ANALIZA_CBA_2008-2024.md"
+SET doc:ANALIZA_CBA_2008-2024:content "# ANALIZA RAPORTÓW CBA 2008-2024
+
+**Źródło:** Autonomous System Analysis  
+**Data:** 5 Listopada 2024  
+**Dokumenty:** 13 raportów CBA (912,156 znaków)  
+**Agenci:** Legal, Risk, Architect
+
+---
+
+## 📄 LOKALIZACJA PLIKÓW
+
+### **Główny raport (JSON):**
+```
+reports/autonomous_profound_test_cba_reports.json  (46KB)
+```
+
+### **Jak otworzyć:**
+
+```bash
+# Wyświetl cały raport:
+cat reports/autonomous_profound_test_cba_reports.json | jq '.'
+
+# Tylko analizę LEGAL:
+cat reports/autonomous_profound_test_cba_reports.json | jq -r '.findings[0].output'
+
+# Tylko analizę RISK:
+cat reports/autonomous_profound_test_cba_reports.json | jq -r '.findings[1].output'
+
+# Tylko analizę ARCHITECT:
+cat reports/autonomous_profound_test_cba_reports.json | jq -r '.findings[2].output'
+
+# Zapisz do plików tekstowych:
+cat reports/autonomous_profound_test_cba_reports.json | jq -r '.findings[0].output' > analiza_legal.txt
+cat reports/autonomous_profound_test_cba_reports.json | jq -r '.findings[1].output' > analiza_risk.txt"
+EXPIRE doc:ANALIZA_CBA_2008-2024:content 86400
+SADD docs:all "ANALIZA_CBA_2008-2024"
+SADD docs:type:protocol "ANALIZA_CBA_2008-2024"

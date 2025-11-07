@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza Raportów CBA 2024</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        .meta {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+        .summary {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary h2 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .stat {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .finding {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .finding-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .agent-badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+        .category {
+            color: #666;
+            font-size: 1.1em;
+        }
+        .confidence {
+            margin-left: auto;
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .output {
+            line-height: 1.8;
+            color: #333;
+            white-space: pre-wrap;
+            font-family: 'Georgia', serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Analiza Raportów CBA 2024</h1>
+        <div class="meta">
+            <strong>Case ID:</strong> cba_analysis_2024<br>
+            <strong>Data analizy:</strong> 2025-11-05T13:08:03.740355<br>
+            <strong>Folder:</strong> /Users/artur/coursor-agents-destiny-folder/testdocsLLM
+        </div>
+    </div>
+
+    <div class="summary">
+        <h2>📈 Podsumowanie</h2>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">14</div>
+                <div class="stat-label">Plików przeanalizowanych</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">17.2 MB</div>
+                <div class="stat-label">Całkowity rozmiar</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Wygenerowanych analiz</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">13</div>
+                <div class="stat-label">Raportów CBA (PDF)</div>
+            </div>
+        </div>
+    </div>
+
+    <h2 style="color: #667eea; margin-left: 10px;">🔍 Szczegółowe Analizy</h2>
+
+    <div class="finding">
+        <div class="finding-header">
+            <span class="agent-badge">LEGAL</span>
+            <span class="category">legal</span>
+            <span class="confidence">Pewność: 85%</span>
+        </div>
+        <div class="output">**Comprehensive Legal Analysis – Case ID cba_analysis_2024**
+
+| Document | Key Findings | Patterns/Trends | Relevant Insights for the Legal Team | Confidence / Reasoning |
+|----------|--------------|-----------------|--------------------------------------|------------------------|
+| **1 – Informacja_2021.pdf** | • Annual operational‑process report for 2021. <br>• Sections on *operational cases*, *pre‑control analyses*, *control actions* and *corruption complaints*. <br>• Explicit reference to “dostęp do informacji finansowych stanowiących tajemnicę bankową i tajemnicę zawodową” (access to financial information that is a banking secret and professional secrecy). | • Consistent structure across years: introduction → operational → control → analytical. <br>• Repeated mention of confidentiality obligations around sensitive data. | • Must verify that all disclosures comply with Polish *Ustawa o ochronie danych osobowych* (PDPO) and GDPR where personal data are involved. <br>• The CBA’s access to banking secrets may trigger additional safeguards under the *Bank Act* and *Professional Secrecy Law*. | **High** – The preview contains explicit clause titles; structure is typical of public‑sector annual reports. |
+| **2 – Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf** | • 2022 operational & control outcomes. <br>• Includes “analiza kryminalna” and “sprawy analityczne”. <br>• Mentions *Zgłoszenia przypadków korupcji* (corruption complaints). | • Same chapter layout as Doc 1, indicating standardized reporting format. <br>• Growing emphasis on *analytical* activities – likely a shift toward data‑driven investigations. | • The analytical section may contain large volumes of personal data; GDPR “processing” obligations must be documented (lawful basis, purpose limitation). <br>• Need to confirm that the CBA’s internal risk assessment aligns with § 7(1) of the *Act on Anti‑Corruption* regarding preventive measures. | **High** – Titles are identical to Doc 1; only year differs. |
+| **3 – informacja_CBA_2019.pdf** | • 2019 report, earlier iteration of the same structure. <br>• Highlights “Śledztwa w sprawie wyłudzeń podatku VAT” and “wyłudzeń środków unijnych”. | • Early years focus more on *tax fraud* and *EU fund misappropriation*. <br>• Over time, the content expands to include *financial secrecy* and *professional secrecy* issues. | • Legal review should trace evolution of obligations: 2019 may have had fewer GDPR‑related disclosures; subsequent documents show increased data handling. <br>• Identify whether new compliance frameworks (e.g., EU Anti‑Money Laundering Directive) were incorporated later. | **Medium‑High** – The preview shows typical sections but lacks explicit clause numbering, so less granular confidence. |
+| **4 – Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf** | • 2015 report; first year in the set. <br>• Contains *Współpraca międzynarodowa* (international cooperation). <br>• Mentions *Finansowanie służby*, *liczba funkcjonariuszy*. | • The earliest reports emphasize organizational capacity and international collaboration, suggesting a foundational phase of CBA’s operations. <br>• Subsequent years shift toward case‑based reporting. | • International cooperation raises cross‑border data transfer issues (GDPR Chapter V). <br>• Early mention of *financing* hints at statutory funding limits – need to verify compliance with the *Public Finance Act*. | **High** – The preview contains full chapter titles and dates; structure is unmistakable. |
+| **5 – Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf** | • 2024 report; latest in the series. <br>• Adds *Realizacja kluczowych zadań w 2024 r.* and *Sankcje*. <br>• Expands on *Osłona antykorupcyjna* (anti‑corruption protection). | • Continuous expansion of scope: new categories (e.g., “Przestępstwa gospodarcze ze szczególnym uwzględnieniem uszczupleni” – economic crimes with focus on VAT & excise fraud). <br>• Inclusion of *statystyka* indicates a shift toward metrics and performance measurement. | • The new sanctions section may involve civil/administrative liability clauses; check for compliance with the *Act on Sanctions for Corruption*. <br>• Performance metrics could trigger contractual obligations if CBA is funded by EU or national grants – need to audit reporting requirements under those funding agreements. | **High** – Titles are explicit, and the report covers a recent year, implying up‑to‑date legal frameworks. |
+
+---
+
+### 1. Key Findings Across All Documents
+
+| Category | Summary |
+|----------|---------|
+| **Legal Frameworks Referenced** | • *Ustawa o zapobieganiu i zwalczaniu korupcji* (Anti‑Corruption Act). <br>• GDPR and Polish PDPO for personal data handling. <br>• Banking secrecy law and professional secrecy law when accessing financial information. |
+| **Obligations Identified** | • Annual reporting to the Prime Minister/Ministry of Finance. <br>• Disclosure of operatio</div>
+    </div>
+
+    <div class="finding">
+        <div class="finding-header">
+            <span class="agent-badge">RISK</span>
+            <span class="category">legal</span>
+            <span class="confidence">Pewność: 85%</span>
+        </div>
+        <div class="output">## 1. Key Findings (across all five documents)
+
+| # | Finding | Source Documents | Why it matters |
+|---|---------|------------------|---------------|
+| **1** | The Central Anti‑Corruption Bureau (CBA) publishes an annual “Informacja o wynikach działalności” report that contains a *structured, repeatable format* – title, table of contents, sections on operational, control, analytical activities, and statistics. | All 5 PDFs | This consistency allows automated extraction of metrics and risk indicators. |
+| **2** | The reports consistently list **“sprawy operacyjne” (operational cases)**, “postępowania przygotowawcze” (pre‑trial investigations), “postępowania kontrolne” (control investigations) and “analiza kryminalna” (criminal analysis). | 1–5 | These are the core risk‑management processes that must be monitored for compliance and effectiveness. |
+| **3** | **Statistical data** is presented in each report: number of cases, types of corruption investigated, amounts involved, sanctions imposed, etc. | 4, 5 (and to a lesser extent 1–3) | Provides quantitative baseline for trend analysis. |
+| **4** | The reports refer repeatedly to *“tajemnica bankowa”* and *“tajemnica zawodowa”* – the confidentiality of financial information. | 1, 2, 3 | Indicates that CBA handles sensitive data; risk of data breach or insider threat is high. |
+| **5** | There are sections on *“Zgłoszenia przypadków korupcji”* and *“Oświadczenia majątkowe”* (asset declarations). | 1–5 | These documents are key for assessing compliance with anti‑corruption legislation (e.g., asset declaration laws). |
+| **6** | The 2015 report (Document 4) contains a *“Współpraca międzynarodowa”* section, suggesting that CBA cooperates with foreign agencies. | Document 4 | International cooperation introduces cross‑border legal and operational risks. |
+| **7** | Each document ends with an *“Ocena działania i wykorzystania narzędzi”* (assessment of performance and tools used). | 5 (and similar in earlier years) | Provides insight into technology adoption, training gaps, and potential obsolescence. |
+| **8** | The reports highlight specific corruption themes: VAT fraud, excise fraud, money laundering, misuse of public funds, and executive/managerial corruption. | 5 | These themes align with the organization’s risk appetite and regulatory focus. |
+
+---
+
+## 2. Important Patterns / Trends
+
+| Trend | Evidence | Interpretation |
+|-------|----------|----------------|
+| **Annual reporting cadence** | All documents are dated 2015–2024, each year containing a similar structure. | CBA has an established compliance culture; risk monitoring can rely on yearly snapshots. |
+| **Increasing emphasis on data confidentiality** | Repeated references to “tajemnica bankowa” in Documents 1–3; the 2024 report expands this with sections on “Osłona antykorupcyjna”. | Growing awareness of cyber‑risk and insider threat; likely driven by regulatory changes (e.g., GDPR, Polish Personal Data Protection Act). |
+| **Shift toward analytical tools** | The 2024 report lists “Działania analityczno‑informacyjne” as a major section, while earlier reports focus more on operational cases. | Indicates a strategic shift to data‑driven investigations; risk of misalignment between legacy processes and new analytics capabilities. |
+| **Consistent case volume** | While exact numbers vary, each report lists dozens of “sprawy operacyjne” and “postępowania kontrolne”. | Suggests stable workload but potential strain on resources if case complexity rises (e.g., cross‑border money laundering). |
+| **International cooperation** | Explicitly mentioned in 2015; implied through references to EU funds fraud in earlier years. | Cross‑border legal exposure increases; need for robust extradition and evidence‑sharing protocols. |
+| **Asset declaration compliance focus** | Dedicated sections on “Oświadczenia majątkowe” across all reports. | Regulatory pressure to ensure public officials’ integrity; risk of non‑compliance penalties. |
+
+---
+
+## 3. Specific Insights Relevant to Risk Analysis
+
+1. **Risk Identification & Classification**
+   - *Operational Risks*: Case backlog, resource allocation, procedural delays.
+   - *Compliance Risks*: Failure to meet asset declaration deadlines, data protection breaches.
+   - *Reputational Risks*: Public perception of effectiveness; high‑profile corruption cases.
+   - *Strategic Risks*: Misalignment between new analytical tools and legacy processes.
+
+2. **Impact Assessment**
+   - A breach of confidential financial information could result in regulatory fines (EU GDPR, Polish law) and loss of public trust.
+   - Delays or failures in asset declaration enforcement may expose CBA to civil penalties and undermine anti‑corruption credibility.
+   - Inadequate cross‑border cooperation can lead to legal gaps in prosecuting international corruption schemes.
+
+3. **Mitigation Strategy Evaluation**
+   - Strengthen data security: encryption, role‑based access controls, regular penetration testing.
+   - </div>
+    </div>
+
+    <div class="finding">
+        <div class="finding-header">
+            <span class="agent-badge">ARCHITECT</span>
+            <span class="category">technical</span>
+            <span class="confidence">Pewność: 85%</span>
+        </div>
+        <div class="output">## 1. Architecture Analysis  
+
+| Layer | Purpose in the system | Key Observations | Design Implications |
+|-------|----------------------|------------------|---------------------|
+| **File Ingestion** | Accepts a variety of document types (PDF/Word/Text, Excel/CSV, JSON/XML/YAML, images). | The README lists supported formats explicitly.  It also mentions a `.gitignore` entry for the test folder, indicating that test data is meant to be transient and not version‑controlled. | • A robust file‑type detection module must exist (e.g., magic numbers + MIME checks). <br>• The system should expose an API or CLI that can accept arbitrary case IDs – useful for sandboxing tests. |
+| **Metadata Extraction** | Determines document type, category, and relevant agents. | “System automatycznie: Zidentyfikuje typ każdego pliku; Sklasyfikuje kategorię; Wybierze odpowiednich agentów.” | • The architecture likely includes a *classification engine* that maps file extensions/metadata to processing pipelines. <br>• A registry of agents (PDF parser, OCR, Excel extractor, JSON validator) must be maintainable and extensible. |
+| **Processing Pipelines** | Each document type goes through a dedicated pipeline (e.g., PDF → text extraction + layout analysis). | The README hints at “Przeprowadzi analizę” (perform analysis) after classification, suggesting that the system orchestrates multiple specialized agents. | • Pipeline orchestration can be implemented with a workflow engine (Airflow, Prefect, or custom event‑driven system). <br>• Pipelines should be stateless to enable parallel processing and scaling. |
+| **Reporting** | Generates a consolidated report after all analyses finish. | “Wygeneruje raport” – the output is not described in detail but likely a structured document (JSON/Markdown) summarizing findings. | • The report generator should accept partial results from each pipeline, merge them, and format them for human consumption. <br>• Consider versioning reports per case ID to support auditability. |
+| **CLI / Entry‑point** | `python destiny_auto.py testdocsLLM [--case-id …]` | The CLI accepts a mandatory positional argument (`testdocsLLM`) and an optional case‑ID flag. | • The CLI should validate inputs, handle errors gracefully, and expose logging options for debugging. <br>• It might also support batch mode (processing all files in the test folder). |
+
+### Architecture Pattern
+
+- **Micro‑service / Modular** – each file type is handled by a separate agent/module.  
+- **Event‑driven Orchestration** – ingestion triggers classification → pipeline selection → analysis → report generation.  
+- **Extensible Plugin System** – new agents can be added without touching core orchestration logic.
+
+### Scalability & Reliability
+
+| Concern | Current Design Support | Recommendations |
+|---------|------------------------|-----------------|
+| Parallelism | Not explicit; CLI implies single‑threaded by default. | Use a task queue (Celery/RabbitMQ) or multi‑process pool for large batches. |
+| Fault tolerance | No mention of retries or error handling. | Wrap each agent in try/except, log failures, and allow partial report generation. |
+| Data persistence | Reports are generated but storage location not specified. | Persist reports to a dedicated output directory or database with case‑ID keying. |
+
+## 2. Technical Review  
+
+### A. File Handling & Security
+
+1. **Supported Formats**  
+   - Text-based: `.pdf`, `.docx`, `.doc`, `.txt`, `.md`  
+   - Spreadsheet: `.xlsx`, `.xls`, `.csv`  
+   - Structured data: `.json`, `.xml`, `.yaml`  
+   - Images: `.png`, `.jpg`, `.jpeg`
+
+2. **Potential Risks**  
+   - **Malicious PDFs/Office files** – could trigger code execution during parsing.  
+   - **Large images** – OCR may consume excessive memory.  
+   - **Encoding issues** – especially for CSV and XML/YAML.
+
+3. **Mitigations**  
+   - Run parsers in sandboxed environments (Docker containers, restricted user).  
+   - Set file size limits per format.  
+   - Validate MIME types before processing.  
+
+### B. Agent Selection & Extensibility
+
+- The README references “Wybierze odpowiednich agentów” implying a registry mapping file type → agent class.
+- **Design Suggestion**: Use a plugin architecture (entry points via `setuptools` or a custom factory) so new agents can be registered with minimal changes.
+
+### C. CLI Interface
+
+```bash
+python destiny_auto.py testdocsLLM [--case-id CASE_ID]
+```
+
+- **Pros**: Simple, explicit case ID for isolation.  
+- **Cons**: Hard‑coded positional argument limits reuse; no batch/recursive options shown.  
+- **Enhancements**:
+  - Add `--input-dir` and `--output-dir`.
+  - Verbose logging flag.
+  - Ability to run in dry‑run mode.
+
+### D. Reporting
+
+- The system “generates a report” but the format is unspecified.  
+- Recommendation: Output both human‑readable (Markdown/HTML) and machine‑processable (JSON).  
+- Include metadata: case ID, timestamp, list of processed files, status per file.
+
+### E. Performance & Resource Utilization
+
+- OCR for</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+SET doc:SEPARACJA_DANYCH_DEVELOPMENT:title "🔒 SEPARACJA: Investigation Data vs Development System"
+SET doc:SEPARACJA_DANYCH_DEVELOPMENT:type "general_documentation"
+SET doc:SEPARACJA_DANYCH_DEVELOPMENT:path "SEPARACJA_DANYCH_DEVELOPMENT.md"
+SET doc:SEPARACJA_DANYCH_DEVELOPMENT:content "# 🔒 SEPARACJA: Investigation Data vs Development System
+
+**Data:** 5 Listopada 2024  
+**Critical Issue:** Musimy rozdzielić dane śledcze od rozwoju systemu!
+
+---
+
+## ⚠️ PROBLEM - Nie Możemy Mieszać!
+
+```
+❌ ŹLE: Development system używa investigation databases
+❌ ŹLE: Test data miesza się z production cases
+❌ ŹLE: Jeden kontener dla wszystkiego
+```
+
+**Dlaczego to problem:**
+- 🔐 Security: Investigation data jest wrażliwe
+- 🧪 Testing: Nie możemy testować na production data
+- 🗑️ Cleanup: Nie możemy usunąć test data bez ryzyka
+- 📊 Analytics: Trudno oddzielić metrics
+- 🐛 Debugging: Risk of corrupting real cases
+
+---
+
+## ✅ PRAWIDŁOWA ARCHITEKTURA
+
+### **2 Osobne Środowiska:**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  INVESTIGATION ENVIRONMENT (Production)                  │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  sms-postgres:5432        → SMS investigation data      │
+│  sms-neo4j:747"
+EXPIRE doc:SEPARACJA_DANYCH_DEVELOPMENT:content 86400
+SADD docs:all "SEPARACJA_DANYCH_DEVELOPMENT"
+SADD docs:type:general_documentation "SEPARACJA_DANYCH_DEVELOPMENT"

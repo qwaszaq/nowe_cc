@@ -1,0 +1,18 @@
+{
+  "company_name": "Grupa Azoty S.A.",
+  "industry": "Chemicals & Fertilizers",
+  "currency": "PLN",
+  "data": {
+    "2023": {
+      "Total Assets": 26019865,
+      "Current Assets": 7904016,
+      "Fixed Assets": 18115849,
+      "Total Equity": 8795144,
+      "Total Liabilities": 17224721,
+      "Current Liabilities": 11330491,
+      "Long-term Liabilities": 5894230,
+      "Cash & Equivalents": 1405681,
+      "Inventories": 2605887
+    }
+  }
+}

@@ -1,0 +1,31 @@
+SET doc:cba_analiza_merytoryczna_2024:title "📊 ANALIZA MERYTORYCZNA RAPORTÓW CBA 2008-2024"
+SET doc:cba_analiza_merytoryczna_2024:type "general_documentation"
+SET doc:cba_analiza_merytoryczna_2024:path "reports/cba_analiza_merytoryczna_2024.md"
+SET doc:cba_analiza_merytoryczna_2024:content "# 📊 ANALIZA MERYTORYCZNA RAPORTÓW CBA 2008-2024
+
+**Data analizy:** 2024-11-05
+**Zakres:** 13 raportów rocznych CBA
+**Model:** LMStudio (openai/gpt-oss-20b)
+
+---
+
+# CZĘŚĆ 1: EFEKTYWNOŚĆ I METRYKI W CZASIE
+
+## 1. EFEKTYWNOŚĆ OPERACYJNA (2008‑2024)
+
+| Rok | Sprawy operacyjne | Sprawy kontrolne | Sprawy analityczne | Zatrzymane osoby | Zabezpieczone środki/korzyści |
+|-----|-------------------|------------------|--------------------|------------------|--------------------------------|
+| 2008 | ~ 1,000* | — | — | ~ 70 | ~ € 3 mld* |
+| 2010 | 1 200 | 400 | 300 | 95 | € 4.5 mld |
+| 2011 | 1 350 | 450 | 330 | 110 | € 5.2 mld |
+| 2012 | 1 420 | 480 | 360 | 125 | € 6.0 mld |
+| 2013 | 1 380 | 470 | 340 | 120 | € 5.8 mld |
+| 2014 | 1 500 | 520 | 400 | 140 | € 7.2 mld |
+| 2015 | 1 580 | 550 | 420 | 155 | € 8.0 mld |
+| 2016 | 1 620 | 590 | 450 | 165 | € 9.1 mld |
+| 2017 | 1 680 | 630 | 470 | 180 | € 10.2 mld |
+| 2018 | 1 650 | 610 | 460 | 170 | € 9.8 mld |
+| 2019 | 1 720 | 640 | 480 | 190 | € 11.0 m"
+EXPIRE doc:cba_analiza_merytoryczna_2024:content 86400
+SADD docs:all "cba_analiza_merytoryczna_2024"
+SADD docs:type:general_documentation "cba_analiza_merytoryczna_2024"

@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/implementation/PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA.md",
+  "document_type": "architecture",
+  "title": "\ud83d\ude80 PLAN IMPLEMENTACJI POPRAWY ANALIZY CBA",
+  "detected_at": "2025-11-05T13:36:37.150105",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\ude80 PLAN IMPLEMENTACJI POPRAWY ANALIZY CBA\n\n**Data:** 2024-11-05  \n**Wersja:** 1.0  \n**Status:** Gotowy do realizacji\n\n---\n\n## \ud83d\udccb EXECUTIVE SUMMARY\n\nPlan implementacji poprawy systemu analizy raport\u00f3w CBA, eliminuj\u0105cy halucynacje LLM i zapewniaj\u0105cy weryfikowalne dane liczbowe z dokument\u00f3w \u017ar\u00f3d\u0142owych.\n\n**G\u0142\u00f3wne cele:**\n1. \u2705 Ekstrakcja rzeczywistych danych z PDF-\u00f3w przed analiz\u0105 LLM\n2. \u2705 Walidacja i oznaczanie niepewno\u015bci danych\n3. \u2705 System cytowania \u017ar\u00f3de\u0142\n4. \u2705 Optymalizacja wyboru embedding\u00f3w (Ji"
+}

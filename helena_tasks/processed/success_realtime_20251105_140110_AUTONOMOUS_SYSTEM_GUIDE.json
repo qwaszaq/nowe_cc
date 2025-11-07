@@ -1,0 +1,9 @@
+{
+  "file_path": "AUTONOMOUS_SYSTEM_GUIDE.md",
+  "document_type": "guide",
+  "title": "\ud83e\udd16 AUTONOMOUS SYSTEM - User Guide",
+  "detected_at": "2025-11-05T14:01:10.030061",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83e\udd16 AUTONOMOUS SYSTEM - User Guide\n\n## Koncepcja: \"Wska\u017c i Zapomnij\"\n\nSystem dzia\u0142a **w pe\u0142ni autonomicznie**:\n\n```\nTY: \"Przeanalizuj folder /data/documents/\"\n    \u2193\nSYSTEM AUTOMATYCZNIE:\n  1. \ud83d\udd0d Skanuje i klasyfikuje pliki\n  2. \ud83e\udde0 Decyduje jakie analizy przeprowadzi\u0107\n  3. \ud83d\udee0\ufe0f Wybiera odpowiednie narz\u0119dzia\n  4. \ud83e\udd16 Wykonuje prac\u0119 agentami\n  5. \ud83d\udcca Generuje raport\n```\n\n---\n\n## \ud83d\ude80 Quick Start\n\n### Podstawowe u\u017cycie:\n\n```bash\n# Wska\u017c folder - system zrobi reszt\u0119\npython destiny_auto.py /path/to/your/document"
+}

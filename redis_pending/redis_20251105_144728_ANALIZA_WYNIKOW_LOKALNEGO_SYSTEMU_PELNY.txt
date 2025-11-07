@@ -1,0 +1,43 @@
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY:title "📊 ANALIZA WYNIKÓW LOKALNEGO SYSTEMU - PEŁNY RAPORT"
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY:type "general_documentation"
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY:path "ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY.md"
+SET doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY:content "# 📊 ANALIZA WYNIKÓW LOKALNEGO SYSTEMU - PEŁNY RAPORT
+## Ocena analizy przeprowadzonej przez system on-premise (bez zewnętrznego AI)
+
+**Data:** 2024-11-05  
+**System:** Local Professional Analyzer (fully autonomous)  
+**Case ID:** professional_analysis_20251105_144547  
+**Czas wykonania:** 36.9s (Professional Analysis: 6.0s)
+
+---
+
+## 🔍 WYNIKI SYSTEMU - SZCZEGÓŁOWA ANALIZA
+
+### ✅ STATUS WYKONANIA
+
+**Professional Analyzer:** ✅ Uruchomiony  
+**Fazy wykonane:** 7/7 (100%)  
+**LLM Interpretation:** ✅ Wygenerowane lokalnie  
+**Czas wykonania:** 6.0s dla Professional Analysis
+
+---
+
+## 📊 PHASE 2: EKSTRAKCJA DANYCH ILOŚCIOWYCH
+
+### Wyniki:
+
+**Lata z danymi:** 10  
+**Łącznie wartości:** 65 metryk  
+**Pokrycie:** 76.9% (10/13 dokumentów)
+
+**Wyekstrahowane metryki (przykłady):**
+
+| Rok | Przykładowe Metryki |
+|-----|-------------------|
+| 2008 | sprawy_operacyjne, budzet, funkcjonariusze |
+| 2010 | sprawy_zakończone, zatrzymania, skazania |
+| 2012 | zarzuty, szkolenia, sprawy_w_toku |
+| ... | ... |"
+EXPIRE doc:ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY:content 86400
+SADD docs:all "ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY"
+SADD docs:type:general_documentation "ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY"

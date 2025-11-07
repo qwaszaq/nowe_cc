@@ -1,0 +1,207 @@
+
+================================================================================
+🔍 INVESTIGATIVE SYSTEM TEST - CBA DOCUMENTS
+================================================================================
+
+📂 Analyzing folder: /Users/artur/coursor-agents-destiny-folder/testdocsLLM
+--------------------------------------------------------------------------------
+?? Scanning folder: /Users/artur/coursor-agents-destiny-folder/testdocsLLM
+?? Found 14 files (17.2 MB)
+   - pdf: 13
+   - text: 1
+
+?? Classifying files...
+   Informacja_2021.pdf: investigative (confidence: 0.20)
+   Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf: investigative (confidence: 0.20)
+   informacja_CBA_2019.pdf: investigative (confidence: 0.30)
+   Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf: investigative (confidence: 0.30)
+   Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf: investigative (confidence: 0.20)
+   README.md: technical (confidence: 0.50)
+   Sprawozdanie_jawne_2010_druk.pdf: investigative (confidence: 0.20)
+   Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf: investigative (confidence: 0.20)
+   Sprawozdanie_2013.pdf: investigative (confidence: 0.20)
+   informacja_za_2023_r_ (1).pdf: investigative (confidence: 0.20)
+   Sprawozdanie_2012.pdf: investigative (confidence: 0.20)
+   Sprawozdanie__jawne_2011_druk.pdf: investigative (confidence: 0.20)
+   Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2017_r..pdf: investigative (confidence: 0.20)
+   Informacja_o_wynikach_CBA_2014.pdf: investigative (confidence: 0.30)
+
+?? Generating tasks...
+   Generated 2 tasks
+
+================================================================================
+📊 CLASSIFICATION RESULTS
+================================================================================
+
+📄 Total Files: 14
+📦 Total Size: 17.20 MB
+
+📋 Files by Type:
+   - pdf: 13
+   - text: 1
+
+🏷️  Classification Breakdown:
+   - investigative: 13 files
+   - technical: 1 files
+
+🔍 Investigation Types Detected:
+   - comprehensive: 13 files
+
+================================================================================
+📝 DETAILED FILE ANALYSIS
+================================================================================
+
+🔍 INVESTIGATIVE FILES (13):
+--------------------------------------------------------------------------------
+
+1. Informacja_2021.pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 2.85 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+2. Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2022_roku (1).pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 2.35 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+3. informacja_CBA_2019.pdf
+   Category: investigative
+   Confidence: 0.30
+   Investigation Type: comprehensive
+   Size: 1.69 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+4. Informacja_o_wynikach_dzialalnosci_CBA_w_2015.pdf
+   Category: investigative
+   Confidence: 0.30
+   Investigation Type: comprehensive
+   Size: 0.37 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+5. Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2024_r_.pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 2.03 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+6. Sprawozdanie_jawne_2010_druk.pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 0.47 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+7. Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2008_roku.pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 0.52 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+8. Sprawozdanie_2013.pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 1.34 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+9. informacja_za_2023_r_ (1).pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 1.80 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+10. Sprawozdanie_2012.pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 0.86 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+11. Sprawozdanie__jawne_2011_druk.pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 0.41 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+12. Informacja_o_wynikach_dzialalnosci_Centralnego_Biura_Antykorupcyjnego_w_2017_r..pdf
+   Category: investigative
+   Confidence: 0.20
+   Investigation Type: comprehensive
+   Size: 1.64 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+13. Informacja_o_wynikach_CBA_2014.pdf
+   Category: investigative
+   Confidence: 0.30
+   Investigation Type: comprehensive
+   Size: 0.88 MB
+   Suggested Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+📄 OTHER FILES (1):
+--------------------------------------------------------------------------------
+
+1. README.md
+   Category: technical
+   Confidence: 0.50
+   Size: 0.00 MB
+
+================================================================================
+📋 GENERATED TASKS
+================================================================================
+
+Total Tasks: 2
+
+--- Task 1 ---
+Category: investigative
+Priority: 89/100
+Agents: investigative
+Files: 13
+Investigation Type: comprehensive
+Analyses: source_verification, comprehensive_investigation, osint_analysis
+
+🔍 ✅ ROUTED TO INVESTIGATIVE TEAM!
+
+--- Task 2 ---
+Category: technical
+Priority: 60/100
+Agents: architect, developer
+Files: 1
+Investigation Type: none
+Analyses: technical_review, architecture_analysis
+
+================================================================================
+✅ DETECTION VERDICT
+================================================================================
+
+📊 Detection Rate:
+   Investigative: 13/14 files (92.9%)
+
+✅ SUCCESS: System detected 13 investigative documents!
+   These will be routed to the Investigative Team (9 specialized agents)
+   Investigation types: comprehensive
+
+================================================================================
+🚀 WHAT HAPPENS NEXT (in full system)
+================================================================================
+
+🔍 Investigation: investigative
+   Type: comprehensive
+   Files: 13
+
+   Phases:
+   1. Viktor Kovalenko - Investigation planning
+   2. Elena Volkov - OSINT gathering
+   3. Marcus Chen - Financial analysis
+   4. Sofia Martinez - Market research
+   5. Adrian Kowalski - Legal review
+   6. Maya Patel - Data correlation
+   7. Damian Rousseau - Critical review
+   8. Lucas Rivera - Final report synthesis

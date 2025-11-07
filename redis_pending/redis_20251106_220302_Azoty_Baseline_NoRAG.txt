@@ -1,0 +1,30 @@
+SET doc:Azoty_Baseline_NoRAG:title "Comprehensive Intelligence Report: Grupa Azoty S.A."
+SET doc:Azoty_Baseline_NoRAG:type "general_documentation"
+SET doc:Azoty_Baseline_NoRAG:path "output/intelligence_reports/Azoty_Baseline_NoRAG.md"
+SET doc:Azoty_Baseline_NoRAG:content "# Comprehensive Intelligence Report: Grupa Azoty S.A.
+
+**Report Date:** 2025-11-06
+**Industry:** Chemicals & Fertilizers
+**Currency:** PLN (thousands)
+**Analysis Period:** 2023
+**Analysis Method:** Local LLM Intelligence System (Multi-Pass Analysis)
+
+---
+
+## EXECUTIVE SUMMARY
+
+**Financial Health Score:** 45/100
+**Overall Risk Level:** N/A
+**Investment Recommendation:** HOLD
+
+This comprehensive report analyzes the company across three critical dimensions: financial health, risk assessment, and investment viability. The analysis is based on automated extraction of financial statements, validated through accounting equation verification.
+
+### Key Findings
+
+
+
+**OVERALL RISK PROFILE**
+- **Summary:** Grupa Azoty faces a *high* overall risk profile driven primarily by weak liquidity, high leverage, and exposure to cyclical commodity markets. Operational and market risks compound these financial vulnerabilities, especially given the hazardous nature of chemical production and volatile raw‑mate"
+EXPIRE doc:Azoty_Baseline_NoRAG:content 86400
+SADD docs:all "Azoty_Baseline_NoRAG"
+SADD docs:type:general_documentation "Azoty_Baseline_NoRAG"

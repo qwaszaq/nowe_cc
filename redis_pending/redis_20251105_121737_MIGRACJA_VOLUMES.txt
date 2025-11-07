@@ -1,0 +1,46 @@
+SET doc:MIGRACJA_VOLUMES:title "🔄 MIGRACJA VOLUMES - Stare vs Nowe"
+SET doc:MIGRACJA_VOLUMES:type "general_documentation"
+SET doc:MIGRACJA_VOLUMES:path "MIGRACJA_VOLUMES.md"
+SET doc:MIGRACJA_VOLUMES:content "# 🔄 MIGRACJA VOLUMES - Stare vs Nowe
+
+**Data:** 5 Listopada 2024
+
+---
+
+## 🔍 SYTUACJA
+
+### **Problem:**
+Mieliśmy **DWA zestawy** Docker Compose:
+
+1. **Stary:** `docker-compose.yml`
+   - Volumes: `coursor-agents-destiny-folder_*`
+   - Porty: 5432, 6333, 7474, 9200
+   - **KONFLIKT z investigation containers!**
+   - Status: Volumes utworzone, ale kontenery nigdy nie działały
+
+2. **Nowy:** `docker-compose-dev.yml`
+   - Volumes: `destiny_*`
+   - Porty: 5434, 6335, 7475, 9201
+   - **ZERO konfliktów!**
+   - Status: Właśnie uruchomione
+
+---
+
+## 📦 VOLUMES - Co Mamy?
+
+### **Stare Volumes (nie używane):**
+```
+coursor-agents-destiny-folder_postgres_data     (utworzony: 09:07:54)
+coursor-agents-destiny-folder_qdrant_data       (utworzony: 09:07:54)
+coursor-agents-destiny-folder_neo4j_data        (utworzony: 09:07:54)
+coursor-agents-destiny-folder_elasticsearch_data (utworzony: 09:07:54)
+```
+
+**Status:** Sprawdzamy czy są tam jakieś dane...
+
+### **Nowe Volumes (aktywne):**
+```
+destiny_postgres_data  "
+EXPIRE doc:MIGRACJA_VOLUMES:content 86400
+SADD docs:all "MIGRACJA_VOLUMES"
+SADD docs:type:general_documentation "MIGRACJA_VOLUMES"

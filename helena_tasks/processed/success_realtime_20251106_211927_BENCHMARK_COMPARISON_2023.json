@@ -1,0 +1,9 @@
+{
+  "file_path": "BENCHMARK_COMPARISON_2023.md",
+  "document_type": "general_documentation",
+  "title": "Financial Extraction Quality Benchmark - Grupa Azoty 2023",
+  "detected_at": "2025-11-06T21:19:27.702568",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Financial Extraction Quality Benchmark - Grupa Azoty 2023\n\n**Test Date:** 2025-11-06\n**Source Document:** Grupa Azoty Tarn\u00f3w - \u015ar\u00f3droczne skr\u00f3cone skonsolidowane sprawozdanie finansowe (6-month report ending June 30, 2023)\n**Document Size:** 2.2MB, 54 pages\n**Language:** Polish\n**Currency:** Thousands of Polish z\u0142oty (tys. z\u0142)\n\n---\n\n## \ud83c\udfaf Executive Summary\n\nThis benchmark compares three extraction methods against the same Polish financial report:\n\n| System | Quality Score | Completeness | Accur"
+}

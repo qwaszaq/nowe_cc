@@ -1,0 +1,59 @@
+SET doc:AUTONOMOUS_SYSTEM_GUIDE:title "🤖 AUTONOMOUS SYSTEM - User Guide"
+SET doc:AUTONOMOUS_SYSTEM_GUIDE:type "guide"
+SET doc:AUTONOMOUS_SYSTEM_GUIDE:path "AUTONOMOUS_SYSTEM_GUIDE.md"
+SET doc:AUTONOMOUS_SYSTEM_GUIDE:content "# 🤖 AUTONOMOUS SYSTEM - User Guide
+
+## Koncepcja: "Wskaż i Zapomnij"
+
+System działa **w pełni autonomicznie**:
+
+```
+TY: "Przeanalizuj folder /data/documents/"
+    ↓
+SYSTEM AUTOMATYCZNIE:
+  1. 🔍 Skanuje i klasyfikuje pliki
+  2. 🧠 Decyduje jakie analizy przeprowadzić
+  3. 🛠️ Wybiera odpowiednie narzędzia
+  4. 🤖 Wykonuje pracę agentami
+  5. 📊 Generuje raport
+```
+
+---
+
+## 🚀 Quick Start
+
+### Podstawowe użycie:
+
+```bash
+# Wskaż folder - system zrobi resztę
+python destiny_auto.py /path/to/your/documents
+```
+
+### Z własnym ID:
+
+```bash
+python destiny_auto.py /data/case_001 --case-id case_001
+```
+
+### Przykład z verbose:
+
+```bash
+python destiny_auto.py ~/Documents/financial_reports --verbose
+```
+
+---
+
+## 📋 Co system robi automatycznie?
+
+### 1. **Document Discovery** (Wykrywanie dokumentów)
+
+System automatycznie:
+- ✅ Skanuje folder i podfoldery
+- ✅ Identyfikuje typy plików (PDF, Excel, txt, etc.)
+- ✅ Oblicza metadane (rozmiar, hash, data modyfikacji)
+- ✅ Grupuje pliki według typu
+
+**Obsługiwane "
+EXPIRE doc:AUTONOMOUS_SYSTEM_GUIDE:content 86400
+SADD docs:all "AUTONOMOUS_SYSTEM_GUIDE"
+SADD docs:type:guide "AUTONOMOUS_SYSTEM_GUIDE"

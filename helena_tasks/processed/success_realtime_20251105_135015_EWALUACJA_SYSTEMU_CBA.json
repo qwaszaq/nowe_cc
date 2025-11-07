@@ -1,0 +1,9 @@
+{
+  "file_path": "reports/EWALUACJA_SYSTEMU_CBA.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udcca EWALUACJA SYSTEMU ANALIZY CBA - RAPORT KO\u0143COWY",
+  "detected_at": "2025-11-05T13:50:15.160776",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udcca EWALUACJA SYSTEMU ANALIZY CBA - RAPORT KO\u0143COWY\n\n**Data ewaluacji:** 2024-11-05  \n**Por\u00f3wnanie:** System stary (z halucynacjami) vs System nowy (z ekstrakcj\u0105)\n\n---\n\n## \ud83c\udfaf EXECUTIVE SUMMARY\n\n### \u2705 **G\u0141\u00d3WNE OSI\u0104GNI\u0118CIA:**\n\n1. **\u2705 Eliminacja halucynacji** - LLM u\u017cywa tylko wyekstrahowanych danych\n2. **\u2705 Ekstrakcja metryk dzia\u0142a** - wyekstrahowano dane z 5 dokument\u00f3w\n3. **\u2705 Oznaczanie danych** - wszystkie liczby maj\u0105 \u017ar\u00f3d\u0142o (\u2705)\n4. **\u2705 Routing embedding\u00f3w** - automatyczny, dzia\u0142a poprawnie\n\n### \ud83d\udcca *"
+}

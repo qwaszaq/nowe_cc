@@ -1,0 +1,9 @@
+{
+  "file_path": "WERYFIKACJA_PODZIALU.md",
+  "document_type": "general_documentation",
+  "title": "\u2705 WERYFIKACJA PODZIA\u0141U - Investigation vs Development",
+  "detected_at": "2025-11-05T12:14:50.607234",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \u2705 WERYFIKACJA PODZIA\u0141U - Investigation vs Development\n\n**Data:** 5 Listopada 2024\n\n---\n\n## \ud83d\udcca FINAL PORT ALLOCATION\n\n### **INVESTIGATION Environment (Production - DO NOT MODIFY)**\n\n```\nContainer Name              Port(s)           Purpose                   Data\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nsms-postgres                5432              SMS Cases DB              Production\nsms-qdrant                  6333-6334         SMS Embeddings            96,1"
+}

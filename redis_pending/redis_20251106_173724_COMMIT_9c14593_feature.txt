@@ -1,0 +1,40 @@
+SET doc:COMMIT_9c14593_feature:title "feat(intelligent-extraction): Complete multi-source extraction system"
+SET doc:COMMIT_9c14593_feature:type "architecture"
+SET doc:COMMIT_9c14593_feature:path "docs/auto-generated/2025-11-06/COMMIT_9c14593_feature.md"
+SET doc:COMMIT_9c14593_feature:content "# feat(intelligent-extraction): Complete multi-source extraction system
+
+**Auto-Generated Documentation**
+
+**Date:** 2025-11-06 17:37:24
+**Commit:** `9c14593`
+**Type:** Feature
+**Author:** artur
+
+---
+
+## 📝 Commit Message
+
+**feat(intelligent-extraction): Complete multi-source extraction system**
+
+🚀 FULL HOG IMPLEMENTATION - Intelligent Multi-Source Financial Data Extraction
+
+## Achievement: Complete System Implementation
+
+Implemented comprehensive intelligent extraction system supporting 6 document formats
+with automatic fallback strategies, quality assessment, and multi-language support.
+
+### Supported Formats
+
+✅ PDF - Enhanced with text extraction for borderless tables
+✅ DOCX - Microsoft Word table and text extraction
+✅ TXT - Plain text parsing (tabular/indented/freeform layouts)
+✅ XLSX - Excel spreadsheet structured data extraction
+✅ CSV - Comma-separated values extraction
+✅ HTML - Web page table and text extraction
+
+### Core Components (7 New Modules, ~1,800 Lines)
+
+1. **intelligent"
+EXPIRE doc:COMMIT_9c14593_feature:content 86400
+SADD docs:all "COMMIT_9c14593_feature"
+SADD docs:type:architecture "COMMIT_9c14593_feature"

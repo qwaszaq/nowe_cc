@@ -1,0 +1,9 @@
+{
+  "file_path": "ANALIZA_WYNIKOW_LOKALNEGO_SYSTEMU_PELNY.md",
+  "document_type": "general_documentation",
+  "title": "\ud83d\udcca ANALIZA WYNIK\u00d3W LOKALNEGO SYSTEMU - PE\u0141NY RAPORT",
+  "detected_at": "2025-11-05T14:47:28.259298",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83d\udcca ANALIZA WYNIK\u00d3W LOKALNEGO SYSTEMU - PE\u0141NY RAPORT\n## Ocena analizy przeprowadzonej przez system on-premise (bez zewn\u0119trznego AI)\n\n**Data:** 2024-11-05  \n**System:** Local Professional Analyzer (fully autonomous)  \n**Case ID:** professional_analysis_20251105_144547  \n**Czas wykonania:** 36.9s (Professional Analysis: 6.0s)\n\n---\n\n## \ud83d\udd0d WYNIKI SYSTEMU - SZCZEG\u00d3\u0141OWA ANALIZA\n\n### \u2705 STATUS WYKONANIA\n\n**Professional Analyzer:** \u2705 Uruchomiony  \n**Fazy wykonane:** 7/7 (100%)  \n**LLM Interpretation:** \u2705 "
+}

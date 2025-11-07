@@ -14,6 +14,7 @@ from src.data.postgres_client import PostgresClient
 from src.data.qdrant_client import QdrantClient
 from src.data.elasticsearch_client import ElasticsearchClient
 from src.data.neo4j_client import Neo4jClient
+from config import Config
 
 
 class SmartDatabaseRouter:
@@ -31,9 +32,17 @@ class SmartDatabaseRouter:
     
     def __init__(self):
         """Initialize all database clients"""
+        config = Config()
+        
         # PostgreSQL (always primary for structured data)
         try:
-            self.postgres = PostgresClient()
+            self.postgres = PostgresClient(
+                host=config.POSTGRES_HOST,
+                port=config.POSTGRES_PORT,
+                database=config.POSTGRES_DB,
+                user=config.POSTGRES_USER,
+                password=config.POSTGRES_PASSWORD
+            )
             self.postgres_available = True
             print("✅ PostgreSQL: Connected")
         except:
@@ -43,7 +52,10 @@ class SmartDatabaseRouter:
         
         # Qdrant (for scale)
         try:
-            self.qdrant = QdrantClient()
+            self.qdrant = QdrantClient(
+                host=config.QDRANT_HOST,
+                port=config.QDRANT_PORT
+            )
             self.qdrant_available = self.qdrant.available
             if self.qdrant_available:
                 print("✅ Qdrant: Connected")
@@ -56,7 +68,10 @@ class SmartDatabaseRouter:
         
         # Elasticsearch (for documents)
         try:
-            self.elasticsearch = ElasticsearchClient()
+            self.elasticsearch = ElasticsearchClient(
+                host=config.ELASTICSEARCH_HOST,
+                port=config.ELASTICSEARCH_PORT
+            )
             self.elasticsearch_available = self.elasticsearch.available
             if self.elasticsearch_available:
                 print("✅ Elasticsearch: Connected")
@@ -69,7 +84,12 @@ class SmartDatabaseRouter:
         
         # Neo4j (for graphs)
         try:
-            self.neo4j = Neo4jClient()
+            self.neo4j = Neo4jClient(
+                host=config.NEO4J_HOST,
+                port=config.NEO4J_HTTP_PORT,
+                username=config.NEO4J_USER,
+                password=config.NEO4J_PASSWORD
+            )
             self.neo4j_available = self.neo4j.available
             if self.neo4j_available:
                 print("✅ Neo4j: Connected")

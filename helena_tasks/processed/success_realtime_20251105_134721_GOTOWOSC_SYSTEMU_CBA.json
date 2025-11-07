@@ -1,0 +1,9 @@
+{
+  "file_path": "reports/GOTOWOSC_SYSTEMU_CBA.md",
+  "document_type": "general_documentation",
+  "title": "\u2705 INTEGRACJA ZAKO\u0143CZONA - SYSTEM GOTOWY DO PRACY Z RAPORTAMI CBA",
+  "detected_at": "2025-11-05T13:47:21.585259",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \u2705 INTEGRACJA ZAKO\u0143CZONA - SYSTEM GOTOWY DO PRACY Z RAPORTAMI CBA\n\n**Data:** 2024-11-05  \n**Status:** \u2705 **GOTOWY DO U\u017bYCIA**\n\n---\n\n## \ud83c\udf89 PODSUMOWANIE WDRO\u017bENIA\n\n### \u2705 **CO ZOSTA\u0141O ZROBIONE:**\n\n1. **\u2705 Ekstrakcja metryk zintegrowana z AutonomousOrchestrator**\n   - Metryki s\u0105 wyekstrahowane przed analiz\u0105 LLM\n   - Dane s\u0105 przekazywane do promptu LLM\n   - Zapisane w raporcie ko\u0144cowym\n\n2. **\u2705 Prompt LLM zaktualizowany**\n   - Instrukcja: \"Nie generuj nowych liczb\"\n   - Wyekstrahowane dane oznaczone jak"
+}

@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/implementation/STRATEGIA_EMBEDDINGOW_JINA_VS_E5.md",
+  "document_type": "architecture",
+  "title": "\ud83c\udfaf STRATEGIA WYBORU EMBEDDING\u00d3W: JINA vs E5/INTFLOAT",
+  "detected_at": "2025-11-05T13:37:10.512444",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# \ud83c\udfaf STRATEGIA WYBORU EMBEDDING\u00d3W: JINA vs E5/INTFLOAT\n\n**Data:** 2024-11-05  \n**Wersja:** 1.0  \n**Kontekst:** Analiza raport\u00f3w CBA i dokument\u00f3w strukturalnych\n\n---\n\n## \ud83d\udcca EXECUTIVE SUMMARY\n\nSzczeg\u00f3\u0142owa strategia wyboru mi\u0119dzy **Jina v4** i **E5-Large (IntFloat)** dla r\u00f3\u017cnych typ\u00f3w danych w systemie analizy CBA.\n\n**Kluczowe r\u00f3\u017cnice:**\n- **Jina v4:** Tabele, dane strukturalne, d\u0142ugie dokumenty (8192 tokens)\n- **E5-Large:** Og\u00f3lny tekst, wieloj\u0119zyczno\u015b\u0107, kr\u00f3tkie dokumenty (512 tokens)\n\n---\n\n## \ud83d\udd0d CHA"
+}

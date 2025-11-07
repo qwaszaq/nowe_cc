@@ -1,0 +1,9 @@
+{
+  "file_path": "testdocsLLM/README.md",
+  "document_type": "general_documentation",
+  "title": "Test Documents for LLM Testing",
+  "detected_at": "2025-11-05T11:15:41.008383",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Test Documents for LLM Testing\n\n## Folder do testowania systemu\n\nWrzu\u0107 tutaj dokumenty testowe (PDF, Excel, txt, etc.) do przetestowania autonomicznego systemu.\n\n## Jak u\u017cywa\u0107:\n\n```bash\n# Po dodaniu plik\u00f3w do tego folderu, uruchom:\npython destiny_auto.py testdocsLLM\n\n# Lub z custom case ID:\npython destiny_auto.py testdocsLLM --case-id test_001\n```\n\n## Obs\u0142ugiwane formaty:\n\n- **Dokumenty:** .pdf, .docx, .doc, .txt, .md\n- **Dane:** .xlsx, .xls, .csv\n- **Strukturalne:** .json, .xml, .yaml\n- **Obr"
+}

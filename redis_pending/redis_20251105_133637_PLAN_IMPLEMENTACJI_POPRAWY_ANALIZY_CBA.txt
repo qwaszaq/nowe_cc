@@ -1,0 +1,39 @@
+SET doc:PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA:title "🚀 PLAN IMPLEMENTACJI POPRAWY ANALIZY CBA"
+SET doc:PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA:type "architecture"
+SET doc:PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA:path "docs/implementation/PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA.md"
+SET doc:PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA:content "# 🚀 PLAN IMPLEMENTACJI POPRAWY ANALIZY CBA
+
+**Data:** 2024-11-05  
+**Wersja:** 1.0  
+**Status:** Gotowy do realizacji
+
+---
+
+## 📋 EXECUTIVE SUMMARY
+
+Plan implementacji poprawy systemu analizy raportów CBA, eliminujący halucynacje LLM i zapewniający weryfikowalne dane liczbowe z dokumentów źródłowych.
+
+**Główne cele:**
+1. ✅ Ekstrakcja rzeczywistych danych z PDF-ów przed analizą LLM
+2. ✅ Walidacja i oznaczanie niepewności danych
+3. ✅ System cytowania źródeł
+4. ✅ Optymalizacja wyboru embeddingów (Jina vs E5/IntFloat)
+
+**Szacowany czas:** 3 tygodnie (przy pełnym zaangażowaniu)
+
+---
+
+## 🎯 FAZA 1: KRYTYCZNE NAPRAWY (Tydzień 1)
+
+### **TASK 1.1: Ekstrakcja Tabel z PDF** 🔴 WYSOKI PRIORYTET
+
+**Cel:** Wyekstrahować rzeczywiste dane liczbowe z PDF-ów przed analizą LLM
+
+**Zadania:**
+- [ ] Zainstalować `camelot-py` lub `tabula-py` dla ekstrakcji tabel
+- [ ] Zainstalować `pdfplumber` dla zaawansowanej ekstrakcji
+- [ ] Stworzyć moduł `src/parsing/pdf_table_extractor.py`
+- [ ] Zintegrować z `UniversalFi"
+EXPIRE doc:PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA:content 86400
+SADD docs:all "PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA"
+SADD docs:type:architecture "PLAN_IMPLEMENTACJI_POPRAWY_ANALIZY_CBA"

@@ -1,0 +1,9 @@
+{
+  "file_path": "docs/auto-generated/2025-11-05/COMMIT_f0d49b5_feature.md",
+  "document_type": "team_documentation",
+  "title": "Complete Week 1 Foundation - Hybrid Multi-Agent System",
+  "detected_at": "2025-11-05T10:49:23.388283",
+  "processing_mode": "realtime",
+  "priority": "immediate",
+  "content_preview": "# Complete Week 1 Foundation - Hybrid Multi-Agent System\n\n**Auto-Generated Documentation**\n\n**Date:** 2025-11-05 10:49:23\n**Commit:** `f0d49b5`\n**Type:** Feature\n**Author:** artur\n\n---\n\n## \ud83d\udcdd Commit Message\n\n**feat: Complete Week 1 Foundation - Hybrid Multi-Agent System**\n\nMajor milestone: Full Week 1 implementation complete and production-ready.\n\nCore Components:\n- 10 specialized AI agents (Financial, Legal, Risk, DataSci, DevOps, Security, Product, QA, Architect, Documentation)\n- Dual LLM syste"
+}
