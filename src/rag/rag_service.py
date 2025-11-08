@@ -7,6 +7,7 @@ from typing import List, Dict, Any, Optional
 import logging
 
 from .qdrant_vector_store import QdrantVectorStore
+from .collection_mapper import get_collections_for_years
 
 logger = logging.getLogger(__name__)
 
@@ -40,6 +41,9 @@ class RAGService:
         """
         Get relevant context from documents for a specific question
 
+        ENHANCED: Now intelligently selects appropriate RAG collections
+        based on the years being analyzed.
+
         Args:
             question: Analyst question (e.g., "Why did margins decline?")
             company: Company name
@@ -51,44 +55,70 @@ class RAGService:
         """
         logger.info(f"RAG query: '{question}' for {company} (years={years})")
 
+        # SMART COLLECTION SELECTION: Use collection mapper
+        # This ensures we query the right collections for the analysis period
+        if years:
+            required_collections = get_collections_for_years(years, company)
+            logger.info(
+                f"Smart collection selection: {required_collections} "
+                f"for years {years}"
+            )
+        else:
+            required_collections = [self.vector_store.collection_name]
+            logger.info(f"No years specified, using default collection: {required_collections}")
+
+        # Query all required collections
         all_results = []
 
-        if years and len(years) > 1:
-            # Query each year separately and combine
-            for year in years:
-                results = self.vector_store.search(
+        for collection_name in required_collections:
+            # Create temporary vector store for this collection
+            temp_store = QdrantVectorStore(
+                collection_name=collection_name,
+                qdrant_url=self.vector_store.qdrant_url,
+                use_reranker=self.vector_store.use_reranker
+            )
+
+            if years and len(years) > 1:
+                # Query each year separately and combine
+                for year in years:
+                    results = temp_store.search(
+                        query=question,
+                        company=company,
+                        year=year,
+                        top_k=max(1, top_k // len(years))
+                    )
+                    all_results.extend(results)
+
+            elif years and len(years) == 1:
+                # Single year
+                results = temp_store.search(
                     query=question,
                     company=company,
-                    year=year,
-                    top_k=max(1, top_k // len(years))
+                    year=years[0],
+                    top_k=top_k
                 )
                 all_results.extend(results)
 
-            # Sort by score
-            all_results.sort(key=lambda x: x['score'], reverse=True)
-            results = all_results[:top_k]
+            else:
+                # All years
+                results = temp_store.search(
+                    query=question,
+                    company=company,
+                    year=None,
+                    top_k=top_k
+                )
+                all_results.extend(results)
 
-        elif years and len(years) == 1:
-            # Single year
-            results = self.vector_store.search(
-                query=question,
-                company=company,
-                year=years[0],
-                top_k=top_k
-            )
-
-        else:
-            # All years
-            results = self.vector_store.search(
-                query=question,
-                company=company,
-                year=None,
-                top_k=top_k
-            )
+        # Sort by score and take top K
+        all_results.sort(key=lambda x: x['score'], reverse=True)
+        results = all_results[:top_k]
 
         # Format context
         if not results:
-            logger.warning(f"No relevant context found for: {question}")
+            logger.warning(
+                f"No relevant context found for: {question} "
+                f"(searched collections: {required_collections})"
+            )
             return "No relevant context found in documents."
 
         context_parts = []
@@ -107,7 +137,10 @@ class RAGService:
 
         context = "\n\n---\n\n".join(context_parts)
 
-        logger.info(f"Retrieved {len(results)} relevant chunks (avg score: {sum(r['score'] for r in results) / len(results):.3f})")
+        logger.info(
+            f"Retrieved {len(results)} relevant chunks from {len(required_collections)} "
+            f"collections (avg score: {sum(r['score'] for r in results) / len(results):.3f})"
+        )
 
         return context
 
