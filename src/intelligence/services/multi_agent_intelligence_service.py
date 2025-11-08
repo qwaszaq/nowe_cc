@@ -49,6 +49,7 @@ from ..types import ReportMode, get_token_budget, get_rag_query_count
 
 from ..formatters.data_formatter import (
     format_financial_data,
+    format_financial_ratios,
     calculate_financial_ratios,
     select_analysis_framework,
     assess_severity
@@ -152,7 +153,7 @@ class MultiAgentIntelligenceService:
                 company_data.get('income_statement', {}),
                 company_data.get('cash_flow', {})
             )
-            ratios_table = format_financial_data(ratios)
+            ratios_table = format_financial_ratios(ratios)  # Use specialized ratio formatter (doesn't divide by 1000)
 
             # Determine latest year for RAG
             latest_year = None

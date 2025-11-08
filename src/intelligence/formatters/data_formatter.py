@@ -77,6 +77,91 @@ def format_financial_data(data: Dict[str, Dict[int, float]]) -> str:
     return "\n".join(rows)
 
 
+def format_financial_ratios(ratios: Dict[str, Dict[int, float]]) -> str:
+    """
+    Format financial ratios as markdown table for LLM.
+
+    IMPORTANT: Unlike format_financial_data(), this does NOT divide by 1000
+    because ratios are already calculated as dimensionless numbers or percentages.
+
+    Input:
+        {
+            'Current Ratio': {2020: 0.70, 2021: 0.65, 2023: 0.70},
+            'ROE (%)': {2020: 5.0, 2021: 3.0, 2023: 4.2},
+            'Debt to Equity': {2020: 2.5, 2021: 3.0, 2023: 3.2}
+        }
+
+    Output:
+        | Ratio | 2020 | 2021 | 2023 | Trend |
+        |-------|------|------|------|-------|
+        | Current Ratio | 0.70 | 0.65 | 0.70 | -0.0% |
+        | ROE (%) | 5.0 | 3.0 | 4.2 | -6.8% |
+    """
+    if not ratios:
+        return "No ratios calculated"
+
+    # Get years (sorted)
+    all_years = set()
+    for metric_data in ratios.values():
+        all_years.update(metric_data.keys())
+    years = sorted(all_years)
+
+    if not years:
+        return "No ratios calculated"
+
+    # Build table
+    rows = []
+    header = f"| Ratio | {' | '.join(str(y) for y in years)} | Trend (CAGR) |"
+    separator = "|" + "|".join(["---"] * (len(years) + 2)) + "|"
+
+    rows.append(header)
+    rows.append(separator)
+
+    for ratio_name, values in ratios.items():
+        # Format values (NO division by 1000 - ratios are already correct scale)
+        formatted_values = []
+        for year in years:
+            value = values.get(year)
+            if value is not None:
+                # Format based on ratio type
+                if ratio_name in ['Current Ratio', 'Quick Ratio', 'Debt to Equity']:
+                    # Dimensionless ratios - show 2 decimal places
+                    formatted = f"{value:.2f}"
+                elif '(%)' in ratio_name:
+                    # Percentage ratios - show 1 decimal place
+                    formatted = f"{value:.1f}"
+                elif ratio_name == 'Working Capital':
+                    # Working Capital is still in thousands - divide by 1000
+                    formatted = f"{value/1000:,.0f}"
+                else:
+                    # Default formatting
+                    formatted = f"{value:.2f}"
+            else:
+                formatted = "-"
+            formatted_values.append(formatted)
+
+        # Calculate trend (CAGR if we have first and last year)
+        first_year = min(years)
+        last_year = max(years)
+        first_value = values.get(first_year)
+        last_value = values.get(last_year)
+
+        if first_value and last_value and first_value != 0 and first_value > 0:
+            years_diff = last_year - first_year
+            if years_diff > 0:
+                cagr = ((last_value / first_value) ** (1 / years_diff) - 1) * 100
+                trend = f"{cagr:+.1f}%"
+            else:
+                trend = "N/A"
+        else:
+            trend = "N/A"
+
+        row = f"| {ratio_name} | {' | '.join(formatted_values)} | {trend} |"
+        rows.append(row)
+
+    return "\n".join(rows)
+
+
 def calculate_financial_ratios(
     balance_sheet: Dict[str, Dict[int, float]],
     income_statement: Dict[str, Dict[int, float]],
