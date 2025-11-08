@@ -1,0 +1,708 @@
+{
+  "test_date": "2025-11-07",
+  "reports_tested": 10,
+  "successful_extractions": 10,
+  "failed_extractions": 0,
+  "success_rate": "100.0%",
+  "failure_rate": "0.0%",
+  "issues_found": [
+    {
+      "file": "Benchmark_MultiAgent_20251107_094422.md",
+      "warning": "Multiple different scores found: [38, 58]"
+    },
+    {
+      "file": "Benchmark_MultiAgent_20251107_094422.md",
+      "warning": "Invalid recommendation value '' found via recommendation_double_bold"
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_085800.md",
+      "warning": "Multiple different scores found: [38, 58]"
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_084021.md",
+      "warning": "Multiple different scores found: [35, 38, 58]"
+    },
+    {
+      "file": "Azoty_SingleAgent_MultiYear_20251107_082752.md",
+      "warning": "Invalid recommendation value 'THE FINANCIAL HEALTH OF GRUPA AZOTY S' found via bold_rec"
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_081825.md",
+      "warning": "Invalid recommendation value '' found via recommendation_double_bold"
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_074658.md",
+      "warning": "Multiple different scores found: [38, 47]"
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_074658.md",
+      "warning": "Invalid recommendation value '' found via investment_recommendation_double_bold"
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_074658.md",
+      "warning": "Invalid recommendation value '' found via recommendation_double_bold"
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_074658.md",
+      "warning": "Invalid recommendation value '' found via recommendation_double_bold"
+    }
+  ],
+  "detailed_results": [
+    {
+      "file": "Azoty_VALIDATED_20251107.md",
+      "score": 34,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 34,
+        "score_method": "financial_health_score",
+        "score_line": "**FINANCIAL HEALTH SCORE: 34/100**",
+        "score_line_number": 58,
+        "score_all_matches": [
+          {
+            "score": 34,
+            "method": "financial_health_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 34/100**"
+          },
+          {
+            "score": 34,
+            "method": "generic_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 34/100**"
+          },
+          {
+            "score": 34,
+            "method": "simple_score",
+            "line_number": 13,
+            "line": "**Financial Health Score:** 34/100"
+          },
+          {
+            "score": 34,
+            "method": "simple_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 34/100**"
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "bold_investment_rec",
+        "recommendation_line": "**Investment Recommendation:** SELL",
+        "recommendation_line_number": 15,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "bold_investment_rec",
+            "line_number": 15,
+            "line": "**Investment Recommendation:** SELL"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": []
+      }
+    },
+    {
+      "file": "Benchmark_MultiAgent_20251107_094422.md",
+      "score": 38,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 38,
+        "score_method": "assessment_score",
+        "score_line": "Overall Assessment Score: **38/100**",
+        "score_line_number": 7,
+        "score_all_matches": [
+          {
+            "score": 38,
+            "method": "assessment_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "overall_assessment_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "generic_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "bold_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 31,
+            "line": "**Weighted Overall:** 38/100 (weights: 25\u202f% F.H., 20\u202f% R.P., 20\u202f% I.P., 20\u202f% S.Q., 15\u202f% M.O.)"
+          },
+          {
+            "score": 58,
+            "method": "simple_score",
+            "line_number": 39,
+            "line": "1. **Industry Position vs. Financial Weakness** \u2013 Industry Context rates the company as a leader (58/100) while Financial Health flags severe distress."
+          },
+          {
+            "score": 58,
+            "method": "simple_score",
+            "line_number": 42,
+            "line": "2. **Strategic Ambition vs. Execution Gap** \u2013 Strategic Evaluation scores 58/100 for strategy quality, whereas Risk Assessment highlights execution failures (e.g., no concrete milestones)."
+          },
+          {
+            "score": 58,
+            "method": "simple_score",
+            "line_number": 64,
+            "line": "| 4 | **Competitive Position** \u2013 Second largest EU producer gives scale advantages. | Industry Context scores 58/100 for market share\u3010source: Industry Context, p.1\u3011. |"
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "investment_recommendation_double_bold",
+        "recommendation_line": "Investment Recommendation: **SELL**",
+        "recommendation_line_number": 8,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "investment_recommendation_double_bold",
+            "line_number": 8,
+            "line": "Investment Recommendation: **SELL**"
+          },
+          {
+            "recommendation": "SELL",
+            "method": "recommendation_double_bold",
+            "line_number": 8,
+            "line": "Investment Recommendation: **SELL**"
+          },
+          {
+            "recommendation": "SELL",
+            "method": "bold_rec_double",
+            "line_number": 96,
+            "line": "**Recommendation:** **SELL**"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": [
+          "Multiple different scores found: [38, 58]",
+          "Invalid recommendation value '' found via recommendation_double_bold"
+        ]
+      }
+    },
+    {
+      "file": "Benchmark_SingleAgent_20251107_094303.md",
+      "score": 34,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 34,
+        "score_method": "financial_health_score",
+        "score_line": "**FINANCIAL HEALTH SCORE: 34/100**",
+        "score_line_number": 58,
+        "score_all_matches": [
+          {
+            "score": 34,
+            "method": "financial_health_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 34/100**"
+          },
+          {
+            "score": 34,
+            "method": "generic_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 34/100**"
+          },
+          {
+            "score": 34,
+            "method": "simple_score",
+            "line_number": 13,
+            "line": "**Financial Health Score:** 34/100"
+          },
+          {
+            "score": 34,
+            "method": "simple_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 34/100**"
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "bold_investment_rec",
+        "recommendation_line": "**Investment Recommendation:** SELL",
+        "recommendation_line_number": 15,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "bold_investment_rec",
+            "line_number": 15,
+            "line": "**Investment Recommendation:** SELL"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": []
+      }
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_085800.md",
+      "score": 38,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 38,
+        "score_method": "assessment_score",
+        "score_line": "Overall Assessment Score: **38/100**",
+        "score_line_number": 7,
+        "score_all_matches": [
+          {
+            "score": 38,
+            "method": "assessment_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "overall_assessment_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "generic_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "bold_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "bold_score",
+            "line_number": 33,
+            "line": "(25%\u202f\u00d7\u202f45) + (20%\u202f\u00d7\u202f70) + (20%\u202f\u00d7\u202f58) + (20%\u202f\u00d7\u202f73) + (15%\u202f\u00d7\u202f35) = **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 33,
+            "line": "(25%\u202f\u00d7\u202f45) + (20%\u202f\u00d7\u202f70) + (20%\u202f\u00d7\u202f58) + (20%\u202f\u00d7\u202f73) + (15%\u202f\u00d7\u202f35) = **38/100**"
+          },
+          {
+            "score": 58,
+            "method": "simple_score",
+            "line_number": 51,
+            "line": "- *Agent:* Industry Context Agent rates competitive position 58/100 (moderate)."
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "investment_recommendation_double_bold",
+        "recommendation_line": "Investment Recommendation: **SELL**",
+        "recommendation_line_number": 9,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "investment_recommendation_double_bold",
+            "line_number": 9,
+            "line": "Investment Recommendation: **SELL**"
+          },
+          {
+            "recommendation": "SELL",
+            "method": "recommendation_double_bold",
+            "line_number": 9,
+            "line": "Investment Recommendation: **SELL**"
+          },
+          {
+            "recommendation": "SELL",
+            "method": "recommendation_double_bold",
+            "line_number": 120,
+            "line": "Recommendation: **SELL**"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": [
+          "Multiple different scores found: [38, 58]"
+        ]
+      }
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_084021.md",
+      "score": 38,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 38,
+        "score_method": "assessment_score",
+        "score_line": "Overall Assessment Score: **38/100**",
+        "score_line_number": 7,
+        "score_all_matches": [
+          {
+            "score": 38,
+            "method": "assessment_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "overall_assessment_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "generic_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "bold_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 7,
+            "line": "Overall Assessment Score: **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 31,
+            "line": "**Weighted Overall Score:** 38/100"
+          },
+          {
+            "score": 58,
+            "method": "simple_score",
+            "line_number": 46,
+            "line": "- *Industry Context Agent* rates market position as strong (58/100)."
+          },
+          {
+            "score": 35,
+            "method": "simple_score",
+            "line_number": 47,
+            "line": "- *Financial Health Agent* deems overall health weak (35/100)."
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "investment_recommendation_double_bold",
+        "recommendation_line": "Investment Recommendation: **SELL**",
+        "recommendation_line_number": 9,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "investment_recommendation_double_bold",
+            "line_number": 9,
+            "line": "Investment Recommendation: **SELL**"
+          },
+          {
+            "recommendation": "SELL",
+            "method": "recommendation_double_bold",
+            "line_number": 9,
+            "line": "Investment Recommendation: **SELL**"
+          },
+          {
+            "recommendation": "SELL",
+            "method": "recommendation_double_bold",
+            "line_number": 104,
+            "line": "Recommendation: **SELL**"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": [
+          "Multiple different scores found: [35, 38, 58]"
+        ]
+      }
+    },
+    {
+      "file": "Azoty_SingleAgent_MultiYear_20251107_082752.md",
+      "score": 38,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 38,
+        "score_method": "financial_health_score",
+        "score_line": "**FINANCIAL HEALTH SCORE: 38/100**",
+        "score_line_number": 58,
+        "score_all_matches": [
+          {
+            "score": 38,
+            "method": "financial_health_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 38/100**"
+          },
+          {
+            "score": 38,
+            "method": "generic_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 13,
+            "line": "**Financial Health Score:** 38/100"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 58,
+            "line": "**FINANCIAL HEALTH SCORE: 38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 155,
+            "line": "| 1 | **Execution risk on turnaround plan** \u2013 Requires rapid cost cuts, debt restructuring, and cash\u2011flow improvement. | High | Medium | Failure to execute could lock the company into a downward spiral; current financial health score is 38/100. | \u2022 Develop a detailed action plan with clear KPIs (e.g., DSCR, working capital).<br>\u2022 Assign dedicated turnaround team with external advisors.<br>\u2022 Monitor progress monthly and adjust tactics promptly. |"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 225,
+            "line": "- **Rationale:** The company\u2019s financial health score of 38/100 and deteriorating liquidity metrics signal significant risk. Yet its asset base, modest cash buffer, and potential upside from regulatory incentives provide a counterbalance that could justify a cautious hold while monitoring turnaround progress."
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "bold_investment_rec",
+        "recommendation_line": "**Investment Recommendation:** SELL",
+        "recommendation_line_number": 15,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "bold_investment_rec",
+            "line_number": 15,
+            "line": "**Investment Recommendation:** SELL"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": [
+          "Invalid recommendation value 'THE FINANCIAL HEALTH OF GRUPA AZOTY S' found via bold_rec"
+        ]
+      }
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_081825.md",
+      "score": 63,
+      "recommendation": "HOLD",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 63,
+        "score_method": "simple_score",
+        "score_line": "**Weighted Overall Score:** 63/100",
+        "score_line_number": 31,
+        "score_all_matches": [
+          {
+            "score": 63,
+            "method": "simple_score",
+            "line_number": 31,
+            "line": "**Weighted Overall Score:** 63/100"
+          }
+        ],
+        "recommendation": "HOLD",
+        "recommendation_method": "bold_rec_double",
+        "recommendation_line": "**Recommendation:** **HOLD**",
+        "recommendation_line_number": 9,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "HOLD",
+            "method": "bold_rec_double",
+            "line_number": 9,
+            "line": "**Recommendation:** **HOLD**"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": [
+          "Invalid recommendation value '' found via recommendation_double_bold"
+        ]
+      }
+    },
+    {
+      "file": "Azoty_SingleAgent_MultiYear_20251107_081651.md",
+      "score": 35,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 35,
+        "score_method": "financial_health_score",
+        "score_line": "**FINANCIAL HEALTH SCORE: 35/100**",
+        "score_line_number": 37,
+        "score_all_matches": [
+          {
+            "score": 35,
+            "method": "financial_health_score",
+            "line_number": 37,
+            "line": "**FINANCIAL HEALTH SCORE: 35/100**"
+          },
+          {
+            "score": 35,
+            "method": "generic_score",
+            "line_number": 37,
+            "line": "**FINANCIAL HEALTH SCORE: 35/100**"
+          },
+          {
+            "score": 35,
+            "method": "simple_score",
+            "line_number": 13,
+            "line": "**Financial Health Score:** 35/100"
+          },
+          {
+            "score": 35,
+            "method": "simple_score",
+            "line_number": 37,
+            "line": "**FINANCIAL HEALTH SCORE: 35/100**"
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "bold_investment_rec",
+        "recommendation_line": "**Investment Recommendation:** SELL",
+        "recommendation_line_number": 15,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "bold_investment_rec",
+            "line_number": 15,
+            "line": "**Investment Recommendation:** SELL"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": []
+      }
+    },
+    {
+      "file": "Azoty_MultiAgent_MultiYear_20251107_074658.md",
+      "score": 38,
+      "recommendation": "SELL",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 38,
+        "score_method": "bold_score",
+        "score_line": "**Overall Assessment Score:** **38/100**",
+        "score_line_number": 9,
+        "score_all_matches": [
+          {
+            "score": 38,
+            "method": "bold_score",
+            "line_number": 9,
+            "line": "**Overall Assessment Score:** **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "bold_score",
+            "line_number": 30,
+            "line": "**Weighted Overall Score:** **38/100** (weights: 25\u202f% financial, 20\u202f% risk, 20\u202f% industry, 20\u202f% strategy, 15\u202f% market)."
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 9,
+            "line": "**Overall Assessment Score:** **38/100**"
+          },
+          {
+            "score": 38,
+            "method": "simple_score",
+            "line_number": 30,
+            "line": "**Weighted Overall Score:** **38/100** (weights: 25\u202f% financial, 20\u202f% risk, 20\u202f% industry, 20\u202f% strategy, 15\u202f% market)."
+          },
+          {
+            "score": 47,
+            "method": "simple_score",
+            "line_number": 41,
+            "line": "- **Strategic Evaluation vs Industry Context:** Strategic agent rates strategy quality at 47/100 (adequate), whereas industry context gives a competitive position score of 42/100 (follower)."
+          }
+        ],
+        "recommendation": "SELL",
+        "recommendation_method": "bold_investment_rec_double",
+        "recommendation_line": "**Investment Recommendation:** **SELL**",
+        "recommendation_line_number": 10,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "SELL",
+            "method": "bold_investment_rec_double",
+            "line_number": 10,
+            "line": "**Investment Recommendation:** **SELL**"
+          },
+          {
+            "recommendation": "SELL",
+            "method": "bold_rec_double",
+            "line_number": 99,
+            "line": "**Recommendation:** **SELL**"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": [
+          "Multiple different scores found: [38, 47]",
+          "Invalid recommendation value '' found via investment_recommendation_double_bold",
+          "Invalid recommendation value '' found via recommendation_double_bold",
+          "Invalid recommendation value '' found via recommendation_double_bold"
+        ]
+      }
+    },
+    {
+      "file": "Azoty_SingleAgent_MultiYear_20251107_074306.md",
+      "score": 35,
+      "recommendation": "HOLD",
+      "extraction_successful": true,
+      "metadata": {
+        "score": 35,
+        "score_method": "financial_health_score",
+        "score_line": "**FINANCIAL HEALTH SCORE: 35/100**",
+        "score_line_number": 34,
+        "score_all_matches": [
+          {
+            "score": 35,
+            "method": "financial_health_score",
+            "line_number": 34,
+            "line": "**FINANCIAL HEALTH SCORE: 35/100**"
+          },
+          {
+            "score": 35,
+            "method": "generic_score",
+            "line_number": 34,
+            "line": "**FINANCIAL HEALTH SCORE: 35/100**"
+          },
+          {
+            "score": 35,
+            "method": "simple_score",
+            "line_number": 13,
+            "line": "**Financial Health Score:** 35/100"
+          },
+          {
+            "score": 35,
+            "method": "simple_score",
+            "line_number": 34,
+            "line": "**FINANCIAL HEALTH SCORE: 35/100**"
+          }
+        ],
+        "recommendation": "HOLD",
+        "recommendation_method": "bold_investment_rec",
+        "recommendation_line": "**Investment Recommendation:** HOLD",
+        "recommendation_line_number": 15,
+        "recommendation_all_matches": [
+          {
+            "recommendation": "HOLD",
+            "method": "bold_investment_rec",
+            "line_number": 15,
+            "line": "**Investment Recommendation:** HOLD"
+          }
+        ],
+        "extraction_successful": true,
+        "warnings": []
+      }
+    }
+  ]
+}
