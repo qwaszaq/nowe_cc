@@ -1,0 +1,34 @@
+{
+  "test_date": "2025-11-08T11:00:38.969977",
+  "baseline": {
+    "gemma_27b_citations": 32,
+    "oss_20b_citations": 8
+  },
+  "enhanced": {
+    "gemma_27b": {
+      "success": true,
+      "model": "gemma-3-27b-it",
+      "generation_time": 241.1825408935547,
+      "report_length": 56583,
+      "word_count": 7867,
+      "rag_citations": 27,
+      "tables": 36,
+      "output_file": "/Users/artur/coursor-agents-destiny-folder/output/phase1_enhanced/azoty_enhanced_gemma_3_27b_it_20251108_105929.md"
+    },
+    "oss_20b": {
+      "success": true,
+      "model": "openai/gpt-oss-20b",
+      "generation_time": 67.48056817054749,
+      "report_length": 39358,
+      "word_count": 5885,
+      "rag_citations": 231,
+      "tables": 49,
+      "output_file": "/Users/artur/coursor-agents-destiny-folder/output/phase1_enhanced/azoty_enhanced_openai_gpt_oss_20b_20251108_110038.md"
+    }
+  },
+  "improvements": {
+    "oss_citation_improvement_pct": 2787.5,
+    "oss_target_met": true,
+    "gemma_table_enforcement": true
+  }
+}

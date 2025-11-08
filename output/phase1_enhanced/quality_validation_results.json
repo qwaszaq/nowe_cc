@@ -1,0 +1,85 @@
+{
+  "timestamp": "2025-11-08T10:02:41Z",
+  "citation_patterns": {
+    "gemma": {
+      "total_citations": 1,
+      "unique_citations": 1,
+      "duplicate_rate": 0.0,
+      "format_distribution": {
+        "directors_report": 1
+      },
+      "source_distribution": {
+        "Directors Report": 1
+      },
+      "with_page_numbers": 0,
+      "page_number_rate": 0.0,
+      "avg_citation_text_length": 108.0
+    },
+    "oss": {
+      "total_citations": 58,
+      "unique_citations": 58,
+      "duplicate_rate": 0.0,
+      "format_distribution": {
+        "source_with_page": 58
+      },
+      "source_distribution": {
+        "Grupa_Azoty_Directors_Report_2024.pdf": 34,
+        "Grupa_Azoty_Directors_Report_2024": 23,
+        "Financial Health Summary": 1
+      },
+      "with_page_numbers": 58,
+      "page_number_rate": 1.0,
+      "avg_citation_text_length": 87.01724137931035
+    }
+  },
+  "financial_metrics": {
+    "gemma": {
+      "debt_to_equity": 3.57,
+      "current_ratio": 0.65
+    },
+    "oss": {
+      "debt_to_equity": 3.57,
+      "current_ratio": 0.65
+    },
+    "validation": {
+      "debt_to_equity": {
+        "actual": 3.57,
+        "expected": 3.57,
+        "correct": true,
+        "error": 0.0
+      },
+      "current_ratio": {
+        "actual": 0.65,
+        "expected": 0.65,
+        "correct": true,
+        "error": 0.0
+      }
+    }
+  },
+  "citation_accuracy": 0.0,
+  "calculations_correct": true,
+  "depth_comparison": {
+    "length": {
+      "gemma": 56583,
+      "oss": 39358,
+      "ratio": 1.4376492707962802
+    },
+    "word_count": {
+      "gemma": 7867,
+      "oss": 5885
+    },
+    "risk_mentions": {
+      "gemma": 50,
+      "oss": 33
+    },
+    "metrics_coverage": {
+      "gemma": 6,
+      "oss": 6
+    },
+    "tables": {
+      "gemma": 36,
+      "oss": 49
+    }
+  },
+  "recommendation": "PROCEED_PHASE2"
+}
